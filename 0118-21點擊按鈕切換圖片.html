@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #im{
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="顯示" id="btn">
+    <img id="im" src="https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/07/27/4/6617338.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=1050" alt="">
+    <script>
+        function my$(id){
+            return document.getElementById(id)
+        }
+
+        my$("btn").onclick = function(){
+            my$("im").src = "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2019/01/21/99/5825083.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=1050";
+        }
+    </script>
+</body>
+</html>
