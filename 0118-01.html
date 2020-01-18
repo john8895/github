@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="button" value="設置顏色" id="btn">
+    <input type="button" value="隱藏" id="btn">
     <div id="dv"></div>
     <script src="comon.js"></script>
     <script>
         my$('btn').onclick = function(){
-            my$('dv').style.width = "300px";
-            my$('dv').style.height = "200px";
-            my$('dv').style.backgroundColor = "yellowgreen";
+            if(this.value == "隱藏"){
+                my$('dv').style.display = "none";
+                this.value = "顯示"
+            }else if(this.value == "顯示"){
+                my$('dv').style.display = "block";
+                this.value = "隱藏";
+            }
         }
     </script>
 </body>
