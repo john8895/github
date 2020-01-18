@@ -9,18 +9,14 @@
 </head>
 
 <body>
-    <input type="button" value="點菜" id="btn">
-    <select name="" id="ss">
-        <option value="1">清蒸臭豆腐</option>
-        <option value="2">紅燒榴璉</option>
-        <option value="3">油炸西瓜</option>
-        <option value="4" id="op1">脆皮白兔</option>
-        <option value="5">涼拌麻油雞</option>
-    </select>
+    <input type="button" value="設置顏色" id="btn">
+    <div id="dv"></div>
     <script src="comon.js"></script>
     <script>
         my$('btn').onclick = function(){
-            my$('op1').selected = true;
+            my$('dv').style.width = "300px";
+            my$('dv').style.height = "200px";
+            my$('dv').style.backgroundColor = "yellowgreen";
         }
     </script>
 </body>
