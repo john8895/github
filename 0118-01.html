@@ -8,25 +8,30 @@
     <title>Document</title>
     <style>
         div {
-            width: 300px;
+            width: 500px;
             height: 200px;
             background-color: greenyellow;
+        }
+        .cls {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <input type="button" value="隱藏" id="btn">
+    <input type="button" value="顯示" id="btn">
     <div id="dv"></div>
+
     <script src="comon.js"></script>
     <script>
-        my$('btn').onclick = function(){
-            if(this.value == "隱藏"){
-                my$('dv').style.display = "none";
-                this.value = "顯示"
-            }else if(this.value == "顯示"){
-                my$('dv').style.display = "block";
+        my$('btn').onclick =function(){
+            if(this.value == "顯示"){
+                my$('dv').className = "cls";
                 this.value = "隱藏";
+                console.log(my$('dv').className);
+            }else{
+                my$('dv').className ="";
+                this.value = "顯示"; 
             }
         }
     </script>
