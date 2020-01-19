@@ -9,29 +9,20 @@
 </head>
 
 <body>
-    <input type="button" id="btn" value="設置">
-    <ul id="uu">
-        <li>保時捷</li>
-        <li>藍保機泥</li>
-        <li>保馬</li>
-        <li>和馬</li>
-        <li>滿天星</li>
-        <li>86</li>
-        <li>素罷負</li>
-        <li>馬王</li>
-    </ul>
+    <input type="button" value="設置" id="btn"><br/>
+    <input type="text" name="name1" value="你好"><br/>
+    <input type="text" name="name2" value="你好"><br/>
+    <input type="text" name="name1" value="你好"><br/>
+    <input type="text" name="name2" value="你好"><br/>
+    <input type="text" name="name1" value="你好"><br/>
+    <input type="text" name="name1" value="你好"><br/>
+
     <script src="comon.js"></script>
     <script>
-        //奇紅偶黃
-        my$('btn').onclick = function (){
-            var list = my$('uu').getElementsByTagName('li');
-            for(var i=0;i<list.length;i++){
-                if(i%2==0){
-                    // console.log(list[i].style);
-                    list[i].style.backgroundColor = "red";
-                }else{
-                    list[i].style.backgroundColor = "yellow";
-                }
+        my$('btn').onclick = function(){
+            var inputs = document.getElementsByName('name1');
+            for(var i=0;i<inputs.length;i++){
+                inputs[i].value = "嘎阿";
             }
         }
     </script>
