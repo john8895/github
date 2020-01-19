@@ -7,32 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div {
-            width: 500px;
-            height: 200px;
-            background-color: greenyellow;
-        }
         .cls {
-            display: none;
+            background-color: Black;
         }
     </style>
 </head>
 
 <body>
-    <input type="button" value="顯示" id="btn">
-    <div id="dv"></div>
-
+    <input type="button" value="開/關燈" id="btn">
     <script src="comon.js"></script>
     <script>
-        my$('btn').onclick =function(){
-            if(this.value == "顯示"){
-                my$('dv').className = "cls";
-                this.value = "隱藏";
-                console.log(my$('dv').className);
-            }else{
-                my$('dv').className ="";
-                this.value = "顯示"; 
-            }
+        my$('btn').onclick = function () {
+            document.body.className = document.body.className != "cls" ? "cls" : "";
         }
     </script>
 </body>
