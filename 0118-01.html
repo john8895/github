@@ -6,50 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        ul {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            justify-content: space-between;
-        }
-        li img {
-            max-width: 145px;
-        }
-        #gallery {
-            width: 600px;
-        }
-        img {
-            max-width: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="gallery">
-        <ul>
-            <li><a href="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg"><img
-                        src="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg" alt=""></a></li>
-            <li><a href="https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2017/01/16/20170116-114604_U7418_M238622_01c7.GIF?itok=MIvB74ui"><img
-                        src="https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2017/01/16/20170116-114604_U7418_M238622_01c7.GIF?itok=MIvB74ui" alt=""></a></li>
-            <li><a href="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg"><img
-                        src="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg" alt=""></a></li>
-            <li><a href="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg"><img
-                        src="https://news.cts.com.tw/photo/cts/201907/201907101967020_l.jpg" alt=""></a></li>
-        </ul>
-        <img src="http://fakeimg.pl/600x400" alt="" id="image">
-        <p id="des">選擇一個圖片</p>
-    </div>
-
+    <input type="button" id="btn" value="設置">
+    <ul id="uu">
+        <li>保時捷</li>
+        <li>藍保機泥</li>
+        <li>保馬</li>
+        <li>和馬</li>
+        <li>滿天星</li>
+        <li>86</li>
+        <li>素罷負</li>
+        <li>馬王</li>
+    </ul>
     <script src="comon.js"></script>
     <script>
-        var aObj = my$('gallery').getElementsByTagName('a');
-        console.log(aObj);
-        for(var i =0;i<aObj.length; i++){
-            aObj[i].onclick = function(){
-                my$('image').src = this.href;
-                return false;
+        //奇紅偶黃
+        my$('btn').onclick = function (){
+            var list = my$('uu').getElementsByTagName('li');
+            for(var i=0;i<list.length;i++){
+                if(i%2==0){
+                    // console.log(list[i].style);
+                    list[i].style.backgroundColor = "red";
+                }else{
+                    list[i].style.backgroundColor = "yellow";
+                }
             }
         }
     </script>
