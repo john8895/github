@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #dv {
+        border: 2px solid hotpink; 
+        height: 200px;
+        width: 300px;
+    }
+    </style>
 </head>
 
 <body>
-    <input type="button" value="設置" id="btn"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name2" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name2" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-
+    <input type="button" value="設置" id="btn">
+    <div id="dv">
+123456
+    </div>
     <script src="comon.js"></script>
     <script>
         my$('btn').onclick = function(){
-            var inputs = document.getElementsByName('name1');
-            for(var i=0;i<inputs.length;i++){
-                inputs[i].value = "嘎阿";
-            }
+            my$('dv').textContent = "嘎嘎，我又變帥了！";
+            console.log(typeof my$('dv').textContent);
         }
     </script>
 </body>
