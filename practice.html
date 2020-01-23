@@ -3,96 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .box {
-            width: 400px;
-            height: 300px;
-            border: 1px solid #ccc;
-            margin: 100px auto;
-            overflow: hidden;
-        }
-
-        .hd {
-            height: 45px;
-        }
-
-        .hd span {
-            display: inline-block;
-            width: 90px;
-            background-color: pink;
-            line-height: 45px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .hd span.current {
-            background-color: purple;
-        }
-
-        .bd li {
-            height: 255px;
-            background-color: purple;
-            display: none;
-        }
-
-        .bd li.current {
-            display: block;
-        }
-    </style>
 </head>
 <body>
-<div class="box" id="box">
-    <div class="hd">
-        <span class="current">体育</span>
-        <span>娱乐</span>
-        <span>新闻</span>
-        <span>综合</span>
-    </div>
-    <div class="bd">
-        <ul>
-            <li class="current">我是体育模块</li>
-            <li>我是娱乐模块</li>
-            <li>我是新闻模块</li>
-            <li>我是综合模块</li>
-        </ul>
-    </div>
-</div>
-
+<input type="button" value="禁用文本框" id="btn">
+<input type="text" value="我是一個文本框" id="txt"><br/><br/>
+<input type="button" value="設定背景色" id="btn2">
+<ul id="uu">
+    <li>我是一個li 1</li>
+    <li>我是一個li 2</li>
+    <li>我是一個li 3</li>
+    <li>我是一個li 4</li>
+    <li>我是一個li 5</li>
+</ul>
 <script src="common.js"></script>
 <script>
-    let box = my$('box');
-    let hd = box.getElementsByTagName('div')[0];
-    let bd = box.getElementsByTagName('div')[1];
-    let spans = hd.getElementsByTagName('span');
-    let lists = bd.getElementsByTagName('li');
-
-    for (let i = 0; i < spans.length; i++) {
-        spans[i].setAttribute('index', i);
-        spans[i].onclick = function () {
-            //1.移除所有的span的類樣式
-            for (let j = 0; j < spans.length; j++) {
-                spans[j].removeAttribute('class');
-            }
-            //2.給當前的span添加current類樣式
-            this.className = "current";
-            var num = this.getAttribute('index'); // 取得索引
-
-            for (var k = 0; k < lists.length; k++) {
-                lists[k].removeAttribute("class")
-            }
-            lists[num].className = "current";
-        }
+    document.getElementById('btn').onclick = function () {
+        // document.getElementById('txt').disabled = true;
+        // document.getElementById('txt').setAttribute("disabled",true);
     }
+    document.getElementById('btn2').onclick =function () {
+        document.getElementById('uu').style.backgroundColor = "hotpink"
 
+    }
 </script>
 </body>
 </html>
