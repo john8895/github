@@ -5,26 +5,19 @@
     <title></title>
 </head>
 <body>
-<input type="button" value="禁用文本框" id="btn">
-<input type="text" value="我是一個文本框" id="txt"><br/><br/>
-<input type="button" value="設定背景色" id="btn2">
-<ul id="uu">
-    <li>我是一個li 1</li>
-    <li>我是一個li 2</li>
-    <li>我是一個li 3</li>
-    <li>我是一個li 4</li>
-    <li>我是一個li 5</li>
-</ul>
+<a href="http://www.google.com.tw" onclick="return f1();">超連結1</a><br/><br/>
+<a href="http://www.google.com.tw" onclick="f1(); return false;">超連結2</a><br/><br/>
+<a href="http://www.google.com.tw" id="ak">超連結</a>
 <script src="common.js"></script>
 <script>
-    document.getElementById('btn').onclick = function () {
-        // document.getElementById('txt').disabled = true;
-        // document.getElementById('txt').setAttribute("disabled",true);
-    }
-    document.getElementById('btn2').onclick =function () {
-        document.getElementById('uu').style.backgroundColor = "hotpink"
-
-    }
+function f1() {
+    alert("嘎嘎，我被點了");
+}
+document.getElementById('ak').onclick =function () {
+    alert("嘎嘎");
+    return false;
+    
+}
 </script>
 </body>
 </html>
