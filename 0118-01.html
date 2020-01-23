@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>20 innerHTML和innerText</title>
+    <style>
+        #dv {
+            background-color: coral;
+            height: 100px;
+            width: 200px;
+            border: 3px solid aqua;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="button" value="設置" id="btn"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name2" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name2" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
-    <input type="text" name="name1" value="你好"><br/>
 
+    <input type="button" value="設置" id="btn">
+    <input type="button" value="獲取" id="btn2">
+    <div id="dv">
+這是div
+<p>這是一個P</p>
+    </div>
     <script src="comon.js"></script>
     <script>
         my$('btn').onclick = function(){
-            var inputs = document.getElementsByName('name1');
-            for(var i=0;i<inputs.length;i++){
-                inputs[i].value = "嘎阿";
-            }
+            //my$('dv').innerText = "<p>我是一個P標籤</p>";
+            my$('dv').innerHTML = "<p>我是一個P標籤</p>";
+        }
+        my$('btn2').onclick = function(){
+            // console.log(my$('dv').innerText);
+            console.log(my$('dv').innerHTML);
         }
     </script>
 </body>
