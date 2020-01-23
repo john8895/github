@@ -1,24 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>20 innerHTML和innerText</title>
+    <title></title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .hd {
+            height: 45px;
+        }
+        .hd span {
+            display: inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .hd span.current {
+            background-color: purple;
+        }
+        .bd li {
+            height: 255px;
+            background-color: purple;
+            display: none;
+        }
+        .bd li.current {
+            display: block;
+        }
     </style>
 </head>
-
 <body>
-<ul id="uu">
-    <li score="10">阿熊的成績</li>
-    <li score="20">小皮的成績</li>
-    <li score="30">貓咪的成績</li>
-</ul>
-<script src="comon.js"></script>
+<div class="box" id="box">
+    <div class="hd">
+        <span class="current">体育</span>
+        <span>娱乐</span>
+        <span>新闻</span>
+        <span>综合</span>
+    </div>
+    <div class="bd">
+        <ul>
+            <li class="current">我是体育模块</li>
+            <li>我是娱乐模块</li>
+            <li>我是新闻模块</li>
+            <li>我是综合模块</li>
+        </ul>
+    </div>
+</div>
+
+<script src="common.js"></script>
 <script>
+    let box = my$('box');
+    let hd = box.getElementsByTagName('div')[0];
+    let bd = box.getElementsByTagName('div')[1];
+    let spans = hd.getElementsByTagName('span');
+    for(let i=0;i<spans.length;i++){
+        spans[i].onclick = function () {
+            //1.移除所有的span的類樣式
+            for(let j=0;j<spans.length;j++){
+                spans[j].removeAttribute('class');
+            }
+            //2.給當前的span添加current類樣式
+            this.className = "current";
+        }
+    }
 </script>
 </body>
-
 </html>
