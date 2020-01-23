@@ -8,9 +8,11 @@
             margin: 0;
             padding: 0;
         }
+
         ul {
             list-style-type: none;
         }
+
         .box {
             width: 400px;
             height: 300px;
@@ -18,9 +20,11 @@
             margin: 100px auto;
             overflow: hidden;
         }
+
         .hd {
             height: 45px;
         }
+
         .hd span {
             display: inline-block;
             width: 90px;
@@ -29,14 +33,17 @@
             text-align: center;
             cursor: pointer;
         }
+
         .hd span.current {
             background-color: purple;
         }
+
         .bd li {
             height: 255px;
             background-color: purple;
             display: none;
         }
+
         .bd li.current {
             display: block;
         }
@@ -66,16 +73,26 @@
     let hd = box.getElementsByTagName('div')[0];
     let bd = box.getElementsByTagName('div')[1];
     let spans = hd.getElementsByTagName('span');
-    for(let i=0;i<spans.length;i++){
+    let lists = bd.getElementsByTagName('li');
+
+    for (let i = 0; i < spans.length; i++) {
+        spans[i].setAttribute('index', i);
         spans[i].onclick = function () {
             //1.移除所有的span的類樣式
-            for(let j=0;j<spans.length;j++){
+            for (let j = 0; j < spans.length; j++) {
                 spans[j].removeAttribute('class');
             }
             //2.給當前的span添加current類樣式
             this.className = "current";
+            var num = this.getAttribute('index'); // 取得索引
+
+            for (var k = 0; k < lists.length; k++) {
+                lists[k].removeAttribute("class")
+            }
+            lists[num].className = "current";
         }
     }
+
 </script>
 </body>
 </html>
