@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>
+    高亮顯示效果
+</h2>
+<!--<input type="button" value="隔行變色" id="btn">-->
+<ul id="uu">
+    <li>清蒸老闆</li>
+    <li>燒烤秘書</li>
+    <li>川燙警衛</li>
+    <li>涼拌董事長</li>
+    <li>清蒸工友</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    var lists = my$('uu').getElementsByTagName('li');
+    for(var i=0;i<lists.length;i++){
+        lists[i].onmouseover = function () {
+            this.style.backgroundColor = "red";
+        }
+        lists[i].onmouseout = function () {
+            this.style.backgroundColor = "";
+        }
+    }
+</script>
+</body>
+</html>
