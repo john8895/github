@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>
+    19-封裝innerText和textContent
+</h2>
+<p>
+    123456
+</p>
+<input type="button" value="設置" id="btn">
+<!--<script src="common.js"></script>-->
+<script>
+    document.getElementById('btn').onclick = function () {
+        var para = document.getElementsByTagName('p')[0];
+        // para.textContent = "嘎嘎"
+        // console.log(typeof para.textContent);
+        // setTextContent(para, "嘎嘎");
+        console.log(getTextContent(para));
+
+    }
+
+    function setTextContent(element, text) {
+        if (typeof element.textContent === "undefined") {
+            element.innerText = text;
+            console.log("undefined");
+        } else {
+            element.textContent = text;
+        }
+    }
+    function getTextContent(element) {
+        if (typeof element.textContent === "undefined") {
+            return element.innerText;
+            console.log("undefined");
+
+        } else {
+            return element.textContent;
+        }
+    }
+</script>
+</body>
+</html>
