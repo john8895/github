@@ -72,15 +72,14 @@
 </div>
 <script src="common.js"></script>
 <script>
-    var hd = my$('box').getElementsByClassName('hd')[0];
-    var spans = hd.getElementsByTagName('span');
-    var bd = document.getElementsByClassName('bd')[0].getElementsByTagName('li');
-
-    for (var i = 0; i < spans.length; i++) {
-        spans[i].setAttribute("index", i);
-        spans[i].onclick = function () {
-            for (var j = 0; j < spans.length; j++) {
-                spans[j].className = ""
+    var box = my$('box');
+    var hd = box.getElementsByTagName('span');
+    var bd = box.getElementsByClassName('bd')[0].getElementsByTagName('li');
+    for(var i=0;i<hd.length;i++){
+        hd[i].setAttribute("index",i);
+        hd[i].onclick = function () {
+            for(var j=0;j<hd.length;j++){
+                hd[j].removeAttribute("class");
             }
             this.className = "current";
             var num = this.getAttribute("index");
