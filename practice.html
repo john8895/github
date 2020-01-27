@@ -6,12 +6,8 @@
 </head>
 <body>
 <h2>
-    07-獲取相關的節點
+    10-節點的兼容代碼
 </h2>
-<h1>master</h1>
-<h1>feature1</h1>
-<a href="">我是一個a標籤，我也即將被暫存囉！</a>
-<input type="button" value="設置" id="btn"><br/>
 <ul id="uu">
     <li>我是第 1 個 LI 的同志</li>
     <li>我是第 2 個 LI 的同志</li>
@@ -25,73 +21,100 @@
 
 <script src="common.js"></script>
 <script>
-    var ulObj = my$('uu');
-    var dvObj = my$('dv');
+    /*
+    第一個節點及第一個元素的獲取
+    最後一個節點和最後一個元素
+    前一個節點與前一個元素
+    後一個節點與後一個元素
+    所有的子節點與子元素
+     */
+    //獲取任意一個父級元素的第一個子級元素
+    function getFirstElementChild(element) {
+        if (element.firstElementChild) { //---true 支持
+            return element.firstElementChild;
+        } else {
+            var node = element.firstChild;
+            while (node && node.nodeType != 1) {
+                element.nextSibling;
+            }
+            return node;
+        }
+    }
 
-    // 12 行代碼
-    //父級節點
-    //父級元素
-    //子節點
-    //子元素
-    console.log("============================");
-    //第一個子節點
-    //第一個子元素
-    //最後一個子節點
-    //最後一個子元素
-    //某個元素的前一個兄弟節點
-    //某個元素的前一個兄弟元素
-    //某個元素的後一個兄弟節點
-    //某個元素的後一個兄弟元素
+    console.log(getFirstElementChild(my$('uu')).innerText);
 
-    // 12 行代碼
-    //父級節點
-    //父級元素
-    //子節點
-    //子元素
-    // console.log("============================");
-    //第一個子節點
-    //第一個子元素
-    //最後一個子節點
-    //最後一個子元素
-    //某個元素的前一個兄弟節點
-    //某個元素的前一個兄弟元素
-    //某個元素的後一個兄弟節點
-    //某個元素的後一個兄弟元素
+    //獲取任意一個父級元素的最後一個子級元素
+    function getLastElementChild(element) {
+        if (element.lastElementChild) {
+            return element.lastElementChild;
+        } else {
+            var node = element.lastChild;
+            while (node && node.nodeType != 1) {
+                node = element.previousSibling;
+            }
+            return node;
+        }
+    }
 
-    // 12 行代碼
-    // var uuObj = document.getElementById('uu');
-    //
-    // //父級節點
-    // console.log(uuObj.parentNode);
-    //
-    // //父級元素
-    // console.log(uuObj.parentElement);
-    //
-    // //子節點
-    // console.log(uuObj.childNodes);
-    //
-    // //子元素
-    // console.log(uuObj.children);
-    //
-    //
-    // console.log("============================");
-    //
-    // //第一個子節點
-    // console.log(uuObj.firstChild.innerText);
-    // //第一個子元素
-    // console.log(uuObj.firstElementChild);
-    // //最後一個子節點
-    // console.log(uuObj.lastChild.innerText);
-    // //最後一個子元素
-    // console.log(uuObj.lastElementChild);
-    // //某個元素的前一個兄弟節點
-    // console.log(document.getElementById('three').previousSibling.innerText);
-    // //某個元素的前一個兄弟元素
-    // console.log(document.getElementById('three').previousElementSibling);
-    // //某個元素的後一個兄弟節點
-    // console.log(document.getElementById('three').nextSibling.innerText);
-    // //某個元素的後一個兄弟元素
-    // console.log(document.getElementById('three').nextElementSibling);
+    console.log(getLastElementChild(my$('uu')).innerText);
+
+    //獲取任意一個元素的前一個兄弟元素
+    function getPreviousElement(element) {
+        if (element.previousElementSibling) {
+            return element.previousElementSibling;
+        } else {
+            var node = element.previousSibling;
+            while (node && node.nodeType != 1) {
+                node = element.previousSibling;
+            }
+            return node;
+        }
+    }
+
+    console.log(getPreviousElement(my$('five')).innerText);
+
+    //獲取任意一個元素的後一個兄弟元素
+    function getNextElement(element) {
+        if (element.nextElementSibling) {
+            return element.nextElementSibling;
+        } else {
+            var node = element.nextSibling;
+            while (node && node.nodeType != 1) {
+                node = element.nextSibling;
+            }
+            return node;
+        }
+    }
+
+    console.log(getNextElement(my$('five')).innerText);
+
+    //獲取任意一個父級元素的所有子元素
+    function getAllElementChild(element) {
+        if (element.children) {
+
+            return element.children;
+            // var el = element.children;
+            // var a;
+            // for(var i=0;i<el.length;i++){
+            //     if(el[i].innerText){
+            //         a += el[i].innerText + " ";
+            //     }
+            // }
+            // return a;
+
+        } else {
+            var node = element.childNodes;
+
+
+            while (node && node.nodeType != 1) {
+                node = element.nextSibling;
+
+            }
+
+            return node;
+        }
+    }
+    console.log(getAllElementChild(my$('uu')));
 
 </script>
 </body>
