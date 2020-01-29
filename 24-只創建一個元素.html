@@ -24,7 +24,7 @@
 </head>
 <body>
 <h2>
-    26-為元素綁定事件的兼容代碼
+    24-只創建一個元素
 </h2>
 <input type="button" value="設置" id="btn">
 <div id="dv">
@@ -32,27 +32,25 @@
 <script src="common.js"></script>
 <script>
     // my$('btn').onclick = function () {
-    //
+    //     if(my$('btn2')){
+    //         my$('dv').removeChild(my$('btn2'));
+    //     }
+    //     var obj=document.createElement("input");
+    //     obj.type = "button";
+    //     obj.value = "按鈕";
+    //     obj.id = "btn2";
+    //     my$('dv').appendChild(obj);
     // }
-    //
-    // my$('btn').addEventListener("click",function () {
-    //
-    // },false)
 
-    //兼容代碼
-    function addEventListener(element, type, fn) {
-        // 判斷瀏覽器是否兼容
-        if (element.addEventListener) {
-            element.addEventListener(type, fn, false);
-        } else if (element.attachEvent) {
-            element.attachEvent("on" + type, fn);
-        } else {
-            element["on" + type] = fn;
+    my$('btn').onclick = function () {
+        if(!my$('btn2')){
+            var obj=document.createElement("input");
+            obj.type = "button";
+            obj.value = "按鈕";
+            obj.id = "btn2";
+            my$('dv').appendChild(obj);
         }
     }
-    addEventListener(my$('btn'),"click",function () {
-        console.log("哈哈");
-    })
 </script>
 </body>
 </html>
