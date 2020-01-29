@@ -38,30 +38,46 @@
         {name: "九貓", href: "http://tw.yahoo.com"},
         {name: "阿虎", href: "http://tw.yahoo.com"}
     ];
+    /*
+    * 1. 點擊按鈕註冊事件
+    * 2. 創建表格，並添加至div
+    * 3. 創建tr，並添加至表格
+    * 4. 獲取對象
+    * 5. 創建兩列td，添加至tr
+    * 6. 修改表格樣式
+    * */
 
     my$('btn').onclick = function () {
-        //創建table給div
         var tableObj = document.createElement("table");
         tableObj.border = 1;
         tableObj.cellPadding = 0;
         tableObj.cellSpacing = 0;
-        //創建tr給table
         for (var i = 0; i < arr.length; i++) {
             var tr = document.createElement("tr");
-            //創建對象
+            //額外增加：增加滑鼠移入移出效果
+            tr.onmouseover = onmouseoverHandle;
+            tr.onmouseout = onmouseoutHandle;
+            //獲取對象
             var dt = arr[i];
-            //創建第一列
+            //創建第1列td
             var dd1 = document.createElement("td");
             dd1.innerText = dt.name;
             tr.appendChild(dd1);
-            //創建第二列
+            //創建第2列td
             var dd2 = document.createElement("td");
             dd2.innerHTML = "<a href=" + dt.href + ">" + dt.name + "</a>";
             tr.appendChild(dd2);
-
+            //tr添加至table
             tableObj.appendChild(tr);
         }
         my$('dv').appendChild(tableObj);
+    }
+
+    function onmouseoverHandle() {
+        this.style.backgroundColor = "red";
+    }
+    function onmouseoutHandle() {
+        this.style.backgroundColor = "";
     }
 </script>
 </body>
