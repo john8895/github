@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: #0099cc;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    25-為元素綁定事件
+</h2>
+<input type="button" value="設置" id="btn">
+<div id="dv">
+</div>
+<script src="common.js"></script>
+<script>
+    // my$('btn').onclick = function () {
+    //     alert("好棒棒")
+    // }
+    // my$('btn').onclick = function () {
+    //     alert("好棒棒2")
+    // }
+    // my$('btn').onclick = function () {
+    //     alert("好棒棒3")
+    // }
+    // my$('btn').onclick = function () {
+    //     alert("好棒棒4")
+    // }
+    // my$('btn').onclick = function () {
+    //     alert("好棒棒5")
+    // }
+
+    // my$('btn').addEventListener("click",function(){
+    //     alert("好蚌蚌1");
+    // },false)
+    // my$('btn').addEventListener("click",function () {
+    //     alert("好蚌蚌2")
+    // },false)
+    // my$('btn').addEventListener("click",function () {
+    //     alert("好蚌蚌3")
+    // },false)
+    // my$('btn').addEventListener("click",function () {
+    //     alert("好蚌蚌4")
+    // },false)
+
+    //只支援IE
+    my$('btn').attachEvent("onclick",function () {
+        alert("哈哈")
+    })
+    my$('btn').attachEvent("onclick",function () {
+        alert("哈哈2")
+    })
+    my$('btn').attachEvent("onclick",function () {
+        alert("哈哈3")
+    })
+</script>
+</body>
+</html>
