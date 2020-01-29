@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 400px;
+            background-color: #cc6600;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    18-點擊按鈕創建列表
+</h2>
+<input type="button" value="設置" id="btn">
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    // my$('btn').onclick = function () {
+    //     my$('dv').innerHTML = "<ul><li>洋過</li><li>小毛女</li></ul>"
+    // }
+    var data = ["洋國","小毛女", "小羊估", "矛頭果"];
+    my$('btn').onclick = function () {
+        var str="<ul>";
+        for(var i=0;i<data.length;i++){
+            str += "<li>"+ data[i] +"</li>";
+        }
+        str+="</ul>";
+        my$('dv').innerHTML = str;
+        //已經創建了list
+        var list = my$('dv').getElementsByTagName('li');
+        for(var i=0; i<list.length; i++){
+            list[i].onmouseover = function () {
+                this.style.backgroundColor = "yellow";
+            }
+            list[i].onmouseout = function () {
+                this.style.backgroundColor = "";
+            }
+        }
+    }
+</script>
+</body>
+</html>

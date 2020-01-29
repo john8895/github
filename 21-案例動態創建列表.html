@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: #0099cc;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    21-案例動態創建列表
+</h2>
+<input type="button" value="設置" id="btn">
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    var kungfu = ["天龍八部", "九音真經", "靠夭神曲", "五胡亂滑","胡說八道","隨口胡謅"];
+    my$('btn').onclick = function () {
+        //創建ul並添加進div中
+        var ulObj=document.createElement("ul");
+        //動態添加li並賦值
+        for(var i=0;i<kungfu.length;i++){
+            var liObj=document.createElement("li");
+            liObj.innerHTML = kungfu[i];
+            ulObj.appendChild(liObj);
+            //增加滑鼠移入移出效果
+            liObj.onmouseover = onmouseoverHandle;
+            liObj.onmouseout = onmouseoutHandle;
+        }
+        my$('dv').appendChild(ulObj);
+    }
+
+    function onmouseoverHandle() {
+        this.style.cssText = "background-color:yellow;color:#000;";
+    }
+    function onmouseoutHandle() {
+        this.style.cssText = "";
+    }
+</script>
+</body>
+</html>
