@@ -9,21 +9,25 @@
     <style>
         div {
             width: 200px;
-            height: 100px;
-            border: 2px solid deeppink;
+            height: 400px;
+            background-color: #cc6600;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 <h2>
-    17-第二種創建元素的方法
+    20-第三種元素創建方式
 </h2>
 <input type="button" value="設置" id="btn">
 <div id="dv"></div>
-<script src="common.js"></script>
+
+<script src="../common.js"></script>
 <script>
     my$('btn').onclick = function () {
-        my$('dv').innerHTML = "<p>床前明月光，疑似地上霜，舉頭望明月，低頭思故鄉。</p>"
+        var pObj=document.createElement("p");
+        setInnerText(pObj,"洋國");
+        my$('dv').appendChild(pObj);
     }
 </script>
 </body>
