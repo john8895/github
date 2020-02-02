@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #dv {
+            font-size: 19px;
+            font-weight: bold;
+            padding: 10px;
+            color: red;
+        }
+        pre {
+            font-size: 13px;
+            background-color: #eee;
+            padding: 10px;
+            border-left: 6px solid #ccc;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    判斷是否為閏年？
+</h2>
+<div>
+    判斷方式：(取自維基百科)<br>
+    1. 公元年分除以4不可整除，為平年。<br>
+    2. 公元年分除以4可整除但除以100不可整除，為閏年。<br>
+    3. 公元年分除以100可整除但除以400不可整除，為平年。<br>
+    4. 公元年分除以400可整除，為閏年。<br><br>
+
+</div>
+<input type="text" value="" id="ip" placeholder="請輸入一個年份如:1984">
+<input type="button" value="判斷" id="btn">
+<div id="dv"></div>
+程式碼
+<pre>
+        my$('btn').addEventListener("click", function () {
+        var year = my$('ip').value;
+        var dv = my$('dv');
+        if(year && year.length == 4){
+            year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? dv.innerText = year + "為閏年" : dv.innerText = year + "為平年";
+        }else {
+            dv.innerText = "請輸入正確的年份(4位數)";
+        }
+    }, false)
+    </pre>
+<script src="../common.js"></script>
+<script>
+    my$('btn').addEventListener("click", function () {
+        var year = my$('ip').value;
+        var dv = my$('dv');
+        if(year && year.length == 4){
+            year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? dv.innerText = year + "為閏年" : dv.innerText = year + "為平年";
+        }else {
+            dv.innerText = "請輸入正確的年份(4位數)";
+        }
+    }, false)
+</script>
+</body>
+</html>
