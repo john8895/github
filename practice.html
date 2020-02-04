@@ -57,6 +57,15 @@
         }
     }
     console.log("最小值：" + min);
+
+    //練習數組反轉
+    var arr1 = [10, 20, 30, 40, 50];
+        for(var i=0;i<arr1.length/2;i++){
+            var temp=arr1[i];
+            arr1[i] = arr1[arr1.length -1-i];
+            arr1[arr1.length-1-i] = temp;
+        }
+        console.log(arr1);
 </script>
 </body>
 </html>
