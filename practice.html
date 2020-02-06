@@ -5,22 +5,67 @@
 </head>
 <body>
 <h2>
-    判斷是否為閏年？
+    畫星星
 </h2>
-<input type="text" value="" id="ip" placeholder="請輸入一個年份如:1984">
-<input type="button" value="判斷" id="btn">
 <div id="dv">
 </div>
 <script src="common.js"></script>
 <script>
-    my$('btn').addEventListener("click", function () {
-        var year = document.getElementById('ip').value;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            alert(year + "為閏年")
-        } else {
-            alert(year + "為平年")
+    // for(var i=10;i>0;i--){
+    //     for(var j=0;j<i;j++){
+    //         document.write("★");
+    //     }
+    //     document.write("<br/>")
+    // }
+    //正向星星
+    // for(var i=0;i<10;i++){
+    //     for (var j = 0; j < i; j++) {
+    //         document.write("★");
+    //     }
+    //     document.write("<br/>");
+    // }
+
+    //反向星星
+    // for(var i=10;i>0;i--){
+    //     for(var j=0;j<i;j++){
+    //         document.write("★");
+    //     }
+    //     document.write("<br/>");
+    // }
+    document.write("<table>");
+    for (var i = 1; i < 10; i++) {
+        for (var j = 1; j < i; j++) {
+            document.write("<tr>");
+            document.write("<td>");
+            document.write(i + "*" + j + "=" + i * j);
+            document.write("</td>");
+            document.write("</tr>");
         }
-    }, false)
+        document.write("<br/>");
+    }
+    document.write("</table>");
+
+
+    // for(var i=1;i<10;i++){
+    //     for(var j=0;j<i;j++){
+    //         document.write("★");
+    //     }
+    //     document.write("<br/>");
+    // }
+    //
+    // for (var i = 10; i > 1; i--) { //行數
+    //     for (var j = 1; j < i; j++) { //每行個數
+    //         document.write("★");
+    //     }
+    //     document.write("<br/>");
+    // }
+
+    //
+    // document.write("★");
+    // document.write("★");
+    // document.write("★");
+    // document.write("★");
+    // document.write("★");
 </script>
 </body>
 </html>
