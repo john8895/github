@@ -76,15 +76,25 @@
     </script>
 
     <script>
-        //求最大值
-        var arr1 = [1, 2, 30, 100, 23, 42, 5];
-        var max = arr1[0];
-        for (var i = 0; i < arr1.length; i++) {
-            if (max < arr1[i]) {
-                max = arr1[i];
+        //隨機產生一組十六進位的色碼
+        //使用函數調用
+        // console.log(parseInt(Math.random()*5));
+        function getColor() {
+            var str = "#";
+            var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+            // var num = parseInt(Math.random() * 16);
+            for (var i = 0; i < 6; i++) {
+                var num = parseInt(Math.random() * 16);
+                str += arr[num];
+                // console.log(num);
             }
+            return str;
         }
-        console.log("最大值:" + max);
+
+        window.onload = function () {
+            document.getElementById('dv').style.backgroundColor = getColor();
+        }
+        // console.log(getColor());
     </script>
 </body>
 
