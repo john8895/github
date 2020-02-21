@@ -16,9 +16,40 @@
 <h2>
 
 </h2>
+<input type="button" value="按鈕" id="btn">
+<input type="button" value="使第一個按鈕失效" id="btn2">
 <div id="dv">
 </div>
 <script src="common.js"></script>
+<script>
+    // my$('btn').addEventListener('click',function () {
+    //     console.log(this);
+    // },false)
+
+    // my$('btn').attachEvent('onclick',function () {
+    //     console.log(this);
+    // })
+    // 1.解綁事件
+    // my$('btn').onclick = function () {
+    //     console.log("e8 e8 ");
+    // }
+    // my$('btn2').onclick = function () {
+    //     my$('btn').onclick = null;
+    // }
+    function f1() {
+        console.log('qqq');
+    }
+    function f2() {
+        console.log('qqq2');
+    }
+    my$('btn').addEventListener('click',f1,false)
+    my$('btn').addEventListener('click',f2,false)
+
+    my$('btn2').addEventListener('click',function () {
+        my$('btn').removeEventListener('click',f1,false)
+    },false)
+    
+</script>
 
 <script>
 
@@ -36,18 +67,28 @@
     // }
     // console.log(sum);
     
-    var sum =0;
-    var i=1;
-    while (i<=10){
-        if(i%10 ==3){
-            //個位是3
-            i++;
-            continue;
-        }
-        sum+=i;
-        i++;
-    }
-    console.log(sum);
+    // var sum =0;
+    // var i=1;
+    // while (i<=10){
+    //     if(i%10 ==3){
+    //         //個位是3
+    //         i++;
+    //         continue;
+    //     }
+    //     sum+=i;
+    //     i++;
+    // }
+    // console.log(sum);
+
+    // let lottery = [];
+    // let n;
+    //
+    // while (lottery.length<6){
+    //     n = Math.floor(Math.random()*49)+1;
+    //     if(lottery.indexOf(n)===-1){
+    //         lottery.push(n);
+    //     }
+    // }
     
 
 </script>
