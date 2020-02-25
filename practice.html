@@ -13,79 +13,85 @@
 </head>
 
 <body>
-    <h2>
+<h2>
 
-    </h2>
-    <div id="dv">
-    </div>
-    <script src="common.js"></script>
-    <script>
-        // //求總和
-        // var arr1 = [10, 20, 30, 40, 50];
-        // var sum = 0;
-        // for (var i = 0; i < arr1.length; i++) {
-        //     sum += arr1[i];
-        // }
-        // console.log(sum);
-        // //求平均值
-        // var arr2 = [1, 2, 3, 4, 5];
-        // var sum2 = 0;
-        // for (var i = 0; i < arr2.length; i++) {
-        //     sum2 += arr2[i];
-        // }
-        // console.log(sum2 / arr2.length);
+</h2>
+<input type="button" value="按鈕" id="btn">
+<input type="button" value="使第一個按鈕失效" id="btn2">
+<div id="dv">
+</div>
+<script src="common.js"></script>
+<script>
+    // my$('btn').addEventListener('click',function () {
+    //     console.log(this);
+    // },false)
 
-        // //求最大值
-        // // var arr3 = [1, 2, 20, 50, 100, 500, 30, 1, 5, 600];
-        // // var max = arr3[0];
-        // // for (var i = 0; i < arr3.length; i++) {
-        // //     if (max < arr3[i]) {
-        // //         max = arr3[i];
-        // //     }
-        // // }
-        // // console.log("最大值：" + max);
+    // my$('btn').attachEvent('onclick',function () {
+    //     console.log(this);
+    // })
+    // 1.解綁事件
+    // my$('btn').onclick = function () {
+    //     console.log("e8 e8 ");
+    // }
+    // my$('btn2').onclick = function () {
+    //     my$('btn').onclick = null;
+    // }
+    function f1() {
+        console.log('qqq');
+    }
+    function f2() {
+        console.log('qqq2');
+    }
+    my$('btn').addEventListener('click',f1,false)
+    my$('btn').addEventListener('click',f2,false)
 
-        // //求最大值2
-        // var arr3 = [1, 2, 20, 50, 100, 500, 30, 1, 5, 600];
-        // var max = Number.MIN_VALUE;
-        // for (var i = 1; i < arr3.length; i++) {
-        //     if (max < arr3[i]) {
-        //         max = arr3[i];
-        //     }
-        // }
-        // console.log("最大值：" + max);
+    my$('btn2').addEventListener('click',function () {
+        my$('btn').removeEventListener('click',f1,false)
+    },false)
+    
+</script>
 
-        // //求最小值
-        // var arr4 = [10, 2, 20, 50, 100, 500, 30, 15, 5, 600];
-        // var min = arr4[0];
-        // for(var i=0;i<arr4.length;i++){
-        //     if(min>arr4[i]){
-        //         min = arr4[i];
-        //     }
-        // }
-        // console.log("最小值：" + min);
+<script>
 
-        // //練習數組反轉
-        // var arr1 = [10, 20, 30, 40, 50];
-        //     for(var i=0;i<arr1.length/2;i++){
-        //         var temp=arr1[i];
-        //         arr1[i] = arr1[arr1.length -1-i];
-        //         arr1[arr1.length-1-i] = temp;
-        //     }
-        //     console.log(arr1);
-    </script>
+    // var sum = 0;
+    // var i = 100;
+    // while (i <= 200) {
+    //
+    //     if (i % 2 === 0) {
+    //         //偶數
+    //         i++;
+    //         continue;
+    //     }
+    //     sum+=i;
+    //     i++;
+    // }
+    // console.log(sum);
+    
+    // var sum =0;
+    // var i=1;
+    // while (i<=10){
+    //     if(i%10 ==3){
+    //         //個位是3
+    //         i++;
+    //         continue;
+    //     }
+    //     sum+=i;
+    //     i++;
+    // }
+    // console.log(sum);
 
-    <script>
-        //求最大值
-        var arr1 = [1, 2, 30, 100, 23, 42, 5];
-        var max = arr1[0];
-        for (var i = 0; i < arr1.length; i++) {
-            if (max < arr1[i]) {
-                max = arr1[i];
-            }
-        }
-        console.log("最大值:" + max);
-    </script>
+    // let lottery = [];
+    // let n;
+    //
+    // while (lottery.length<6){
+    //     n = Math.floor(Math.random()*49)+1;
+    //     if(lottery.indexOf(n)===-1){
+    //         lottery.push(n);
+    //     }
+    // }
+    
+
+</script>
 </body>
 
 </html>
