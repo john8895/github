@@ -16,39 +16,46 @@
 <h2>
 
 </h2>
-<input type="button" value="按鈕" id="btn">
-<input type="button" value="使第一個按鈕失效" id="btn2">
+<input type="button" value="" id="btn">
+
+<label>
+Label<br>
+    <input type="text" value="123">
+</label>
+
+
 <div id="dv">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut expedita laborum mollitia officiis perferendis quod sed sint suscipit vel. Dolore facilis inventore ipsa laudantium mollitia nisi, recusandae saepe unde.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut expedita laborum mollitia officiis perferendis quod sed sint suscipit vel. Dolore facilis inventore ipsa laudantium mollitia nisi, recusandae saepe unde.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut expedita laborum mollitia officiis perferendis quod sed sint suscipit vel. Dolore facilis inventore ipsa laudantium mollitia nisi, recusandae saepe unde.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut expedita laborum mollitia officiis perferendis quod sed sint suscipit vel. Dolore facilis inventore ipsa laudantium mollitia nisi, recusandae saepe unde.</p>
 </div>
 <script src="common.js"></script>
 <script>
-    // my$('btn').addEventListener('click',function () {
-    //     console.log(this);
-    // },false)
+    my$('dv').addEventListener('copy',function () {
+        let body_element = document.querySelector('body');
 
-    // my$('btn').attachEvent('onclick',function () {
-    //     console.log(this);
-    // })
-    // 1.解綁事件
-    // my$('btn').onclick = function () {
-    //     console.log("e8 e8 ");
-    // }
-    // my$('btn2').onclick = function () {
-    //     my$('btn').onclick = null;
-    // }
-    function f1() {
-        console.log('qqq');
-    }
-    function f2() {
-        console.log('qqq2');
-    }
-    my$('btn').addEventListener('click',f1,false)
-    my$('btn').addEventListener('click',f2,false)
+        let selection = window.getSelection();
+        let copy_text = '版權宣告 - ' + selection;
 
-    my$('btn2').addEventListener('click',function () {
-        my$('btn').removeEventListener('click',f1,false)
-    },false)
-    
+        let newdiv = document.createElement('div');
+        newdiv.style.opacity = "0";
+
+        body_element.appendChild(newdiv);
+        newdiv.innerHTML = copy_text;
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {
+            body_element.removeChild(newdiv);
+
+        },0)
+
+    })
+
+    my$('btn').addEventListener('click',function (e) {
+        console.log(e);
+    e.stopPropagation()
+    })
 </script>
 
 <script>
