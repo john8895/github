@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dv"></div>
+<!--2020 年 3 月 3 日 15:16:41-->
+
+<script>
+    // window.onload = function () {
+
+    var today = new Date();
+    console.log(today.getFullYear() + " 年");
+    console.log(today.getMonth() + 1 + " 月"); //月份從 0 起算，0月 = 1月，所以要 +1
+    console.log(today.getDate() + " 日");
+    console.log(today.getDay() + 1); //從 Date 對象返回一週中的某一天 (0 ~ 6)。
+    console.log(today.getHours());
+    console.log(today.getMinutes());
+    console.log(today.getSeconds()); //返回 Date 對象的秒數 (0 ~ 59)。
+    console.log(today.getMilliseconds()); //返回 Date 對象的毫秒(0 ~ 999)。
+    console.log(Date.now());
+
+    setInterval(function () {
+        document.getElementById('dv').innerHTML = new Date();
+    }, 800)
+
+
+    // }
+</script>
+</body>
+</html>
