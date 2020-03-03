@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fontSizeB:checked ~ .dv  {
+            font-size: 30px;
+            background-color: darkcyan;
+        }
+        .fontSizeM:checked ~ .dv  {
+            font-size: 24px;
+            background-color: goldenrod;
+        }
+        .fontSizeS:checked ~ .dv {
+            font-size: 15px;
+            background-color: deepskyblue;
+        }
+        .dv {
+            width: 300px;
+            padding: 10px;
+            background-color: hotpink;
+            transition: all .3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+大<input type="radio" name="rad" class="fontSizeB">
+中<input type="radio" name="rad" class="fontSizeM">
+小<input type="radio" name="rad" class="fontSizeS">
+
+<div class="dv">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid architecto aspernatur at beatae cum, deleniti deserunt dignissimos dolorum eveniet ipsa modi necessitatibus odit recusandae repellendus sapiente suscipit tempora voluptatum!</p>
+</div>
+</body>
+</html>

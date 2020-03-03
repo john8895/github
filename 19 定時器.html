@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按鈕" id="btn">
+<script>
+    var timeId = window.setInterval(function () {
+        console.log("hello");
+
+    }, 1000);
+
+    document.getElementById('btn').onclick = function () {
+        window.clearInterval(timeId);
+    }
+</script>
+</body>
+</html>

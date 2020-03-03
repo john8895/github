@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ip {
+            width: 0;
+            border: solid transparent;
+            transition: .3s ease-in-out;
+        }
+
+        .btn:checked ~ .ip {
+            width: 20em;
+            border: solid 1px #333;
+        }
+
+        .btn:checked,
+        .btn:checked ~ .btnLabel {
+            display: none;
+        }
+
+        .btn2Label {
+            display: none;
+        }
+
+        .btn:checked ~ .btn2Label {
+            display: inline-block;
+        }
+
+        .btn2:checked ~ .ip {
+            width: 0;
+            border: solid transparent;
+        }
+
+        input[id^='btn'] {
+            display: none;
+        }
+
+        .dv {
+            padding: 10px;
+        }
+
+        .search-bar {
+            position: relative;
+            margin: 10px 0 0 10px;
+        }
+
+        .ip {
+            position: absolute;
+            left: 7px;
+            top: -1px;
+            z-index: 1;
+            padding: 5px 0 5px 25px;
+            font-size: 16px;
+        }
+
+        .btnLabel i,
+        .btn2Label i {
+            position: absolute;
+            left: 12px;
+            z-index: 2;
+            top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="dv">
+    <div class="search-bar">
+        <input type="checkbox" name="" class="btn" id="btn">
+        <label for="btn" class="btnLabel"><i class="fa fa-search"></i></label>
+
+        <label for="btn2" class="btn2Label"><i class="fa fa-search"></i></label>
+        <input type="checkbox" name="" class="btn2" id="btn2">
+
+        <input type="text" placeholder="請輸入文字" class="ip">
+    </div>
+</div>
+</body>
+</html>

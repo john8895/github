@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [class^='obj'] {
+            font-size: 17px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <div class="obj_wrap">123</div>
+    <div class="obj_wrap">123</div>
+    <div class="obj_wrap">123</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+    // let $objClone = $('.obj_wrap').clone(); //3個
+    //
+    // $objClone.addClass(function () {
+    //         return 'cloneNum' + 1;
+    // });
+    // $('.cont').append($objClone);
+    // console.log($objClone);
+    //
+    // // for(let i=0;i<$objClone.length;i++){
+    // //
+    // // }
+    //
+    // for (let i = 0; i < 3; i++) {
+    //     // for(let j=0;j<$objClone.length;j++){
+    //
+    //         // $objClone.addClass('cloneNum' + i);
+    //         // console.log($objClone);
+    //
+    //     // }
+    //     // $objClone.addClass('cloneNum' + i);
+    // }
+    // $('.cont').append($objClone);
+
+    let objClone = document.querySelectorAll('.obj_wrap');
+    let objClone2 = document.getElementsByClassName('obj_wrap')[0];
+    // objClone.classList.add('123')
+    objClone2.classList.add('123')
+</script>
+</body>
+</html>
