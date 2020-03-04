@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按鈕" id="btn">
+<script>
+    console.log(window.location.hash);
+    console.log(window.location.host);
+    console.log(window.location.pathname);
+    console.log(window.location.port);
+    console.log(window.location.protocol);
+    console.log(window.location.href);
+    console.log(window.location.search);
+
+    document.getElementById('btn').onclick = function () {
+        // location.href = "http://www.jd.com";
+        // location.assign("http://www.jd.com")
+        // location.reload();
+        location.replace("http://www.jd.com")
+    }
+
+</script>
+</body>
+</html>

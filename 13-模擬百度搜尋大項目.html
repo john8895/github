@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+        }
+
+        #txt {
+            width: 300px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        /*#dv p:hover {*/
+        /*    background-color: #ccc;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" id="txt" value="">
+    <input type="button" value="搜尋" id="btn">
+</div>
+<script src="common.js"></script>
+<script>
+    var keyword = ["新聞", "新聞直播", "新北耶誕城", "新冠症狀", "新冠肺炎疫情", "新光三越", "蘋果好吃", "大俠饒命"];
+    my$('txt').onkeyup = function () {
+        var text = this.value;
+        var tempArr = [];
+
+        if (my$('dv')) {
+            my$('box').removeChild(my$('dv'));
+        }
+
+        // 把文本框跟keyword比對
+        for (var i = 0; i < keyword.length; i++) {
+            if (keyword[i].indexOf(text) == 0) {
+                tempArr.push(keyword[i]);
+            }
+        }
+
+        // 判斷文本框有無內容 || 臨時arr有無內容
+        if (this.value.length == 0 || tempArr.length == 0) {
+            if (my$('dv')) { // 如果存在
+                my$('box').removeChild(my$('dv'));
+            }
+            return;
+        }
+        // 創建div
+        var dvObj = document.createElement('div');
+        my$('box').appendChild(dvObj);
+        dvObj.id = "dv";
+        dvObj.style.width = "300px";
+        dvObj.style.border = "1px solid green";
+
+
+        for (var i = 0; i < tempArr.length; i++) {
+            var pObj = document.createElement('p');
+            pObj.innerText = tempArr[i];
+            my$('dv').appendChild(pObj);
+            pObj.onmouseover = function () {
+                this.style.backgroundColor = "yellow";
+            }
+            pObj.onmouseout = function () {
+                this.style.backgroundColor = "white";
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
