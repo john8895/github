@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+footer .weeks, footer .top, main, .cTitle {
+  font-family: sans-serif;
+}
+
+.wrap {
+  border-radius: 25px;
+  background-color: #E3E1DE;
+  width: 470px;
+  height: 290px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #d6d5d5;
+}
+
+.cTitle {
+  margin: 0 0 -30px 0;
+  padding: 0;
+  text-align: center;
+  line-height: 2;
+  font-size: 41px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+.body {
+  text-align: center;
+  margin: auto;
+  background-color: #ECECEC;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border: 5px solid #ffffff;
+  position: relative;
+  padding: 29px 0 0 7px;
+  box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+header {
+  position: relative;
+}
+header .mer {
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  right: 31px;
+  top: 0;
+  border-radius: 50%;
+}
+header .mer:after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -9px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.31);
+}
+header .mer.pm {
+  background-color: #000;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main .hours {
+  font-size: 60px;
+}
+main .minutes {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  color: #4c4c4c;
+}
+footer .top {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 5px;
+}
+footer .months {
+  margin-right: 5px;
+}
+footer .weeks {
+  font-size: 12px;
+}
+
+.clock-cover {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+.clock-cover:before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: -3px;
+  top: -4px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  z-index: 5;
+}
+.clock-cover:after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: 0px;
+  top: 0;
+  border-radius: 50%;
+  box-shadow: inset 3px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=main.css.map */

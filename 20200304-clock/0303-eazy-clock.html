@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="dv" class="wrap">
+    <h2 class="cTitle">CLOCK</h2>
+    <div class="body" id="clockBody">
+        <div class="clock-cover"></div>
+        <header>
+            <div class="mer pm"></div>
+        </header>
+        <main>
+            <div class="hours">13</div>
+            <div class="minutes">48</div>
+        </main>
+        <footer>
+            <div class="top">
+                <div class="months">Jun</div>
+                <div class="date">27</div>
+            </div>
+            <div class="bottom">
+                <div class="weeks">Monday</div>
+            </div>
+        </footer>
+
+    </div>
+</div>
+<div id="test"></div>
+<script>
+
+    clockGo();
+    function clockGo() {
+        let today = new Date();
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let cHours = today.getHours() < 10 ? "0" + today.getHours() : today.getHours();
+        let cMinutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
+        // let cMill = today.getMilliseconds()
+        let cMonths = months[today.getMonth()];
+        let cDate = today.getDate();
+        let cDay = weeks[today.getDay()];
+        let cMer = today.getHours() < 2; //AM:true  PM:false
+        let cBody = document.getElementById('clockBody');
+
+        cBody.getElementsByTagName('header')[0].innerHTML = `
+            <div class="mer ${!cMer ? 'pm' : ''}"></div>`
+        cBody.getElementsByTagName('main')[0].innerHTML = `
+            <div class="hours">${cHours}</div>
+            <div class="minutes">${cMinutes}</div>`;
+        cBody.getElementsByTagName('footer')[0].innerHTML = `
+            <div class="top">
+                <div class="months">${cMonths}</div>
+                <div class="date">${cDate}</div>
+            </div>
+            <div class="bottom">
+                <div class="weeks">${cDay}</div>
+            </div>
+        `;
+    }
+
+    // setInterval(clockGo, 1000);
+    // console.log(cHours + "==" + cMinutes);
+    // console.log(cMonths + "==" + cDate);
+    // console.log(cDay);
+
+    // var today = new Date();
+    // console.log(today.getFullYear() + " 年");
+    // console.log(today.getMonth() + 1 + " 月"); //月份從 0 起算，0月 = 1月，所以要 +1
+    // console.log(today.getDate() + " 日");
+    // console.log(today.getDay() + 1); //從 Date 對象返回一週中的某一天 (0 ~ 6)。
+    // console.log(today.getHours());
+    // console.log(today.getMinutes());
+    // console.log(today.getSeconds()); //返回 Date 對象的秒數 (0 ~ 59)。
+    // console.log(today.getMilliseconds()); //返回 Date 對象的毫秒(0 ~ 999)。
+    // console.log(Date.now());
+    //
+    // setInterval(function () {
+    //     document.getElementById('dv').innerHTML = new Date();
+    // }, 800)
+</script>
+</body>
+</html>
