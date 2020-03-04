@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .wrap {
+            border-radius: 25px;
+            background-color: #E3E1DD;
+            width: 470px;
+            height: 290px;
+        }
+    </style>
 </head>
 <body>
-<div id="dv"></div>
-<!--2020 年 3 月 3 日 15:16:41-->
+<div id="dv" class="wrap">
+    <div class="body">
+        <header>
+            <div class="mer"></div>
+        </header>
+        <main>
+            <div class="hours">13</div>
+            <div class="minutes">48</div>
+        </main>
+        <footer>
+            <div class="months">Jun</div>
+            <div class="date">27</div>
+        </footer>
+    </div>
+</div>
 
 13 48 
 Jun 27
@@ -23,6 +44,7 @@ Monday
     let cDate = today.getDate();
     let cDay = weeks[today.getDay()];
     let cMer = today.getHours() < 2; //AM:true  PM:false
+
     console.log(cHours + "==" + cMinutes);
     console.log(cMonths + "==" + cDate);
     console.log(cDay);
