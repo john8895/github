@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            border: 3px solid #666;
+            background-color: #000;
+        }
+
+        span {
+            color: yellow;
+            font-size: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按鈕" id="btn">
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    my$('btn').onclick = function () {
+        setInterval(function () {
+            my$('dv').innerHTML = '<span>★</span>';
+            var x = parseInt(Math.random() * 800 + 1) + "px";
+            var y = parseInt(Math.random() * 800 + 1) + "px";
+            my$('dv').firstElementChild.style.marginTop = x;
+            my$('dv').firstElementChild.style.marginLeft = y;
+        },500)
+
+    }
+</script>
+</body>
+</html>
