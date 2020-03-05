@@ -11,7 +11,7 @@
 <button id="reset">Reset</button>
 <button id="stop">stop</button>
 <script>
-    var watch = (function(){
+    var watch = (function () {
         var timer = document.getElementById("timer");
         var stop = document.getElementById("stop");
         var reset = document.getElementById("reset");
@@ -22,7 +22,7 @@
 
         timer.textContent = time;
 
-        function buildTimer () {
+        function buildTimer() {
             seconds++;
             if (seconds >= 60) {
                 seconds = 0;
@@ -32,25 +32,30 @@
                     seconds = 0;
                 }
             }
-            timer.textContent = (minutes < 10 ? "0" + minutes.toString(): minutes) + ":" + (seconds < 10 ? "0" + seconds.toString(): seconds);
+            timer.textContent = (minutes < 10 ? "0" + minutes.toString() : minutes) + ":" + (seconds < 10 ? "0" + seconds.toString() : seconds);
         }
-        function stopTimer () {
-            stop.addEventListener("click", function(){
+
+        function stopTimer() {
+            stop.addEventListener("click", function () {
                 clearTimeout(t);
             })
         }
-        function startTimer () {
-            start.addEventListener("click", function(){
+
+        function startTimer() {
+            start.addEventListener("click", function () {
                 clearTimeout(t);
-                t = setInterval(buildTimer,1000);
+                t = setInterval(buildTimer, 1000);
             });
         }
-        function resetTimer () {
-            reset.addEventListener("click", function(){
+
+        function resetTimer() {
+            reset.addEventListener("click", function () {
                 timer.textContent = time;
-                seconds = 0; minutes = 0;
+                seconds = 0;
+                minutes = 0;
             });
         }
+
         return {
             start: startTimer(),
             stop: stopTimer(),
