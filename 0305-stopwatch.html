@@ -77,12 +77,12 @@
             timer += 1 / 60; //每次累加60/1秒
             console.log(timer);
             
-            msVal = Math.floor((timer - Math.floor(timer)) * 100); //秒
+            msVal = Math.floor((timer - Math.floor(timer)) * 100); //毫秒
             // console.log("msVal =" + msVal);
 
-            secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
-            // console.log(secondVal);
-
+            secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60; //秒
+            // // console.log(secondVal);
+            //
             minuteVal = Math.floor(timer / 60);
             
             

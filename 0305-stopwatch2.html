@@ -3,14 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+
+        #stopwatch {
+            width: 200px;
+            height: 100px;
+            background: #CCC;
+            color: #333;
+            border: solid 2px #333;
+            border-radius: 150px;
+            padding: 60px 50px 100px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #stopwatch span {
+            background: #fff;
+            padding: 3px;
+            border-radius: 5px;
+            border: solid 2px #333;
+            margin: 3px;
+            display: inline-block;
+        }
+
+        #stopwatch button:first-of-type {
+            margin-top: 25px;
+        }
+
+        #stopwatch button {
+            font-size: 20px;
+            -webkit-appearance: none;
+            border: solid 2px #333;
+            background: #fff;
+            color: #333;
+            border-radius: 5px;
+            width: 100px;
+            margin-top: 5px;
+            transition: .3s;
+        }
+
+        #stopwatch button:hover {
+            border: solid 2px #fff;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
+<center>
+    <div id="stopwatch">
+        <span id="minute">00</span><span id="second">00</span><span id="ms">00</span>
+        <br/>
+        <button id="start" onclick="start();">start</button>
+        <button id="stop" onclick="stop();">stop</button>
+    </div>
+</center>
 <script>
-    var timer = 0;
-    setInterval(function () {
-        timer += 1 / 60;
-        console.log(Math.floor(timer));
-    }, 1000 / 60)
+    let timer = 0;
+    let Interval;
+    let minute = document.getElementById('minute');
+    let second = document.getElementById('second');
+    let ms = document.getElementById('ms');
+
+    function start() {
+        Interval = setInterval(function () {
+            timer += 1 / 60;
+            let msVal = Math.floor((timer - Math.floor(timer)) * 100);
+            ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
+
+            let secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+            second.innerHTML = secondVal < 10 ? "0"+secondVal.toString() : secondVal;
+
+            let minuteVal = Math.floor(timer / 60);
+            minute.innerHTML = minuteVal < 10 ? "0"+minuteVal.toString() : minuteVal;
+
+        }, 1000 / 60)
+    }
+
+    function stop() {
+        clearInterval(Interval);
+    }
+
+
 </script>
 </body>
 </html>
