@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+
+        #stopwatch {
+            width: 200px;
+            height: 100px;
+            background: #CCC;
+            color: #333;
+            border: solid 2px #333;
+            border-radius: 150px;
+            padding: 60px 50px 100px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #stopwatch span {
+            background: #fff;
+            padding: 3px;
+            border-radius: 5px;
+            border: solid 2px #333;
+            margin: 3px;
+            display: inline-block;
+        }
+
+        #stopwatch button:first-of-type {
+            margin-top: 25px;
+        }
+
+        #stopwatch button {
+            font-size: 20px;
+            -webkit-appearance: none;
+            border: solid 2px #333;
+            background: #fff;
+            color: #333;
+            border-radius: 5px;
+            width: 100px;
+            margin-top: 5px;
+            transition: .3s;
+        }
+
+        #stopwatch button:hover {
+            border: solid 2px #fff;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<center>
+    <div id="stopwatch">
+        <span id="minute">00</span><span id="second">00</span><span id="ms">00</span>
+        <br/>
+        <button id="start" onclick="start();">start</button>
+        <button id="stop" onclick="stop();">stop</button>
+    </div>
+</center>
+<script>
+
+    var timer = 0;
+    var timerInterval;
+    var ms = document.getElementById('ms');
+    var second = document.getElementById('second');
+    var minute = document.getElementById('minute');
+
+    function start() {
+        stop();
+        timerInterval = setInterval(function () {
+            timer += 1 / 60; //每次累加60/1秒
+            console.log(timer);
+            
+            msVal = Math.floor((timer - Math.floor(timer)) * 100); //秒
+            // console.log("msVal =" + msVal);
+
+            secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+            // console.log(secondVal);
+
+            minuteVal = Math.floor(timer / 60);
+            
+            
+            ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
+            second.innerHTML = secondVal < 10 ? "0" + secondVal.toString() : secondVal;
+            minute.innerHTML = minuteVal < 10 ? "0" + minuteVal.toString() : minuteVal;
+        }, 1000 / 60); // 1000 / 60  : 60分之一秒執行一次，每秒執行60次
+    }
+
+    function stop() {
+        clearInterval(timerInterval);
+    }
+
+
+    // Origin =====================================================
+
+    // var timer = 0;
+    // var timerInterval;
+    // var ms = document.getElementById('ms');
+    // var second = document.getElementById('second');
+    // var minute = document.getElementById('minute');
+    //
+    // function start() {
+    //     stop();
+    //     timerInterval = setInterval(function () {
+    //         timer += 1 / 60;
+    //         console.log(timer);
+    //         msVal = Math.floor((timer - Math.floor(timer)) * 100);
+    //         secondVal = Math.floor(timer) - Math.floor(timer / 60) * 60;
+    //         minuteVal = Math.floor(timer / 60);
+    //
+    //
+    //         ms.innerHTML = msVal < 10 ? "0" + msVal.toString() : msVal;
+    //         second.innerHTML = secondVal < 10 ? "0" + secondVal.toString() : secondVal;
+    //         minute.innerHTML = minuteVal < 10 ? "0" + minuteVal.toString() : minuteVal;
+    //     }, 1000 / 60);
+    // }
+    //
+    // function stop() {
+    //     clearInterval(timerInterval);
+    // }
+
+</script>
+</body>
+</html>
