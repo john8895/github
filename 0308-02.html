@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制網頁元素誰先載入（顯示）</title>
+    <style>
+        .dv {
+            background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 450px;
+            position: relative;
+            border: 1px solid red;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .text {
+            position: absolute;
+            top: 45px;
+            right: 50px;
+            background-color: #fff;
+            height: 200px;
+            width: 400px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="dv">
+    <img id="img" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+    <div class="text" id="textBlock">
+        <h4>我是一段文字</h4>
+        <p>我是第二段文字</p>
+    </div>
+</div>
+<script>
+    let img = document.getElementById('img');
+    onload = function(){
+        if(img && img.complete){
+            let textBlock = document.getElementById('textBlock');
+            textBlock.style.display = "block";
+        }
+    }
+
+</script>
+</body>
+</html>

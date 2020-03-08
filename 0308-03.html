@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制網頁元素誰先載入（顯示）3 進階,相容</title>
+    <style>
+        * {
+            font-family: "Microsoft JhengHei";
+        }
+
+        #test-bg {
+            background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            top: 45px;
+            right: 50px;
+            background-color: #fff;
+            height: 200px;
+            width: 400px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div id="test-bg">
+    <div class="text" id="textBlock">
+        <h4>我是一段文字</h4>
+        <p>我是第二段文字</p>
+    </div>
+</div>
+<h1 id="showText"></h1>
+<script>
+    function getBgUrl(el) {
+        //取得元素CSS樣式中的背景（不只有行內，連CSS檔案都可以）
+        var bg = "";
+        if (el.currentStyle) { // IE
+            bg = el.currentStyle.backgroundImage;
+        } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
+            bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
+        } else { // try and get inline style
+            bg = el.style.backgroundImage;
+        }
+        return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+    }
+
+    let image = document.createElement('img');
+    image.src = getBgUrl(document.getElementById('test-bg'));
+    console.log(image.src);
+
+    let showText = document.getElementById('showText');
+    showText.textContent = "圖片載入中…";
+
+    image.onload = function () {
+        //圖片載入完畢
+        var num = 3;
+        showText.textContent = "圖片已載入完畢，"+ num +" 秒後顯示文字框";
+
+        var timeId = setInterval(function () {
+            num--;
+            showText.textContent = "圖片載入完畢，" + num + " 秒後顯示文字框";
+
+            if (num === 0) {
+                clearInterval(timeId);
+                showText.innerText = "圖片已載入完畢，文字框已顯示";
+                let textBlock = document.getElementById('textBlock');
+                textBlock.style.opacity = "1";
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>

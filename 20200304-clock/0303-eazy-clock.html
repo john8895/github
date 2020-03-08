@@ -33,34 +33,34 @@
 <script>
 
     clockGo();
-    function clockGo() {
-        let today = new Date();
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        let cHours = today.getHours() < 10 ? "0" + today.getHours() : today.getHours();
-        let cMinutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
-        // let cMill = today.getMilliseconds()
-        let cMonths = months[today.getMonth()];
-        let cDate = today.getDate();
-        let cDay = weeks[today.getDay()];
-        let cMer = today.getHours() < 2; //AM:true  PM:false
-        let cBody = document.getElementById('clockBody');
-
-        cBody.getElementsByTagName('header')[0].innerHTML = `
-            <div class="mer ${!cMer ? 'pm' : ''}"></div>`
-        cBody.getElementsByTagName('main')[0].innerHTML = `
-            <div class="hours">${cHours}</div>
-            <div class="minutes">${cMinutes}</div>`;
-        cBody.getElementsByTagName('footer')[0].innerHTML = `
-            <div class="top">
-                <div class="months">${cMonths}</div>
-                <div class="date">${cDate}</div>
-            </div>
-            <div class="bottom">
-                <div class="weeks">${cDay}</div>
-            </div>
-        `;
-    }
+    // function clockGo() {
+    //     let today = new Date();
+    //     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    //     let weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    //     let cHours = today.getHours() < 10 ? "0" + today.getHours() : today.getHours();
+    //     let cMinutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
+    //     // let cMill = today.getMilliseconds()
+    //     let cMonths = months[today.getMonth()];
+    //     let cDate = today.getDate();
+    //     let cDay = weeks[today.getDay()];
+    //     let cMer = today.getHours() < 2; //AM:true  PM:false
+    //     let cBody = document.getElementById('clockBody');
+    //
+    //     cBody.getElementsByTagName('header')[0].innerHTML = `
+    //         <div class="mer ${!cMer ? 'pm' : ''}"></div>`
+    //     cBody.getElementsByTagName('main')[0].innerHTML = `
+    //         <div class="hours">${cHours}</div>
+    //         <div class="minutes">${cMinutes}</div>`;
+    //     cBody.getElementsByTagName('footer')[0].innerHTML = `
+    //         <div class="top">
+    //             <div class="months">${cMonths}</div>
+    //             <div class="date">${cDate}</div>
+    //         </div>
+    //         <div class="bottom">
+    //             <div class="weeks">${cDay}</div>
+    //         </div>
+    //     `;
+    // }
 
     // setInterval(clockGo, 1000);
     // console.log(cHours + "==" + cMinutes);
