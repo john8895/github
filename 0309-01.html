@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0px;
+        }
+
+        .container{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+        }
+
+        .girl_complete{
+            position:relative;
+        }
+
+        .girl_face{
+            background-color:#F7C9B9;
+            width:308px;
+            height:320px;
+            border-top-left-radius:200px;
+            border-top-right-radius:200px;
+            border-bottom-right-radius:170px;
+            border-bottom-left-radius:170px;
+            display:block;
+            margin:auto;
+            box-shadow: inset -30px 0px #ffb69c;
+
+        }
+
+        .girl_body{
+            width:377px;
+            height:130px;
+            background:radial-gradient(ellipse at top, #f7c9b9 50%, #ef3c41 50.5%,#ef3c41 100%);
+            border-radius:113px;
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+            margin-top:20px;
+        }
+
+        .girl_hair::before{
+            content:'';
+            height:90%;
+            width:100%;
+            background-color:#F77D5E;
+            position:absolute;
+            left:0;
+            top:-50px;
+            z-index:-1;
+            border-top-left-radius:170px;
+            border-top-right-radius:170px;
+            border-bottom-right-radius:118px;
+            border-bottom-left-radius:118px;
+            box-shadow:inset -60px 0px #e4532e;
+
+        }
+
+        .girl_hair::after{
+            content:'';
+            position:absolute;
+            width:200px;
+            height:80px;
+            background-color:#F77D5E;
+            border-radius:50%;
+            transform:rotate(-45deg);
+        }
+
+        .girl_body:before{
+            content:'';
+            position:absolute;
+            width:100px;
+            height:200px;
+            background:#f1b8a5;
+            bottom:10%;
+            left:calc(50% - 50px);
+            border-radius:100px;
+            z-index:-1;
+        }
+
+        .girl_glasses{
+            display:flex;
+            justify-content:space-around;
+            padding-top:100px;
+            position:relative;
+            animation: laugh_glasses 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+        }
+
+        .girl_glasses::before{
+            content:'';
+            width:100%;
+            height: 10px;
+            background:#000;
+            position:absolute;
+            left:0;
+            top:calc(50px + 50% - 5px);
+        }
+
+        .girl_eye{
+            width:90px;
+            height:90px;
+            background:#000;
+            background: radial-gradient(ellipse at center, #000 0%, #000 20%,#F7C9B9 21% ,#F7C9B9 100%);
+            border-radius:50%;
+            border:6px solid #000;
+            transform:translate3d(0,0,0);
+            position:relative;
+        }
+
+        .girl_eye::before{
+            content:'';
+            width:100%;
+            height:100%;
+            border-radius:50%;
+            position:absolute;
+            z-index:999;
+            background:blue;
+            background: linear-gradient(135deg, #fff 50%,#000 50%);
+            opacity:.1;
+        }
+
+        .mouth{
+            width:160px;
+            height:80px;
+            background:#732225;
+            display:block;
+            margin:auto;
+            margin-top:10px;
+            border-radius:100px;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+            position:relative;
+            overflow:hidden;
+            animation: laugh_mouth 1.5s cubic-bezier(0.39, 0.58, 0.57, 1) infinite alternate
+        }
+
+        .mouth::before{
+            content:'';
+            width: 100px;
+            height:80px;
+            position:absolute;
+            bottom:calc(0% - 35px);
+            left: calc( 50% - 50px);
+            background:#e05459;
+            border-radius:50%;
+            box-shadow:inset -30px 0px #d04449;
+        }
+
+        @keyframes laugh_mouth{
+            0%{
+                transform:translateY(0px);
+            }
+            10%{
+                transform:translateY(5px);
+            }
+            20%{
+                transform:translateY(0px);
+            }
+            30%{
+                transform:translateY(10px);
+            }
+            40%{
+                transform:translateY(6px);
+            }
+            100%{
+                transform:translateY(10px);
+            }
+        }
+
+        @keyframes laugh_glasses{
+            0%{
+                transform:translateY(0px);
+            }
+            100%{
+                transform:translateY(-7px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="girl_complete">
+        <div class="girl_hair"></div>
+        <div class="girl_face">
+            <div class="girl_glasses">
+                <div class="girl_eye"></div>
+                <div class="girl_eye"></div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+        <div class="girl_body"></div>
+    </div>
+</div>
+</body>
+</html>
