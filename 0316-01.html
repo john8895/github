@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        a {
+            display: inline-block;
+            font-size: 180px;
+            color: deeppink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<a href="" id="btn1">
+    <div id="dv">
+        <i class="fa fa-heart-o" data-checked=""></i>
+    </div>
+</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function (e) {
+            e.preventDefault();
+            if(!$('#dv').children('i').attr('data-checked')){
+                $('#dv').children('i').attr('data-checked','checked').removeClass('fa-heart-o')
+                    .addClass('fa-heart')
+            }else {
+                $('#dv').children('i').attr('data-checked','').removeClass('fa-heart')
+                    .addClass('fa-heart-o')
+            }
+        })
+    })
+
+    // var dv = document.getElementById('dv');
+    // var btn=document.getElementById('btn1');
+    // btn.onmouseover =function (e) {
+    //     dv.innerHTML = "<i class=\"fa fa-heart\"></i>";
+    // }
+    // btn.onmouseout = function () {
+    //     dv.innerHTML = "<i class=\"fa fa-heart-o\"></i>";
+    // }
+
+    // var icon = document.getElementById('dv').children[0];
+    // var btn=document.getElementById('btn1');
+    // btn.onclick =function (e) {
+    //     e.preventDefault()
+    //     if(!icon.getAttribute('data-checked')){
+    //         icon.setAttribute('data-checked','checked');
+    //         icon.classList.remove('fa-heart-o')
+    //         icon.classList.add('fa-heart')
+    //     }else{
+    //         icon.removeAttribute('data-checked');
+    //         icon.classList.remove('fa-heart')
+    //         icon.classList.add('fa-heart-o')
+    //     }
+    // }
+</script>
+</body>
+</html>

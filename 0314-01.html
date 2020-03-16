@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Hex Restaurant</title>
+    <style>
+        /*css reset starts
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /*Css reset ends*/
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .wrap {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: black;
+            background-image: url("https://upload.cc/i1/2020/03/14/hLp6AV.png");
+            height: 380px;
+        }
+
+        .logo {
+            margin: 0 30px;
+        }
+
+        .nav ul {
+            float: right;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav ul li a {
+            color: white;
+            display: block;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav ul {
+                margin-right: 40px;
+            }
+        }
+
+        .slogan {
+            color: white;
+            width: 460px;
+            height: 152px;
+            background: rgba(0, 0, 0, 0.35);
+            text-align: center;
+            margin-top: 123px;
+            margin-left: 30%;
+        }
+
+        .slogan h2 {
+            padding-top: 20px;
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .slogan h2 {
+                padding: 40px;
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+
+        .features {
+            background: #EFE9E7;
+            padding-bottom: 20px;
+        }
+
+        .features h2 {
+            text-align: center;
+            padding-top: 20px;
+            color: #3D1101;
+            font-weight: bold;
+        }
+
+        .features li {
+            display: inline-block;
+            width: 30%;
+            margin-left: 3%;
+            margin-top: 5%;
+            text-align: center;
+            color: #3D1101;
+        }
+
+        @media (max-width: 768px) {
+            .features li {
+                width: 25%;
+            }
+        }
+
+        .features li img {
+            border-radius: 50%;
+        }
+
+        .features li h3 {
+            margin: 10px 10px;
+        }
+
+        .features li p {
+            margin: 10px 10px;
+        }
+
+        .chef-intro {
+            background: #3D1101;
+            padding: 20px 20px;
+        }
+
+        .chef img {
+            display: inline-block;
+            width: 470px;
+            height: 460px;
+        }
+
+        @media (max-width: 768px) {
+            .chef img {
+                width: 80%;
+                height: 80%;
+                padding-left: 20px;
+            }
+        }
+
+        .chef {
+            float: left;
+            width: 50%;
+        }
+
+        .intro {
+            float: left;
+            width: 50%;
+            color: #EFE9E7;
+            padding-top: 81px;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                padding-top: 40px;
+            }
+        }
+
+        .intro p {
+            margin-top: 20px;
+        }
+
+        .comment {
+            padding-top: 50px;
+            padding-bottom: 51px;
+            color: #3D1101;
+            background: #EFE9E7;
+        }
+
+        .comment h2 {
+            font-size: 24px;
+
+            text-align: center;
+        }
+
+        .comment li {
+            display: inline-block;
+            width: 30%;
+            margin-left: 3%;
+            margin-top: 5%;
+            text-align: center;
+            color: #3D1101;
+        }
+
+        @media (max-width: 768px) {
+            .comment li {
+                width: 25%;
+            }
+        }
+
+        .comment li img {
+            border-radius: 50%;
+        }
+
+        .comment li h3 {
+            display: inline;
+        }
+
+        .comment li p {
+            padding: 20px 0px 20px 50px;
+        }
+
+        .contact {
+            background: #FAFAFA;
+            padding-top: 50px;
+        }
+
+        .contact h2 {
+            padding-left: 404px;
+            padding-right: 404px;
+            color: #3D1101;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /*@media (max-width: 768px) {*/
+            .contact h2 {
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+
+            .contact-section {
+                margin: 0 auto;
+                color: #3D1101;
+                font-weight: bold;
+            }
+
+            .contact-map {
+                width: 600px;
+                float: left;
+                margin-bottom: 30px;
+
+
+            }
+
+            .contact-map img {
+                padding-top: 50px;
+                padding-left: 42px;
+                margin-left: 30px;
+            }
+        /*}*/
+            @media (max-width: 768px) {
+                .contact-map img {
+                    width: 120%;
+                    height: 90%;
+                    padding-left: 10px;
+                }
+            }
+            .contact-form {
+                float: left;
+                padding-top: 150px;
+                margin-left: 50px;
+            }
+
+            @media (max-width: 768px) {
+                .contact-form {
+                    margin-left: 20px;
+                    padding-top: 50px;
+                    padding-left: 50px;
+                }
+            }
+            button.cancel {
+                color: white;
+                padding: 3px 10px;
+                display: inline-block;
+                background-color: grey;
+                border-radius: 3px;
+                margin-right: 15px;
+            }
+
+            button.send {
+                color: white;
+                padding: 3px 10px;
+                display: inline-block;
+                background-color: #F56C23;
+                border-radius: 3px;
+            }
+
+            .footer {
+                background: #EFE9E7;
+                padding: 30px 20px;
+                margin: 0 auto;
+            }
+
+            .about {
+                float: left;
+                width: 30%;
+                margin-right: 20%;
+            }
+
+            @media (max-width: 768px) {
+                .about {
+                    display: none;
+                }
+            }
+            .about h3 {
+                margin-bottom: 10px;
+                color: #3D1101;
+                font-size: 24px;
+            }
+
+            .about p {
+                color: #3D1101;
+            }
+
+            .profile {
+                float: left;
+                width: 20%;
+                color: #3D1101;
+            }
+
+            @media (max-width: 768px) {
+                .profile {
+                    width: 50%;
+                    padding-left: 100px;
+                }
+            }
+            .profile h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .social-icon {
+                float: right;
+                width: 25%;
+            }
+
+            .social-icon h2 {
+                font-size: 49px;
+                color: #3D1101;
+            }
+
+            .social-icon ul li img {
+                width: 10%;
+                height: 10s%;
+                float: left;
+                margin-top: 50px;
+                display: inline-block;
+            }
+
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header clear">
+        <div class="logo">
+            <h1>
+                <a href="index.html">
+                    <img src="https://upload.cc/i1/2020/03/14/i6ZPHR.png" alt="logo">
+                </a>
+                六角西餐廳
+            </h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">特色</a></li>
+                <li><a href="#">主廚</a></li>
+                <li><a href="#">地圖</a></li>
+                <li><a href="#">登入</a></li>
+            </ul>
+        </div>
+        <div class="slogan">
+            <h2>咬一口就無法忘懷的漢堡</h2>
+            <p>七夕絕對無法錯過的好滋味</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="features">
+            <h2>客人總是詢問</h2>
+            <h2>這麼好吃的秘訣是什麼</h2>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/gpxA7q.png" alt="veg">
+                <h3>台灣本土蔬菜</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, mollitia?</p>
+            </li>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/vmcDJ7.png" alt="chef">
+                <h3>米其林廚師</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nostrum.</p>
+            </li>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/IYX8uy.png" alt="pro">
+                <h3>對於專業絕不退讓</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, eum.</p>
+            </li>
+        </div>
+        <div class="chef-intro clear">
+            <div class="chef">
+                <img src="https://upload.cc/i1/2020/03/14/EpHvKA.png" alt="chef-intro">
+            </div>
+            <div class="intro">
+                <h3>今日主廚:史蒂芬周</h3>
+                <h3>Today's chef: Steve Chow</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis iure doloribus vero velit magnam,
+                    debitis mollitia neque nostrum iste minima tempore sapiente amet delectus tenetur recusandae officia
+                    deleniti dolor ipsam asperiores,
+                    perferendis accusamus. Nemo harum omnis fugiat minima perspiciatis nisi molestias similique,
+                    numquam, tenetur nesciunt quas aliquam nostrum, atque deleniti est animi aut accusamus, expedita
+                    asperipernatur assumenda sed
+                    amet perferendis unde, id voluptas. Necessitatibus, illo, temporibus?Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Deleniti laborum, consequatur? Dolorem itaque illo magni voluptate
+                    molestiae, quos iure numquam?</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="comment">
+            <h2>聽聽別人的感想</h2>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/fKQGrw.png" alt="avt1">
+                <h3>Person1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, mollitia?</p>
+                <span>---路人A</span>
+            </li>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/eRVEp2.png" alt="avt2">
+                <h3>Person2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, mollitia?</p>
+                <span>---路人B</span>
+            </li>
+            <li>
+                <img src="https://upload.cc/i1/2020/03/14/kUgG5e.png" alt="avt3">
+                <h3>Person3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, mollitia?</p>
+                <span>---路人C</span>
+            </li>
+        </div>
+    </div>
+    <div class="contact">
+        <h2>我們的內用位子較少，
+            歡迎先預約訂位</h2>
+        <div class="contact-section">
+            <div class="contact-map">
+                <img src="https://upload.cc/i1/2020/03/14/FVOQ5c.png" alt="map">
+            </div>
+            <div class="contact-form">
+                <form action="">
+                    <label for="name">姓名:</label>
+                    <input type="text" placeholder=" 六角講師吃尾牙">
+                    <br>
+                    <br>
+                    <label for="name">電話:</label>
+                    <input type="text" placeholder=" 0912345678">
+                    <br>
+                    <br>
+                    <label for="name">信箱:</label>
+                    <input type="text" placeholder=" abc@xyz.com">
+                    <br>
+                    <br>
+                    <label for="name">人數:</label>
+                    <input type="text" placeholder=" 2位">
+                    <br>
+                    <br>
+                    <label for="name">是否需要素食</label>
+                    <input type="radio">是
+                    <input type="radio" name="no" id="no">否
+                    <br>
+                    <br>
+                </form>
+                <button class="cancel">取消</button>
+                <button class="send">送出</button>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+        <div class="about">
+            <h3>關於六角西餐廳</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. umquam eum explicabo, rerum.</p>
+        </div>
+        <div class="profile">
+            <h3>聯絡方式</h3>
+            <ul>
+                <li>高雄市中正五路到底</li>
+                <li>+886 07-6543210</li>
+                <li>khh@hexrestaurant.com</li>
+            </ul>
+        </div>
+        <div class="social-icon">
+            <h2>六角西餐廳</h2>
+            <ul>
+
+                <li><img src="https://upload.cc/i1/2020/03/07/JgduI4.png" alt="twitter"></li>
+                <li><img src="https://upload.cc/i1/2020/03/07/07dw6j.png" alt="facebook"></li>
+
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
