@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+</head>
+<body style="background-color: #cc66ff">
+<p>onFineChange gets executed more often, even on the finest change
+    as we move mouse over the picker controls.
+
+<p>Rectangle color:
+    <input class="jscolor {onFineChange:'update(this)'}" value="cc66ff">
+
+<script>
+    function update(jscolor) {
+        // 'jscolor' instance can be used as a string
+        document.body.style.backgroundColor = '#' + jscolor
+    }
+</script>
+</body>
+</html>
