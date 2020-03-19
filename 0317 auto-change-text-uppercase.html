@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            text-align: center;
+        }
+        #dv {
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        .outputArea {
+            min-height: 30px;
+            font-size: 18px;
+            padding: 5px 10px;
+            min-width: 400px;
+            background-color: deeppink;
+            color: #fff;
+        }
+
+        #font1 {
+            padding: 5px 10px;
+            min-width: 300px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>文字轉大小寫</h1>
+    <h3>輸入文字</h3>
+    <input type="text" id="font1">
+    <hr>
+    <p>1. 全大寫</p>
+    <input id="uppercase" class="outputArea" value="">
+    <p>2. 全小寫</p>
+    <input id="lowercase" class="outputArea" value="">
+    <p>3. 首字大寫</p>
+    <input id="capitalize" class="outputArea" value="">
+
+    <div id="dv"></div>
+    <input type="button" value="複製" id="copy">
+</div>
+<script>
+    let uppercase = document.getElementById('uppercase');
+    let lowercase = document.getElementById('lowercase');
+    let capitalize = document.getElementById('capitalize');
+    let font1 = document.getElementById('font1');
+    font1.onkeyup = function () {
+        uppercase.value = font1.value;
+        uppercase.setAttribute('style', 'text-transform: uppercase;');
+        lowercase.value = font1.value;
+        lowercase.setAttribute('style', 'text-transform: lowercase;');
+        capitalize.value = font1.value;
+        capitalize.setAttribute('style', 'text-transform: capitalize;');
+    }
+
+
+    // let copyBtn=document.getElementById('copy');
+    // copyBtn.onclick = function () {
+    //     console.log(dv.innerText);
+    //     dv.select();
+    //     document.execCommand("Copy");
+    // }
+
+
+</script>
+</body>
+</html>
