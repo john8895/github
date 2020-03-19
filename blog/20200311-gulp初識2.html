@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>20200311-gulp初識</title></head>
+<body><p>20200311-初識 gulp</p>
+<p>這是我第一次將gulp直接用在現有專案上，來談談我所遇到的問題。</p>
+<p>我最初遇到的是版本的問題，gulp 3跟 gulp 4用的語法不同，一開始不知道可以指定版本安裝，所以直接用 npm install gulp --save ，就自動安裝到 gulp 4 ，但在一次載入多個任務的寫法，才發現兩者有很大的差異，舉例：</p>
+<pre><code class='language-javascript' lang='javascript'>//gulp 3 的寫法
+gulp.task(&#39;build&#39;, [&#39;sass&#39;, &#39;js&#39;])
+
+//gulp 4 的寫法
+gulp.task(&#39;build&#39;, gulp.parallel(&#39;sass&#39;,&#39;concat&#39; , &#39;img&#39;, &#39;copy&#39;));
+</code></pre>
+<p>&nbsp;</p>
+<p>還有要用非同步的寫法，例如：</p>
+<pre><code class='language-javascript' lang='javascript'>gulp.task(&#39;sass:dev&#39;, async function() {
+    await gulp.src(&#39;final/css/sass/*.scss&#39;)
+        .pipe(gulp.dest(&#39;dist/final/css/&#39;))
+})
+</code></pre>
+<p>&nbsp;</p>
+<p>，就遇到很多跟網路教學文代碼一樣但結果不同的狀況。</p>
+<p>後來才知道要指定版本，可以用 npm install gulp@3.9.1 --save ，不要</p>
+<p>&nbsp;</p>
+<p>js：</p>
+<ol start='' >
+<li>uglify 一直會出現錯誤訊息，無法壓縮JS。</li>
+<li>JS有載入先後的問題，不能直接合併成一支檔案。</li>
+
+</ol>
+<p>CSS：</p>
+<ol start='' >
+<li>css：輸出目錄如果放在SRC，再次輸出時沒有刪除原本的CSS，該檔會不斷累加，越來越大。</li>
+
+</ol>
+<p>其他：</p>
+<ol start='' >
+<li>資料夾中有很多檔案，需要手動建立規則，複製到dist資料夾中。</li>
+<li>有些外掛有版本或相依性問題，有些外掛則是無法使用。</li>
+
+</ol>
+<p>&nbsp;</p>
+<p>參考資料：</p>
+<ul>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+<li>
+</li>
+<li><p>&nbsp;</p>
+</li>
+
+</ul>
+</body>
+</html>
