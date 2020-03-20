@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .big {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--    <p v-if="hours < 12">Good Morning!</p>-->
+<!--    <p v-if="hours >= 12 && hours <18">Good Afternoon!</p>-->
+<!--    <p v-if="hours >= 18">Good Evening</p>-->
+    <div v-bind:class="isRed?'red':'green'">單個class</div>
+    <div :class="{'red':false, 'big':false}">多個class</div>
+
+    <ul>
+        <li v-for="stu in stus" :class="{'A':'red','B':'green'}[stu.score]">{{stu.name}}</li>
+    </ul>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isRed: false,
+            stus: [{name:'jack',score:'A'},{name:'Mick',score:'B'}]
+        }
+    })
+</script>
+
+</body>
+</html>
