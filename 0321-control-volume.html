@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <audio id="audio" controls
+           src="http://m10.music.126.net/20170719161110/02863ba74071062bce6dd56bf5907797/ymusic/450e/0b69/b118/e3a5be41869989ca3723c8cca2bf82ad.mp3">
+
+    </audio>
+    <button id="down">↓</button>
+    <button id="up">↑</button>
+</div>
+</body>
+<script>
+    $(function () {
+        let vol = $('#audio')[0].volume;
+        $('#audio').on('canplay', function () {
+            this.play()
+        });
+        $('#down').click(function () {
+            console.log(vol)
+            vol = vol > 0 ? (vol * 10 - 1) / 10 : 0;
+            $('#audio')[0].volume = vol;
+        })
+        $('#up').click(function () {
+            console.log(vol)
+            vol = vol < 1 ? (vol * 10 + 1) / 10 : 1;
+            $('#audio')[0].volume = vol;
+        })
+    })
+</script>
