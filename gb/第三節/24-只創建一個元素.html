@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: #0099cc;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    24-只創建一個元素
+</h2>
+<input type="button" value="設置" id="btn">
+<div id="dv">
+</div>
+<script src="../../js/common.js"></script>
+<script>
+    // my$('btn').onclick = function () {
+    //     if(my$('btn2')){
+    //         my$('dv').removeChild(my$('btn2'));
+    //     }
+    //     var obj=document.createElement("input");
+    //     obj.type = "button";
+    //     obj.value = "按鈕";
+    //     obj.id = "btn2";
+    //     my$('dv').appendChild(obj);
+    // }
+
+    my$('btn').onclick = function () {
+        if(!my$('btn2')){
+            var obj=document.createElement("input");
+            obj.type = "button";
+            obj.value = "按鈕";
+            obj.id = "btn2";
+            my$('dv').appendChild(obj);
+        }
+    }
+</script>
+</body>
+</html>

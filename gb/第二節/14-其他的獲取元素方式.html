@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>
+    14-其他的獲取元素方式
+</h2>
+<input type="button" value="設置" id="btn">
+
+<p class="cls">我是一個p標籤 cls</p>
+<div class="abc">我是DIV</div>
+<ul>
+    <li>我是LI</li>
+    <li class="cls">我是LI cls類樣式名</li>
+    <li>我是LI</li>
+</ul>
+<input type="text" class="cls" value="我是input cls">
+<script src="../../js/common.js"></script>
+<script>
+    document.querySelector('#btn').onclick = function () {
+        var cls=document.querySelectorAll('.cls');
+        for(var i=0;i<cls.length;i++){
+            cls[i].style.backgroundColor = "pink";
+        }
+    }
+
+    // document.getElementById('')
+    // document.getElementsByTagName()
+    // 以下有些瀏覽器不支持
+    // document.getElementsByClassName()
+    // document.getElementsByName()
+    // document.querySelector('')
+    // document.querySelectorAll()
+</script>
+</body>
+</html>

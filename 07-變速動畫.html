@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: darkblue;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            margin-top: 10px;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移動400" id="btn1">
+<input type="button" value="移動800" id="btn2">
+<div id="dv"></div>
+<script src="js/common.js"></script>
+<script>
+
+    my$('btn1').onclick = function () {
+        animate(my$('dv'), 400)
+    }
+    my$('btn2').onclick = function () {
+        animate(my$('dv'), 800)
+    }
+
+    // function animate(element, target) {
+    //     clearInterval(element.timeId);
+    //     element.timeId = setInterval(function () {
+    //         var current = element.offsetLeft;
+    //         var step = (target - current) / 10;
+    //         step = step > 0 ? Math.ceil(step) : Math.floor(step);
+    //         current += step;
+    //         element.style.left = current + "px";
+    //         if (current === target) {
+    //             clearInterval(element.timeId)
+    //         }
+    //
+    //     }, 20)
+    // }
+
+</script>
+
+<script>
+
+    function animate(element,target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            let current = element.offsetLeft;
+            let step = (target-current)/10;
+            step = step>0?Math.ceil(step):Math.floor(step);
+            current+=step;
+            element.style.left = current+"px";
+            if(current===target){
+                clearInterval(element.timeId);
+            }
+            console.log("目標位置："+target+",當前位置："+current+",移動步數："+step);
+
+        },20)
+    }
+
+</script>
+</body>
+</html>

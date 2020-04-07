@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: #0099cc;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    26-為元素綁定事件的兼容代碼
+</h2>
+<input type="button" value="設置" id="btn">
+<div id="dv">
+</div>
+<script src="../../js/common.js"></script>
+<script>
+    // my$('btn').onclick = function () {
+    //
+    // }
+    //
+    // my$('btn').addEventListener("click",function () {
+    //
+    // },false)
+
+    //兼容代碼
+    function addEventListener(element, type, fn) {
+        // 判斷瀏覽器是否兼容
+        if (element.addEventListener) {
+            element.addEventListener(type, fn, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, fn);
+        } else {
+            element["on" + type] = fn;
+        }
+    }
+    addEventListener(my$('btn'),"click",function () {
+        console.log("哈哈");
+    })
+</script>
+</body>
+</html>

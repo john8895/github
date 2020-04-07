@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: black;
+        }
+        .text {
+            font-size: 100px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            line-height: 300px;
+        }
+        .show {
+            display: block;
+        }
+        .input {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>客製需求</h1>
+<p>進入網頁時彈出一視窗，倒數三十秒後自動關閉。</p>
+<hr>
+<div id="dv" class="box">
+    <div class="text">30</div>
+</div>
+<input type="button" value="打開視窗" id="btn">
+<script>
+    var dv =document.getElementById('dv');
+    var btn = document.getElementById('btn');
+    var text = dv.children[0]
+
+    btn.onclick = function () {
+        dv.classList.add('show');
+        if(dv.className.indexOf('show') !==-1){
+            var num=30;
+            var timeId = setInterval(function () {
+                if(num===0){
+                    clearInterval(timeId);
+                    dv.classList.remove('show');
+                }
+                num--;
+                text.innerText = num;
+
+            },1000)
+        }
+    }
+
+
+</script>
+</body>
+</html>

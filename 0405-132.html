@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 300px;
+            height: 200px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="顯示效果" id="btn">
+<div id="dv"></div>
+<script src="js/common.js"></script>
+<script>
+    // my$('btn').onclick = function () {
+    //     // console.log(window.getComputedStyle(my$('dv'),null).top);
+    //     // console.log(my$('dv').currentStyle.left);
+    // }
+    my$('btn').onclick = function () {
+        console.log(getStyle(my$('dv'), "height"));
+    }
+
+
+    // function getStyle(element,attr) {
+    //     if(window.getComputedStyle){
+    //         return window.getComputedStyle(element,null)[attr];
+    //     }else{
+    //         return element.currentStyle[attr];
+    //     }
+    // }
+
+    function getStyle(element, attr) {
+        return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr];
+    }
+</script>
+</body>
+</html>

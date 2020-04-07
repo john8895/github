@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: #0099cc;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    23-元素相關的操作方法
+</h2>
+<input type="button" value="設置" id="btn">
+<input type="button" value="移除第一個子元素" id="btn2">
+<input type="button" value="移除所有的子元素" id="btn3">
+<div id="dv">
+    <div id="three"></div>
+</div>
+<script src="../../js/common.js"></script>
+<script>
+    // 追加子元素
+    var i=0;
+    my$('btn').onclick = function () {
+        i++;
+        var input = document.createElement("input");
+        input.type = "button";
+        input.value = "按鈕"+i;
+        // my$('dv').appendChild(input);
+        // my$('dv').insertBefore(input,my$('dv').firstElementChild)
+        // my$('dv').replaceChild(input,my$('dv').firstElementChild)
+        my$('dv').insertBefore(input, my$('dv').firstElementChild);
+    }
+    my$('btn2').onclick = function () {
+        my$('dv').removeChild(my$('dv').firstElementChild);
+    }
+
+    my$('btn3').onclick =function () {
+        while (my$('dv').firstElementChild){
+            my$('dv').removeChild(my$('dv').firstElementChild);
+        }
+    }
+</script>
+</body>
+</html>

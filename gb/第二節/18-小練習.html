@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>
+    18-小練習
+</h2>
+<!--<input type="text" value="我是一個文本框" id="ip">-->
+<input type="button" value="按鈕" id="btn">
+<p>我是一個P</p>
+<script src="../../js/common.js"></script>
+<script>
+    // my$('ip').onblur = function () {
+    //     this.className = "cls show";
+    //     console.log(this.className);
+    //
+    // }
+    my$('btn').onclick = function () {
+        console.log(document.getElementsByTagName('p')[0].innerText);
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: darkblue;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            margin-top: 10px;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移動400" id="btn1">
+<input type="button" value="移動800" id="btn2">
+<input type="button" value="top" id="top">
+<input type="button" value="changeHeight" id="changeHeight">
+<input type="button" value="changeWidth" id="changeWidth">
+<div id="dv"></div>
+<script src="js/common.js"></script>
+<script>
+
+    my$('btn1').onclick = function () {
+        animate(my$('dv'),"left", 400)
+    }
+    my$('btn2').onclick = function () {
+        animate(my$('dv'),"left", 800)
+    }
+    my$('top').onclick = function () {
+        animate(my$('dv'),"top", 300)
+    }
+    my$('changeHeight').onclick = function () {
+        animate(my$('dv'),"height",800)
+    }
+    my$('changeWidth').onclick = function () {
+        animate(my$('dv'),"width",800)
+    }
+
+
+    function getStyle(element, attr) {
+        return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr];
+    }
+
+    function animate(element, attr, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = parseInt(getStyle(element,attr));
+            var step = 9;
+            step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(target - current) > Math.abs(step)) {
+                element.style[attr] = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style[attr] = target + "px";
+            }
+            console.log("目標位置："+target+",當前位置："+current+",移動步數："+step);
+        }, 20)
+    }
+</script>
+</body>
+</html>

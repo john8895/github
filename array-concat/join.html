@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 如何使用 join() 從數組創建字符串
+    // var arr = ["John","Mary","Candy"]
+    // console.log(arr.join(' | '));
+    // 如何使用 pop() 來刪除並返回數組的最後一個元素。
+
+
+    // splice() 方法向/從數組中添加/刪除項目，然後返回被刪除的項目。
+    var arr = new Array(6)
+    arr[0] = "George"
+    arr[1] = "John"
+    arr[2] = "Thomas"
+    arr[3] = "James"
+    arr[4] = "Adrew"
+    arr[5] = "Martin"
+
+    // console.log(arr.splice(2, 0, "Tom"));
+    console.log(arr.splice(2, 1, "Tom"));
+    console.log(arr)
+
+</script>
+</body>
+</html>

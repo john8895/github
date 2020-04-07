@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10">
+在蘋果更新了 16 吋的 MacBook Pro 之後，下一個顯示易見的問題便是：13 吋的 MBP 何時更新呢？據分析師郭明錤的說法，蘋果有可能在今年內就會推出一款 14.1 吋的 MBP 來取代 13 吋版本，並且採用 mini-LED 面板來提供更高的對比度與色彩表現。不過在面板的推測之外，其他項目郭倒是沒有進行猜測，但應該可以預期它會採用與 16 吋兄弟相同的新鍵盤吧。
+</textarea>
+<input type="button" value="按鈕(5)" id="btn" disabled>
+<script src="../js/common.js"></script>
+<script>
+    var time = 5;
+    var timeId = setInterval(function () {
+        time--;
+        my$('btn').value = `按鈕(${time})`;
+        if (time == 0) {
+            clearInterval(timeId);
+            my$('btn').disabled = false;
+            my$('btn').value = "同意";
+        }
+
+    }, 1000)
+</script>
+</body>
+</html>

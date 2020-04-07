@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+
+    </h2>
+    <div id="dv">
+    </div>
+    <script src="../js/common.js"></script>
+    <script>
+        // //求總和
+        // var arr1 = [10, 20, 30, 40, 50];
+        // var sum = 0;
+        // for (var i = 0; i < arr1.length; i++) {
+        //     sum += arr1[i];
+        // }
+        // console.log(sum);
+        // //求平均值
+        // var arr2 = [1, 2, 3, 4, 5];
+        // var sum2 = 0;
+        // for (var i = 0; i < arr2.length; i++) {
+        //     sum2 += arr2[i];
+        // }
+        // console.log(sum2 / arr2.length);
+
+        // //求最大值
+        // // var arr3 = [1, 2, 20, 50, 100, 500, 30, 1, 5, 600];
+        // // var max = arr3[0];
+        // // for (var i = 0; i < arr3.length; i++) {
+        // //     if (max < arr3[i]) {
+        // //         max = arr3[i];
+        // //     }
+        // // }
+        // // console.log("最大值：" + max);
+
+        // //求最大值2
+        // var arr3 = [1, 2, 20, 50, 100, 500, 30, 1, 5, 600];
+        // var max = Number.MIN_VALUE;
+        // for (var i = 1; i < arr3.length; i++) {
+        //     if (max < arr3[i]) {
+        //         max = arr3[i];
+        //     }
+        // }
+        // console.log("最大值：" + max);
+
+        // //求最小值
+        // var arr4 = [10, 2, 20, 50, 100, 500, 30, 15, 5, 600];
+        // var min = arr4[0];
+        // for(var i=0;i<arr4.length;i++){
+        //     if(min>arr4[i]){
+        //         min = arr4[i];
+        //     }
+        // }
+        // console.log("最小值：" + min);
+
+        // //練習數組反轉
+        // var arr1 = [10, 20, 30, 40, 50];
+        //     for(var i=0;i<arr1.length/2;i++){
+        //         var temp=arr1[i];
+        //         arr1[i] = arr1[arr1.length -1-i];
+        //         arr1[arr1.length-1-i] = temp;
+        //     }
+        //     console.log(arr1);
+    </script>
+
+    <script>
+        //求最大值
+        var arr1 = [1, 2, 30, 100, 23, 42, 5];
+        var max = arr1[0];
+        for (var i = 0; i < arr1.length; i++) {
+            if (max < arr1[i]) {
+                max = arr1[i];
+            }
+        }
+        console.log("最大值:" + max);
+    </script>
+</body>
+
+</html>

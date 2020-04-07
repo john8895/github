@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>
+    13-根據類樣式名獲取元素
+</h2>
+<input type="button" value="設置" id="btn">
+
+<p class="cls">我是一個p標籤 cls</p>
+<div class="abc">我是DIV</div>
+<ul>
+    <li>我是LI</li>
+    <li class="cls">我是LI cls類樣式名</li>
+    <li>我是LI</li>
+</ul>
+<input type="text" class="cls" value="我是input cls">
+<script src="../../js/common.js"></script>
+<script>
+    my$('btn').onclick = function () {
+        var cls=document.getElementsByClassName('cls');
+        for(var i=0;i<cls.length;i++){
+            cls[i].style.backgroundColor = "hotpink";
+        }
+    }
+</script>
+</body>
+</html>

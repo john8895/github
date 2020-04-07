@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 10px;
+            height: 200px;
+            border-radius: 30%;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="按鈕" id="btn">
+<script src="../js/common.js"></script>
+<script>
+    // var opacity = 10;
+    // my$('btn').onclick = function () {
+    //     var timeId=setInterval(function () {
+    //         opacity--;
+    //         my$('dv').style.opacity = opacity / 10;
+    //         if(opacity==0){
+    //             clearInterval(timeId)
+    //         }
+    //     }, 100)
+    //
+    // }
+
+    var width=10;
+    my$('btn').onclick = function () {
+        var timeId=setInterval(function () {
+            width+=10;
+            if(width==800){
+                clearInterval(timeId)
+            }
+            my$('dv').style.width = width + "px";
+        },20)
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 2px solid hotpink;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    10-通過節點操作隔行變色
+</h2>
+<input type="button" value="設置" id="btn"><br/>
+<ul id="uu">
+    <li>我是第 1 個 LI 的同志</li>
+    <li>我是第 2 個 LI 的同志</li>
+    <li>我是第 3 個 LI 的同志</li>
+    <li>我是第 4 個 LI 的同志</li>
+    <li>我是第 5 個 LI 的同志</li>
+    <li>我是第 6 個 LI 的同志</li>
+    <li>我是第 7 個 LI 的同志</li>
+    <li>我是第 8 個 LI 的同志</li>
+</ul>
+
+
+<script src="../../js/common.js"></script>
+<script>
+    my$('btn').onclick = function () {
+        var nodes = my$('uu').childNodes;
+        var count = 0;
+        for (var i = 0; i < nodes.length; i++) {
+
+            if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
+                nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+                count++;
+
+                // nodes[i].style.backgroundColor = i % 2 == 0 ? "red" : "yellow";
+            }
+        }
+    }
+</script>
+</body>
+</html>
