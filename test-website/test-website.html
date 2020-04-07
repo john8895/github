@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            background-color: #585C62;
+        }
+        #viewBody iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-<input type="button" value="改變" id="btn">
+<!--網址：<input type="text" value="">-->
+<input type="button" value="改變" id="btn1">
+<input type="button" value="改變" id="btn2">
+
+<div id="viewBody">
+
+</div>
+
+<script src="../js/jquery3.4.1.js"></script>
 <script src="../js/common.js"></script>
 <script>
-    my$('btn').onclick = function () {
-        var mywindow;
-        var config = `
-            width=450,
-            height=450,
-            menubar=yes,
-            location=yes,
-            resizable=yes,
-            scrollbars=yes,
-            status=yes
-        `;
-        mywindow = window.open("http://www.google.com.tw", "test", config)
+    my$('btn1').onclick = function () {
+
+        var url = 'http://demo.atteipo.biz/202003ty/final/index.html';
+        var iframe = document.createElement('iframe');
+        var viewBody = document.getElementById('viewBody');
+        iframe.setAttribute("src",url);
+        viewBody.style.width = 320+"px";
+        viewBody.style.height = 568+"px";
+        my$('viewBody').appendChild(iframe)
     }
 </script>
 </body>

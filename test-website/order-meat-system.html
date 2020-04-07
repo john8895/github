@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>訂餐系統</h1>
+<hr>
+<input type="text" id="text" value="黃雅雅/雞腿飯/100">
+<input type="button" value="設置" id="btn1">
+<input type="button" value="清除資料" id="btn2" onclick="clearLocalstorage()">
+<!--<input type="button" value="取" id="btn2">-->
+<hr>
+此次訂購
+<div id="dv">
+    <ul class="list"></ul>
+</div>
+<hr>
+訂購資料
+<div id="orderView"></div>
+<script src="../js/jquery3.4.1.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    // my$('btn1').onclick = function () {
+    //     var data = {name:"456"};
+    //     data=JSON.stringify(data);
+    //     localStorage.setItem('1001',data);
+    //
+    // }
+    // my$('btn2').onclick = function () {
+    //     var data = localStorage.getItem("1001");
+    //     data=JSON.parse(data);
+    // }
+
+    var arr = {
+        name: "黃雅雅",
+        type: "雞腿飯",
+        price: 100
+    }
+
+    $('#btn1').click(function () {
+        var input = $('#text');
+        var orderView = $('#orderView');
+        var newData = input.val().trim().split('/');
+        var data = localStorage.getItem(getDate()); //這裡要給當日日期
+        data = data ? JSON.parse(data) : []; //如果localstorage有資料就讀出並轉陣列，無則給空陣列
+
+        var order = {
+            name: newData[0],
+            type: newData[1],
+            price: newData[2]
+        };
+
+
+        data.push(order);
+        localStorage.setItem(getDate(), JSON.stringify(data));
+        console.log(data);
+    });
+
+    /*
+    * -------------------
+    * 清除資料
+    * -------------------
+    */
+    function clearLocalstorage() {
+        localStorage.clear()
+    }
+
+    /*
+    * -------------------
+    * 取得當日日期，如20200407，每天只能存取當日的資料
+    * -------------------
+    */
+    function getDate() {
+        var today = new Date;
+        var todayMonth = today.getMonth()+1;
+        todayMonth = todayMonth < 10 ? "0" + todayMonth : todayMonth;
+        var todayDate = today.getDate()
+        todayDate = todayDate < 10 ? "0" + todayDate : todayDate;
+        return today.getFullYear() + "" + todayMonth + "" + todayDate
+        // console.log(today.getFullYear() + "" + todayMonth + "" + todayDate);
+    }
+
+
+
+</script>
+</body>
+</html>
