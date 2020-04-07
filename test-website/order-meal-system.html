@@ -13,8 +13,8 @@
 <!--<input type="button" value="取" id="btn2">-->
 <hr>
 此次訂購
-<div id="dv">
-    <ul class="list"></ul>
+<div class="todayOrder">
+    <ul #todayOrder></ul>
 </div>
 <hr>
 訂購資料
@@ -33,6 +33,15 @@
     //     data=JSON.parse(data);
     // }
 
+    // jquery.create.js - 2013.08.15
+    (function($) {
+        $.create = function(tag,id) {
+            elm = document.createElement(tag.toUpperCase());
+            if (typeof(id) != "undefined") elm.id = id;
+            return $(elm);
+        }; // $.create()
+    }(jQuery));
+
     var arr = {
         name: "黃雅雅",
         type: "雞腿飯",
@@ -41,9 +50,13 @@
 
     $('#btn1').click(function () {
         var input = $('#text');
+        var orderUl = $('#todayOrder');
         var orderView = $('#orderView');
         var newData = input.val().trim().split('/');
         var data = localStorage.getItem(getDate()); //這裡要給當日日期
+
+
+
         data = data ? JSON.parse(data) : []; //如果localstorage有資料就讀出並轉陣列，無則給空陣列
 
         var order = {
@@ -54,6 +67,12 @@
 
 
         data.push(order);
+        var listObj=$.create('li').append(data)
+        // listObj.appendTo(orderUl);
+        console.log(listObj);
+
+
+        //儲存資料
         localStorage.setItem(getDate(), JSON.stringify(data));
         console.log(data);
     });
