@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: deeppink;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移動" id="btn">
+<div id="dv"></div>
+<script src="js/common.js"></script>
+<script>
+    my$('btn').onclick = function () {
+        animation(my$('dv'), 400)
+    }
+
+
+    // 動畫函數封裝練習
+    //
+    // 1.勻速動畫函數
+    // 2.變速動畫函數
+    // 3.封装缓动动画增加任意一个属性
+    //      获取元素计算后的样式属性值
+    //      window.getComputedStyle(element, null)[attr]
+    //      element.currentStyle[attr]
+    // 4.封装缓动动画函数增加任意多个属性(json)
+    // 5.封装缓动动画函数增加回调函数
+    // 6.动画函数增加透明度和层级
+
+
+    //1.勻速動畫函數
+    // function animation(element, target) {
+    //     clearInterval(element.timeId);
+    //     element.timeId = setInterval(function () {
+    //         var current = element.offsetLeft;
+    //         var step = 10;
+    //         step = current < target ? step : -step;
+    //         current += step;
+    //         if (Math.abs(target - current) > Math.abs(step)) {
+    //             element.style.left = current + "px";
+    //         } else {
+    //             clearInterval(element.timeId);
+    //             element.style.left = target + "px";
+    //         }
+    //     }, 20)
+    // }
+    //2.變速動畫函數
+    function animation(element, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = element.offsetLeft;
+            var step = 10;
+            step = (target - current) / 10; //變速公式，剩餘距離越短，移動距離越少
+            step = step > 0 ? Math.ceil(step) : Math.floor(step); // 正數向上取整  負數向下取整
+            // step = current < target ? step : -step;
+            current += step;
+            if (Math.abs(target - current) > Math.abs(step)) {
+                element.style.left = current + "px";
+            } else {
+                clearInterval(element.timeId);
+                element.style.left = target + "px";
+            }
+            console.log("當前目標：" + target + ",當前位置：" + current + ",移動距離：" + step);
+        }, 20)
+    }
+
+    //2.获取元素计算后的样式属性值
+    // function getStyle(element, attr) {
+    //     // 判斷瀏覽器是否支持
+    //     return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr]
+    // }
+    //
+    // function animation(element, attr, target) {
+    //     clearInterval(element.timeId);
+    //     element.timeId = setInterval(function () {
+    //         var current = parseInt(getStyle(element,attr));
+    //         var step = 10;
+    //         step = current < target ? step : -step;
+    //         current += step;
+    //         if (Math.abs(target - current) > Math.abs(step)) {
+    //             element.style[attr] = current + "px";
+    //         } else {
+    //             clearInterval(element.timeId);
+    //             element.style[attr] = target + "px";
+    //         }
+    //         console.log("當前目標：" + target + ",當前位置：" + current + ",移動距離：" + step);
+    //     }, 20)
+    // }
+</script>
+</body>
+</html>

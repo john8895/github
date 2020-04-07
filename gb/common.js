@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 /**
  * 
@@ -114,8 +113,4 @@ function addEventListener(element, type, fn) {
     } else {
         element["on" + type] = fn;
     }
-=======
-function my$(id) {
-    return document.getElementById(id);
->>>>>>> 736056a3bf1765b4b6109d7d5d34df9e4f238858
 }

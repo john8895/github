@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="改變" id="btn">
+<script src="../js/common.js"></script>
+<script>
+    my$('btn').onclick = function () {
+        var mywindow;
+        var config = `
+            width=450,
+            height=450,
+            menubar=yes,
+            location=yes,
+            resizable=yes,
+            scrollbars=yes,
+            status=yes
+        `;
+        mywindow = window.open("http://www.google.com.tw", "test", config)
+    }
+</script>
+</body>
+</html>
