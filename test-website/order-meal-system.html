@@ -12,50 +12,61 @@
 <input type="button" value="清除資料" id="btn2" onclick="clearLocalstorage()">
 <!--<input type="button" value="取" id="btn2">-->
 <hr>
-此次訂購
+<h2>訂購項次</h2>
 <div class="todayOrder">
     <ul #todayOrder></ul>
 </div>
 <hr>
-訂購資料
+<h2>訂購統計</h2>
 <div id="orderView"></div>
 <script src="../js/jquery3.4.1.js"></script>
 <script src="../js/common.js"></script>
 <script>
-    // my$('btn1').onclick = function () {
-    //     var data = {name:"456"};
-    //     data=JSON.stringify(data);
-    //     localStorage.setItem('1001',data);
-    //
-    // }
-    // my$('btn2').onclick = function () {
-    //     var data = localStorage.getItem("1001");
-    //     data=JSON.parse(data);
-    // }
-
     // jquery.create.js - 2013.08.15
-    (function($) {
-        $.create = function(tag,id) {
+    (function ($) {
+        $.create = function (tag, id) {
             elm = document.createElement(tag.toUpperCase());
-            if (typeof(id) != "undefined") elm.id = id;
+            if (typeof (id) != "undefined") elm.id = id;
             return $(elm);
         }; // $.create()
     }(jQuery));
 
-    var arr = {
-        name: "黃雅雅",
-        type: "雞腿飯",
-        price: 100
-    }
+    var orderUl = my$('#todayOrder');
+    var orderView = my$('#orderView');
+
+    /*
+    * -------------------
+    * 更新訂購列表
+    * -------------------
+    */
+    (function updateOrderList() {
+        var dataList = localStorage.getItem(getDate());
+        var lists;
+        dataList = dataList ? JSON.parse(dataList) : [];
+
+        //判斷localStorage有無資料
+        if (dataList.length > 0) {
+            for (var i = 0; i < dataList.length; i++) {
+                var list = $.create('li');
+                list.innerText = dataList[i];
+                lists += list;
+            }
+            console.log(lists);
+        } else { //無資料
+            $('.todayOrder').append('<div>資料庫無資料</div>')
+        }
+    })();
+
+
+    // var arr = {
+    //     name: "黃雅雅",
+    //     type: "雞腿飯",
+    //     price: 100
+    // }
 
     $('#btn1').click(function () {
-        var input = $('#text');
-        var orderUl = $('#todayOrder');
-        var orderView = $('#orderView');
-        var newData = input.val().trim().split('/');
-        var data = localStorage.getItem(getDate()); //這裡要給當日日期
-
-
+        var newData = $('#text').val().trim().split('/');
+        var data = localStorage.getItem(getDate()); //日期為key
 
         data = data ? JSON.parse(data) : []; //如果localstorage有資料就讀出並轉陣列，無則給空陣列
 
@@ -64,17 +75,17 @@
             type: newData[1],
             price: newData[2]
         };
+        data.push(order); //插入新資料
 
 
-        data.push(order);
-        var listObj=$.create('li').append(data)
+        var listObj = $.create('li').append(data);
         // listObj.appendTo(orderUl);
-        console.log(listObj);
+        // console.log(listObj);
 
 
         //儲存資料
         localStorage.setItem(getDate(), JSON.stringify(data));
-        console.log(data);
+        // console.log(data);
     });
 
     /*
@@ -93,14 +104,13 @@
     */
     function getDate() {
         var today = new Date;
-        var todayMonth = today.getMonth()+1;
+        var todayMonth = today.getMonth() + 1;
         todayMonth = todayMonth < 10 ? "0" + todayMonth : todayMonth;
         var todayDate = today.getDate()
         todayDate = todayDate < 10 ? "0" + todayDate : todayDate;
         return today.getFullYear() + "" + todayMonth + "" + todayDate
         // console.log(today.getFullYear() + "" + todayMonth + "" + todayDate);
     }
-
 
 
 </script>
