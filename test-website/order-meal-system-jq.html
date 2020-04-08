@@ -47,11 +47,14 @@
         //判斷localStorage有無資料
         if (dataList.length > 0) {
             for (var i = 0; i < dataList.length; i++) {
+
                 var list = $.create('li');
                 list.innerText = dataList[i];
                 lists += list;
+
+                console.log(list);
+
             }
-            console.log(lists);
         } else { //無資料
             $('.todayOrder').append('<div>資料庫無資料</div>')
         }
