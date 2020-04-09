@@ -35,7 +35,8 @@ function updateOrderList() {
         for (var i = 0; i < dataList.length; i++) {
             var list = document.createElement('li');
             var aObj = document.createElement('a');
-            aObj.href = 'delOrderItem()';
+            aObj.setAttribute('onclick','delOrderItem(this)');
+            aObj.href = "#";
             aObj.id = 'delItem';
             aObj.innerText = '刪除';
             list.innerText = `${dataList[i].name} / ${dataList[i].type} / ${dataList[i].price} 元`;
@@ -85,7 +86,8 @@ my$('btn1').onclick = function () {
     for (var i = 0; i < data.length; i++) {
         var list = document.createElement('li');
         var aObj = document.createElement('a');
-        aObj.href = 'delOrderItem()';
+        aObj.setAttribute('onclick','delOrderItem(this)');
+        aObj.href = "#";
         aObj.id = 'delItem';
         aObj.innerText = '刪除';
         list.innerText = `${data[i].name} / ${data[i].type} / ${data[i].price} 元`;
@@ -110,11 +112,10 @@ var delBtn = document.getElementById('delItem') || 0;
 delBtn.onclick = function () {
 
 }
-//
-// function delOrderItem(e) {
-//     e.preventDefault();
-//
-// }
+
+function delOrderItem(thisItem) {
+    thisItem.parentElement.remove();
+}
 
 
 /*
