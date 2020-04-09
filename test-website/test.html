@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var arr = ["Apple", "Orange", "Apple", "Apple", "Orange", "Banana"];
+
+
+    // var arr = [
+    //     {name: "黃雅雅", type: "雞腿飯", price: "100"},
+    //     {name: "黃雅雅", type: "排骨飯", price: "80"},
+    //     {name: "黃雅雅", type: "雞腿飯", price: "100"},
+    //     {name: "黃雅雅", type: "排骨飯", price: "80"},
+    //     {name: "黃雅雅", type: "雞腿飯", price: "100"}
+    // ];
+    // //計算重複值
+    // var counts = {};
+    // for (var i = 0; i < arr.length; i++) {
+    //     var num = arr[i].type;
+    //     counts[num] = counts[num] ? counts[num] + 1 : 1;
+    // }
+    // console.log(counts); // {雞腿飯: 3, 排骨飯: 2}
+
+
+    var array = [
+        {
+            name: 'Casper',
+            like: '鍋燒意麵',
+            age: 18
+        },
+        {
+            name: 'Wang',
+            like: '炒麵',
+            age: 24
+        },
+        {
+            name: 'Bobo',
+            like: '蘿蔔泥',
+            age: 1
+        },
+        {
+            name: '滷蛋',
+            like: '蘿蔔泥',
+            age: 3
+        }
+    ];
+
+    var ans = array.every(function (item, index, array) {
+        console.log(item, index, array); // 物件, 索引, 全部陣列
+        // return item.age > 10 // 當全部 age 大於 10 才能回傳 true
+    });
+    // console.log(ans); // false: 只要有部分不符合，則為 false
+
+    var ans2 = array.every(function (item, index, array) {
+        // return item.age < 25
+    });
+    // console.log(ans2); // true: 全部 age 都小於 25
+
+
+    //----------------------------------------------------
+
+    // console.log(Object.keys(counts) + Object.values(counts));
+
+    // for(var i=0;i<counts.length;i++){
+    //     console.log(counts[i]);
+    //
+    // }
+
+    // for(var item in counts){
+    //     item += Object.keys(counts)
+    // }
+    // console.log(item);
+    //
+    // for(var i=0;i<counts.length;i++){
+    //
+    // }
+    // console.log(Object.keys(counts));
+
+
+    // 雞腿飯*3
+    // 排骨飯*2
+    // counts.forEach(function (value,index) {
+    //     console.log(index + "x" + value);
+    // })
+
+    // 假設有一資料陣列如下，欲求出元素出現次數並有條理印出
+    // var arr = ["Apple", "Orange", "Apple", "Apple", "Orange", "Banana"];
+
+    // 宣告一空物件用來儲存結果資料
+    // var counts = {};
+
+    // 利用for迴圈遍歷arr並分析
+    // for (var i = 0; i < arr.length; i++) {
+    //     // 將arr[i]值存於num中
+    //     var num = arr[i];
+    //     // console.log("第 "+i+" 次 num="+num);
+    //
+    //
+    //     // 比較counts物件，如相同則該物件存值+1，如不同則存值設為1
+    //     //counts["Apple"] = true  /  counts["qq"] = false
+    //     counts[num] = counts[num] ? counts[num] + 1 : 1; //counts[num]----num=key,1---value
+
+    // console.log("counts[num]="+counts[num]);
+    // console.log(counts);
+    // }
+
+    // 印出物件
+    // console.log(counts);
+    // // // 印出成員
+    // console.log(Object.keys(counts));
+    // // 印出各成員數項
+    // console.log(counts["Apple"], counts["Orange"], counts["Banana"]);
+
+
+    // var arr1 = [{
+    //     name: "Jack",
+    //     age: 28,
+    //     type: "雞腿飯"
+    // }];
+    // console.log(Object.keys(arr1));
+
+    // var obj = {'a':'123','b':'345'};
+    // console.log(Object.keys(obj));
+
+    // var obj1 = { 100: "a", 2: "b", 7: "c"};
+    // console.log(Object.keys(obj1)); // console: ["2", "7", "100"]
+
+    // var obj3 = {
+    //     5: "a",
+    //     6: "b",
+    //     100: "c",
+    //     9: "d"
+    // }
+    // console.log(Object.keys(obj3));
+    // console.log(Object.values(obj3));
+
+    // const array1 = [1, 4, 9, 16];
+
+    // pass a function to map
+    // const map1 = array1.map(function (x) {
+    //     return x * 2
+    // });
+    // var map2 = array1.map(x => x + 5)
+    //
+    // console.log(map2);
+    // expected output: Array [2, 8, 18, 32]
+
+    // var map1 = array1.map(value => value * value)
+    // console.log(map1);
+
+    // var map1 = array1.map(x => x + 1)
+    // console.log(map1);
+
+
+    // const array1 = ['a', 'b', 'c'];
+
+
+    // expected output: "a"
+    // expected output: "b"
+    // expected output: "c"
+
+    // array1.forEach(element=>console.log(element))
+    // array1.forEach(x => x += "b")
+    // console.log(array1);
+    //
+    // const items = ['item1', 'item2', 'item3'];
+    // const copy = [];
+    // //
+    // // for (let i=0; i<items.length; i++) {
+    // //     copy.push(items[i])
+    // // }
+    // // console.log(copy);
+    //
+    // items.forEach(item=>copy.push(item))
+    // console.log(copy);
+
+
+</script>
+</body>
+</html>

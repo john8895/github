@@ -123,9 +123,13 @@ delBtn.onclick = function () {
 * -------------------
 */
 function orderCount(total) {
-
     var totalNum = document.getElementById('totalNum');
     console.log("orderCount----"+total);
+    var oraderData = localStorage.getItem(getDate());
+    oraderData = JSON.parse(oraderData);
+
+    console.log(oraderData);
+
     total=total?total:total=0;
     totalNum.innerText = `總金額 ${total} 元`
 }
