@@ -154,6 +154,14 @@ function orderCount(total) {
         type: "雞腿飯"
     }]
     //輸出到畫面
+    console.log("orderCount----"+total);
+    var oraderData = localStorage.getItem(getDate());
+    oraderData = JSON.parse(oraderData);
+
+    console.log(oraderData);
+
+    total=total?total:total=0;
+    totalNum.innerText = `總金額 ${total} 元`
 }
 
 /*
