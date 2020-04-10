@@ -35,7 +35,7 @@ function updateOrderList() {
         for (var i = 0; i < dataList.length; i++) {
             var list = document.createElement('li');
             var aObj = document.createElement('a');
-            aObj.setAttribute('onclick','delOrderItem(this)');
+            aObj.setAttribute('onclick', 'delOrderItem(this)');
             aObj.href = "#";
             aObj.id = 'delItem';
             aObj.innerText = '刪除';
@@ -67,7 +67,7 @@ function updateOrderList() {
 my$('btn1').onclick = function () {
     var newData = my$('text').value;
     var data = localStorage.getItem(getDate()); //日期為key
-    var total=0;
+    var total = 0;
     newData = newData.trim();
     newData = newData.split('/');
 
@@ -86,7 +86,7 @@ my$('btn1').onclick = function () {
     for (var i = 0; i < data.length; i++) {
         var list = document.createElement('li');
         var aObj = document.createElement('a');
-        aObj.setAttribute('onclick','delOrderItem(this)');
+        aObj.setAttribute('onclick', 'delOrderItem(this)');
         aObj.href = "#";
         aObj.id = 'delItem';
         aObj.innerText = '刪除';
@@ -124,11 +124,36 @@ function delOrderItem(thisItem) {
 * -------------------
 */
 function orderCount(total) {
-
     var totalNum = document.getElementById('totalNum');
-    console.log("orderCount----"+total);
-    total=total?total:total=0;
-    totalNum.innerText = `總金額 ${total} 元`
+    var data = localStorage.getItem(getDate()); //日期為key
+
+    console.log("orderCount----" + total);
+    total = total ? total : total = 0;
+    totalNum.innerText = `總金額 ${total} 元`;
+
+    //取得資料
+    data = JSON.parse(data);
+    console.log(data);
+    //組成新array
+    //計算array
+    for (var i = 0; i < data.length; i++) {
+        var count = 0;
+        var tempType={
+            type: "",
+            num: 0,
+        };
+        // console.log(data[i].type);
+        // if (data[i].type === data[i + 1].type) {
+        //     tempType.type = data[i].type;
+        //     tempType['num']++
+        //     console.log(tempType);
+        // }
+    }
+
+    var tempArr = [{
+        type: "雞腿飯"
+    }]
+    //輸出到畫面
 }
 
 /*
