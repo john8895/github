@@ -6,6 +6,50 @@
 </head>
 <body>
 <script>
+
+
+    var arr = [
+        {name: "黃雅雅", type: "雞腿飯", price: "100"},
+        {name: "黃雅雅", type: "排骨飯", price: "80"},
+        {name: "黃雅雅", type: "雞腿飯", price: "100"},
+        {name: "黃雅雅", type: "排骨飯", price: "80"},
+        {name: "黃雅雅", type: "雞腿飯", price: "100"},
+        {name: "黃雅雅", type: "魚翅飯", price: "200"}
+    ];
+
+    //計算重複值
+    var counts = {};
+    for (var i = 0; i < arr.length; i++) {
+        var num = arr[i].type;
+        counts[num] = counts[num] ? counts[num] + 1 : 1;
+    }
+    //打印出結果  ex:雞腿飯 x 3, 排骨飯 x 2
+    //forEach 定義為 array 的 prototype 不能直接用 object.forEach
+    Object.keys(counts).forEach(function (key){
+        console.log(key + " x " +counts[key]);
+    });
+
+
+    // console.log(counts); // {雞腿飯: 3, 排骨飯: 2}
+    // counts.forEach(function (k, v) { //forEach is defined in Array's prototype, not on Object
+    //     console.log(k + ":" + v);
+    // })
+
+
+    // var lunch = {
+    //     sandwich: 'turkey',
+    //     drink: 'soda',
+    //     chips: true,
+    //     desert: 'cookie'
+    // };
+    //
+    // Object.keys(lunch).forEach(function (key) {
+    //     console.log(key); // The object key
+    //     console.log(lunch[key]); // The object value
+    // });
+
+
+    //--------------------------------------
     // var origin = [1, 2, 'a', 3, 1, 'b', 'a'];
     // var result = new Set();
     // var repeat = new Set();

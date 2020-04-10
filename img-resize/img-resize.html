@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="file" type="file">
+
+
+<script>
+    // var eleFile = document.querySelector('#file');
+    var eleFile = 'img/b.png';
+
+    // 壓縮圖片需要的一些元素和對象
+    var reader = new FileReader(), img = new Image();
+
+    // 選擇的文件對象
+    var file = null;
+
+    // 縮放圖片需要的canvas
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+
+    // base64地址圖片加載完畢後
+    img.onload = function () {
+        // 圖片原始尺寸
+        var originWidth = this.width;
+        var originHeight = this.height;
+        // 最大尺寸限制
+        var maxWidth = 400, maxHeight = 400;
+        // 目標尺寸
+        var targetWidth = originWidth, targetHeight = originHeight;
+        // 圖片尺寸超過400x400的限制
+        if (originWidth > maxWidth || originHeight > maxHeight) {
+            if (originWidth / originHeight > maxWidth / maxHeight) {
+                // 更寬，按照寬度限定尺寸
+                targetWidth = maxWidth;
+                targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+            } else {
+                targetHeight = maxHeight;
+                targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+            }
+        }
+
+        // canvas對圖片進行縮放
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+        // 清除畫布
+        context.clearRect(0, 0, targetWidth, targetHeight);
+        // 圖片壓縮
+        context.drawImage(img, 0, 0, targetWidth, targetHeight);
+        // canvas轉為blob並上傳
+        canvas.toBlob(function (blob) {
+            // 圖片ajax上傳
+            var xhr = new XMLHttpRequest();
+            // 文件上傳成功
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200) {
+                    // xhr.responseText就是返回的數據
+                }
+            };
+            // 開始上傳
+            xhr.open("POST", 'upload.php', true);
+            xhr.send(blob);
+        }, file.type || 'image/png');
+    };
+
+    // 文件base64化，以便獲知圖片原始尺寸
+    reader.onload = function (e) {
+        img.src = e.target.result;
+    };
+    eleFile.addEventListener('change', function (event) {
+        file = event.target.files[0];
+        // 選擇的文件是圖片
+        if (file.type.indexOf("image") == 0) {
+            reader.readAsDataURL(file);
+        }
+    });
+
+</script>
+</body>
+</html>

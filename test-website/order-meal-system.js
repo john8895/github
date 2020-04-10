@@ -23,9 +23,6 @@ function updateOrderList() {
     dataList = dataList ? JSON.parse(dataList) : [];
     //先清空元素
     orderUl.innerText = "";
-    // total = 0;
-    // console.log("updateOrderList--" + total);
-
 
     //判斷localStorage有無資料
     if (dataList.length > 0) {
@@ -46,8 +43,7 @@ function updateOrderList() {
         }
         prompt.innerText = `當前資料共 ${dataList.length} 筆，總金額 ${total} 元`;
         // console.log(`當前資料共 ${dataList.length} 筆，總金額 ${total} 元`);
-        console.log("updateOrderList--for--" + total);
-
+        // console.log("updateOrderList--for--" + total);
 
     } else { //無資料
         prompt.innerText = "資料庫無資料";
@@ -56,13 +52,6 @@ function updateOrderList() {
     orderCount(total);
 
 }
-
-
-// var arr = {
-//     name: "黃雅雅",
-//     type: "雞腿飯",
-//     price: 100
-// }
 
 my$('btn1').onclick = function () {
     var newData = my$('text').value;
@@ -108,10 +97,9 @@ my$('btn1').onclick = function () {
 * -------------------
 */
 var delBtn = document.getElementById('delItem') || 0;
-
-delBtn.onclick = function () {
-
-}
+// delBtn.onclick = function () {
+//
+// }
 
 function delOrderItem(thisItem) {
     thisItem.parentElement.remove();
@@ -126,41 +114,38 @@ function delOrderItem(thisItem) {
 function orderCount(total) {
     var totalNum = document.getElementById('totalNum');
     var data = localStorage.getItem(getDate()); //日期為key
+    var orderCountUl = document.getElementById('orderCountUl');
+    var orderNumShow = document.getElementById('orderNum');
 
-    console.log("orderCount----" + total);
+    // console.log("orderCount----" + total);
     total = total ? total : total = 0;
     totalNum.innerText = `總金額 ${total} 元`;
 
     //取得資料
     data = JSON.parse(data);
-    console.log(data);
-    //組成新array
-    //計算array
-    for (var i = 0; i < data.length; i++) {
-        var count = 0;
-        var tempType={
-            type: "",
-            num: 0,
-        };
-        // console.log(data[i].type);
-        // if (data[i].type === data[i + 1].type) {
-        //     tempType.type = data[i].type;
-        //     tempType['num']++
-        //     console.log(tempType);
-        // }
+
+    if (data) {
+        //計算重複值
+        var counts = {};
+        for (var i = 0; i < data.length; i++) {
+            var num = data[i].type;
+            counts[num] = counts[num] ? counts[num] + 1 : 1;
+        }
+        //打印出結果  ex:雞腿飯 x 3, 排骨飯 x 2
+        //forEach 定義為 array 的 prototype 不能直接用 object.forEach
+        orderCountUl.innerText = "";
+        var orderNum = 0;
+        Object.keys(counts).forEach(function (key) {
+            var liObj=document.createElement('li');
+            liObj.innerText = key + " x " + counts[key];
+            orderCountUl.appendChild(liObj)
+            orderNum += counts[key]
+            // console.log(key + " x " + counts[key]);
+        });
+        orderNumShow.innerText = orderNum;
     }
 
-    var tempArr = [{
-        type: "雞腿飯"
-    }]
-    //輸出到畫面
-    console.log("orderCount----"+total);
-    var oraderData = localStorage.getItem(getDate());
-    oraderData = JSON.parse(oraderData);
-
-    console.log(oraderData);
-
-    total=total?total:total=0;
+    total = total ? total : total = 0;
     totalNum.innerText = `總金額 ${total} 元`
 }
 
