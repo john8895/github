@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="message"></div>
+<script>
+    // let a;
+    // let b;
+    // let message = document.getElementById('message');
+    //
+    // do {
+    //     a = Math.floor(Math.random()*10);
+    //     b = Math.floor(Math.random()*10);
+    // }while (a===b);
+    //
+    // //
+    // // if(a===b){
+    // //      a = Math.floor(Math.random()*10);
+    // //      b = Math.floor(Math.random()*10);
+    // // }
+    // message.innerHTML = a + '-' + b;
+    // console.log(a,b)
+
+</script>
+
+<script>
+    // let a, b;
+    // do {
+    //     a = Math.floor(Math.random() * 10);
+    //     b = Math.floor(Math.random() * 10);
+    // } while (a === b);
+
+</script>
+
+<script>
+    let msg = document.getElementById('message');
+    let a, b, c, d;
+    do {
+        generateNumber();
+    } while (isDuplicate(a, b, c, d));
+
+
+    function generateNumber() {
+        a = Math.floor(Math.random() * 10);
+        b = Math.floor(Math.random() * 10);
+        c = Math.floor(Math.random() * 10);
+        d = Math.floor(Math.random() * 10);
+    }
+
+    function isDuplicate(n1, n2, n3, n4) {
+        let ans;
+        if (n1 === n2 || n1 === n3 || n1 === n4 || n2 === n3 || n2 === n4 || n3 === n4 || n1 === 0) {
+            ans = true;
+        }
+        return ans;
+    }
+
+    console.log(`${a}-${b}-${c}-${d}`);
+
+</script>
+</body>
+</html>

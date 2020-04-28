@@ -51,20 +51,20 @@
 
 <script>
 
-    function animate(element,target) {
+    function animate(element, target) {
         clearInterval(element.timeId);
         element.timeId = setInterval(function () {
             let current = element.offsetLeft;
-            let step = (target-current)/10;
-            step = step>0?Math.ceil(step):Math.floor(step);
-            current+=step;
-            element.style.left = current+"px";
-            if(current===target){
+            let step = (target - current) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            current += step;
+            element.style.left = current + "px";
+            if (current === target) {
                 clearInterval(element.timeId);
             }
-            console.log("目標位置："+target+",當前位置："+current+",移動步數："+step);
+            console.log("目標位置：" + target + ",當前位置：" + current + ",移動步數：" + step);
 
-        },20)
+        }, 20)
     }
 
 </script>

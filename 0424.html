@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let arr = {name: 'john', age: 28, score: 20}
+
+    // for...in迴圈
+    for(let key in arr){
+        if(!arr.hasOwnProperty(key)) continue;
+        console.log(key + ': ' + arr[key]);
+    }
+
+
+</script>
+</body>
+</html>
