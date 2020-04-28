@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script>
+
+    function makeRequest(){
+        "use strict"
+        $.ajax({
+            url: 'https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=d929ca1c9678710402c645706be3a99b',
+            type: 'GET',
+            success: function (Jdata) {
+                console.log(Jdata);
+
+            }
+        })
+
+
+
+
+
+
+        // let xhr = new XMLHttpRequest();
+        // xhr = onload = function () {
+        //     console.log(this.responseText)
+        // }
+        // xhr.open('GET','https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=9c39fa3ce9d953fdd507d7d9f77093ef')
+        // xhr.send()
+    }
+    makeRequest();
+
+</script>
+</body>
+</html>

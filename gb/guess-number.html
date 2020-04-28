@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #guessBtn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="submit" value="開始遊戲" onclick="gameStart();" id="startGameBtn"><br><br>
+<input type="text" maxlength="4" value="1234" id="text">
+<input type="button" value="送出" id="guessBtn">
+<div id="message"></div>
+<ul id="info"></ul>
+
+<script>
+    let guessBtn = document.getElementById('guessBtn');
+    let a, b, c, d;
+    let numberOfAArray = [], numberOfBArray = [];
+    let count;
+
+    // 清除畫布
+    function clearGame() {
+        document.getElementById('info').innerHTML = "";
+    }
+
+
+    // 遊戲開始
+    function gameStart() {
+        clearGame();
+        guessBtn.style.display = 'block';
+        do {
+            a = Math.floor(Math.random() * 10);
+            b = Math.floor(Math.random() * 10);
+            c = Math.floor(Math.random() * 10);
+            d = Math.floor(Math.random() * 10);
+        } while (isDuplicate(a, b, c, d));
+        console.log(`${a}-${b}-${c}-${d}`);
+        count = 0;
+    }
+
+    // 檢查有無重複
+    function isDuplicate(n1, n2, n3, n4) {
+        let ans;
+        if (n1 === n2 || n1 === n3 || n1 === n4 || n2 === n3 || n2 === n4 || n3 === n4 || n1 === 0) {
+            ans = true;
+        }
+        return ans;
+    }
+
+    // 按按鈕開始猜數字
+    guessBtn.onclick = function () {
+        let text = document.getElementById('text').value;
+
+        // 如果輸入的不是數字或未滿4字
+        if(text.match(/[0-9]{4}/)===null){
+            console.log('你輸入的不是數字或未滿4個字喔！');
+            return;
+        }
+        let textArr = text.split(''); //拆成數組
+        let newArr = [];
+        textArr.forEach(item => {
+            newArr.push(Number(item));
+        })
+        console.log(newArr);
+        guessResult(newArr[0], newArr[1], newArr[2], newArr[3])
+    }
+
+    // 猜數字2A1B比對
+    function guessResult(d1, d2, d3, d4) {
+        let numberOfA = 0;
+        let numberOfB = 0;
+
+        // 計算答題數
+        count++;
+        // 超過答題數
+        if (count > 5) {
+            displayAns();
+            return;
+        }
+        if (d1 === a) {
+            numberOfA++;
+        }
+        if (d2 === b) {
+            numberOfA++;
+        }
+        if (d3 === c) {
+            numberOfA++;
+        }
+        if (d4 === d) {
+            numberOfA++;
+        }
+
+        if (d1 === b || d1 === c | d1 === d) {
+            numberOfB++;
+        }
+        if (d2 === a || d2 === c || d2 === d) {
+            numberOfB++;
+        }
+        if (d3 === a || d3 === b || d3 === d) {
+            numberOfB++;
+        }
+        if (d4 === a || d4 === b || d4 === c) {
+            numberOfB++;
+        }
+
+        // 如果四個數字都猜對了，結束遊戲
+        if (numberOfA === 4) {
+            guessRight();
+            return;
+        }
+        numberOfAArray.push(numberOfA);
+        numberOfBArray.push(numberOfB);
+        // console.log(numberOfAArray);
+
+        let liObj = document.createElement('li');
+        liObj.innerHTML = numberOfA + " A" + numberOfB + " B";
+        let ul = document.getElementById('info');
+        ul.appendChild(liObj);
+    }
+
+    // 達到答題次數，公布答案並停止遊戲
+    function displayAns() {
+        let info = '太可惜了！沒能答對～<br>';
+        numberOfAArray.forEach((item, i) => {
+            info += '<li>' + numberOfAArray[i] + ' A' + numberOfBArray[i] + ' B</li>';
+        })
+        info += '答案是'+a+b+c+d+'，再玩一次吧？';
+        document.getElementById('info').innerHTML = info;
+        let startGameBtn = document.getElementById('startGameBtn');
+        startGameBtn.value = '重新開始';
+    }
+
+    // 猜到答案，公布答案
+    function guessRight() {
+        let info = '只猜了 ' + count + ' 次，就全部猜對了！<br>答案就是' + a + b + c + d;
+        document.getElementById('info').innerHTML = info;
+    }
+</script>
+</body>
+</html>

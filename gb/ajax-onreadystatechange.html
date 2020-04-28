@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    "use strict"
+
+    // let open = getData('test.json')
+    // console.log(open);
+    //
+    //
+    // function getData(url){
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("GET", url);
+    //     xhr.send()
+    //     xhr.onload = function () {
+    //         return this.responseText;
+    //     }
+    // }
+
+
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", 'test.json');
+        xhr.send()
+        xhr.onload = function () {
+            console.log(this.readyState);
+
+            console.log(this.responseText);
+        }
+
+</script>
+
+</body>
+</html>

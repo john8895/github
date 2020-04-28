@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var request = require("request");
+    var cheerio = require("cheerio");
+
+    request({
+        url: "http://blog.infographics.tw",
+        method: "GET"
+    }, function(e,r,b) {
+        if(!e) console.log(b);
+    });
+</script>
+</body>
+</html>
