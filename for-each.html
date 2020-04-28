@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    let data = [1, 2, 3, 4, 5];
+    let sum = 0;
+    // data.forEach(function (value) {
+    //     sum += value;
+    // });
+    // console.log(sum); // 15
+
+
+    // data.forEach(function (value) {
+    //     sum+=value;
+    // })
+    // console.log(sum);
+
+    // data.forEach(value => {
+    //     sum-=value;
+    // })
+    // console.log(sum);
+
+    data.forEach(function(value, index, array){
+        array[index] = value + 1;
+    });
+    console.log(data); // [2, 3, 4, 5, 6]
+
+
+</script>
+</body>
+</html>
