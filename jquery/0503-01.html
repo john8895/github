@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box2 {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<h1>title</h1>
+<div class="box">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at cupiditate delectus dolorem eius et nam nihil numquam, obcaecati qui! Aliquid assumenda, blanditiis et eum expedita harum impedit ipsa optio.</p>
+
+</div>
+<input type="button" value="按鈕" id="btn">
+<div class="box2"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+<script>
+
+    $(function () {
+        $('.box2')
+            .css('border','4px dotted red')
+            .css('backgroundColor','blue')
+            .css({'padding':'20px',});
+
+        var btn = document.getElementById('#btn')
+        $('#btn').click(function () {
+            let color = ['red','blue','yellow','deeppink','pink','black']
+            let randomColor = parseInt(Math.random()*color.length)
+            let randomY = parseInt(Math.random()*400);
+
+            $('.box2').css({
+                'left':'2000px',
+                'top':randomY,
+                'borderWidth':randomY,
+                'backgroundColor':color[randomColor],
+            })
+                .animate({
+                'left': '200px'
+            },1000)
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="weatherShow"></div>
+
+<script>
+
+    openJson('get','https://api.openweathermap.org/data/2.5/forecast?q=Taipei,tw&APPID=d929ca1c9678710402c645706be3a99b&lang=zh_tw&units=metric')
+
+    function openJson(method = 'get', url) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url)
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== 4) return;
+            weatherHandle(xhr.responseText)
+        }
+    }
+
+    function weatherHandle(jData) {
+        "use strict"
+        let response = JSON.parse(jData)
+        // 城市
+        let city = response.city.name + ', ' + response.city.country;
+        // 雲量
+        let weatherTitle = response.list[0].weather[0].main;
+        let tempMain = response.list[0].main;
+        // 目前氣溫
+        let wTemp = tempMain.temp + '°';
+        let feels_like = tempMain.feels_like; // 感覺溫度
+        let maxTemp = tempMain.temp_max + '°';
+        let minTemp = tempMain.temp_min + '°';
+        let humidity = tempMain.humidity; // 濕度
+
+        console.log(`HIGH ${maxTemp} <br> LOW ${minTemp}`);
+        console.log(feels_like);
+
+        // 選取器宣告
+        let wContainer = document.querySelector('#weatherShow')
+        wContainer.innerHTML = `${city} <br> ${weatherTitle} <br> ${wTemp}`;
+
+    }
+
+
+</script>
+</body>
+</html>
