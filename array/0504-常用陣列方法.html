@@ -27,6 +27,55 @@
         }
     ];
 
+
+    // var forEachLoop = people.forEach(function(item, index, array){
+    //     console.log(item, index, array); // 物件, 索引, 全部陣列)
+    // });
+    // console.log(forEachLoop); // undefined
+
+
+    // var mapLoop = people.map(function(item, index, array){
+    //     return item
+    // });
+    // console.log(mapLoop); // 與原本陣列資料相同
+
+    //
+    // var mapLoop = people.map(function (item,index,array) {
+    //     return item;
+    // })
+    // console.log(mapLoop);
+
+
+    // Filter
+    // var filterEmpty = people.filter(function(item, index, array){
+    // });
+    // console.log(filterEmpty);    // 沒有條件，會是一個空陣列
+
+    // var filterMoneyThan5000 = people.filter(function(item, index, array){
+    //     return item.money > 5000;       // 取得大於五千元
+    // });
+    // console.log(filterMoneyThan5000); // 杰倫, 老媽 這兩個物件
+
+    // var filterYes = people.filter(function (item,index,array) {
+    //     return item.money >10000;
+    // })
+    // console.log(filterYes);
+
+
+    var findEmpty = people.find(function(item, index, array){
+    });
+    console.log(findEmpty);          // 沒有條件，會是 undefined
+
+    var findMoneyThan5000 = people.find(function(item, index, array){
+        return item.money > 5000;      // 取得大於五千元
+    });
+    console.log(findMoneyThan5000);  // 雖然答案有兩個，但只會回傳 '杰倫' 這一個物件
+
+    var findJay = people.find(function(item, index, array){
+        return item.name === '杰倫';    // 找到杰倫
+    });
+    console.log(findJay);            // '杰倫'
+
 </script>
 </body>
 </html>
