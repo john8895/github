@@ -237,23 +237,30 @@
     $(function () {
         "use strict"
 
+        // 隱藏第一層、第二層
         $('.subs .subs').hide();
-
-
         $('.main +.subs').hide();
+
+        // 註冊第一層點擊事件
         $('#nav > ul> li > .main').click(function () {
+            // 所有先關閉
             $('.main +.subs').slideUp();
             $(this).removeClass('open');
+            // 從this點選兄弟ul，判斷是否關閉
             if ($('+ul', this).css('display') === 'none') {
+                // 展開
                 $('+ul', this).slideDown();
                 $(this).addClass('open');
             }
         })
-        //     .mouseover(function () {
-        //     $(this).addClass('rollover');
-        // }).mouseout(function () {
-        //     $(this).removeClass('rollover');
-        // })
+            // Hover效果
+            .mouseover(function () {
+            $(this).addClass('rollover');
+        }).mouseout(function () {
+            $(this).removeClass('rollover');
+        })
+
+        // 註冊第二層點擊事件，除選擇器不同，其他與第一層完全一樣
         $('.subs .main').click(function () {
             $('.subs .main +.subs').slideUp();
             $(this).removeClass('open');
@@ -261,6 +268,12 @@
                 $('+ul', this).slideDown();
                 $(this).addClass('open');
             }
+        })
+            // Hover效果
+                .mouseover(function () {
+                $(this).addClass('rollover');
+            }).mouseout(function () {
+            $(this).removeClass('rollover');
         })
     })
 
