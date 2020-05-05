@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            font-family: "微軟正黑體";
+            font-weight: 700;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 30px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #nav {
+            width: 200px;
+        }
+
+        #nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav li {
+            list-style: none;
+        }
+
+        .main {
+            height: 60px;
+            line-height: 60px;
+            cursor: pointer;
+            padding: 0px 20px;
+            font-size: 16px;
+        }
+
+        ul.subs li a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #F5F5F5;
+            font-size: 12px;
+        }
+
+        .color_blue .main {
+            background-color: #3FC6F3;
+            color: #fff;
+            border-right: solid 10px #0D9BE5;
+        }
+
+        .color_blue .open {
+            background: #0D9BE5 url("http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-triangle-3.png&r=245&g=245&b=245") no-repeat 28px 52px;
+            background-size: 5%;
+        }
+
+        .color_blue .rollover {
+            background-color: #0D9BE5;
+        }
+
+        .color_blue ul.subs li a {
+            border-right: solid 10px #0D9BE5;
+            color: #0D9BE5;
+        }
+
+        .color_blue ul.subs li a:hover {
+            background-color: #3FC6F3;
+            color: #fff;
+        }
+
+        .color_red .main {
+            background-color: #FF625F;
+            color: #fff;
+            border-right: solid 10px #FD2621;
+        }
+
+        .color_red .open {
+            background: #FD2621 url("http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-triangle-3.png&r=245&g=245&b=245") no-repeat 28px 52px;
+            background-size: 5%;
+        }
+
+        .color_red .rollover {
+            background-color: #FD2621;
+        }
+
+        .color_red ul.subs li a {
+            border-right: solid 10px #FD2621;
+            color: #FD2621;
+        }
+
+        .color_red ul.subs li a:hover {
+            background-color: #FF625F;
+            color: #fff;
+        }
+
+        .color_yellow .main {
+            background-color: #FEBD01;
+            color: #fff;
+            border-right: solid 10px #FF8D00;
+        }
+
+        .color_yellow .open {
+            background: #FF8D00 url("http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-triangle-3.png&r=245&g=245&b=245") no-repeat 28px 52px;
+            background-size: 5%;
+        }
+
+        .color_yellow .rollover {
+            background-color: #FF8D00;
+        }
+
+        .color_yellow ul.subs li a {
+            border-right: solid 10px #FF8D00;
+            color: #FF8D00;
+        }
+
+        .color_yellow ul.subs li a:hover {
+            background-color: #FEBD01;
+            color: #fff;
+        }
+
+        .color_green .main {
+            background-color: #46D7C6;
+            color: #fff;
+            border-right: solid 10px #15B59B;
+        }
+
+        .color_green .open {
+            background: #15B59B url("http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-triangle-3.png&r=245&g=245&b=245") no-repeat 28px 52px;
+            background-size: 5%;
+        }
+
+        .color_green .rollover {
+            background-color: #15B59B;
+        }
+
+        .color_green ul.subs li a {
+            border-right: solid 10px #15B59B;
+            color: #15B59B;
+        }
+
+        .color_green ul.subs li a:hover {
+            background-color: #46D7C6;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="nav">
+    <ul>
+        <li class="color_blue">
+            <div class="main">時尚</div>
+            <ul class="subs">
+                <li><a href="">外套</a></li>
+                <li><a href="">襯衣</a></li>
+                <li><a href="">褲子</a></li>
+                <li><a href="">飾品</a></li>
+            </ul>
+        </li>
+        <li class="color_red">
+            <div class="main">家具、室內裝潢</div>
+            <ul class="subs">
+                <li>
+                    <div class="main">家具、室內裝潢2</div>
+<!--                    第二層-->
+                    <ul class="subs">
+                        <li><a href="">沙發</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">桌子</a></li>
+                        <li><a href="">椅子</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="main">床2</div>
+                    <!--                    第二層-->
+                    <ul class="subs">
+                        <li><a href="">沙發</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">桌子</a></li>
+                        <li><a href="">椅子</a></li>
+                    </ul>
+                </li>
+                <li><a href="">桌子</a></li>
+                <li><a href="">椅子</a></li>
+            </ul>
+        </li>
+        <li class="color_yellow">
+            <div class="main">文具</div>
+            <ul class="subs">
+                <li>
+                    <div class="main">家具、室內裝潢2</div>
+                    <!--                    第二層-->
+                    <ul class="subs">
+                        <li><a href="">沙發</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">桌子</a></li>
+                        <li><a href="">椅子</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="main">家具、室內裝潢2</div>
+                    <!--                    第二層-->
+                    <ul class="subs">
+                        <li><a href="">沙發</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">桌子</a></li>
+                        <li><a href="">椅子</a></li>
+                    </ul>
+                </li>
+                <li><a href="">資料夾</a></li>
+            </ul>
+        </li>
+        <li class="color_green">
+            <div class="main">生活雜貨</div>
+            <ul class="subs">
+                <li><a href="">廚房用品</a></li>
+                <li><a href="">掃除、洗滌用品</a></li>
+                <li><a href="">浴室、廁所用品</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<script>
+
+    $(function () {
+        "use strict"
+
+        $('.subs .subs').hide();
+
+
+        $('.main +.subs').hide();
+        $('#nav > ul> li > .main').click(function () {
+            $('.main +.subs').slideUp();
+            $(this).removeClass('open');
+            if ($('+ul', this).css('display') === 'none') {
+                $('+ul', this).slideDown();
+                $(this).addClass('open');
+            }
+        })
+        //     .mouseover(function () {
+        //     $(this).addClass('rollover');
+        // }).mouseout(function () {
+        //     $(this).removeClass('rollover');
+        // })
+        $('.subs .main').click(function () {
+            $('.subs .main +.subs').slideUp();
+            $(this).removeClass('open');
+            if ($('+ul', this).css('display') === 'none') {
+                $('+ul', this).slideDown();
+                $(this).addClass('open');
+            }
+        })
+    })
+
+</script>
+
+
+<script>
+    // $(function () {
+    //     "use strict"
+    //     $('.main +.subs').hide();
+    //     $('.main').click(function () {
+    //         $('.main +.subs').slideUp();
+    //         $(this).removeClass('open');
+    //         if ($('+ul', this).css('display') === 'none') {
+    //             $('+ul', this).slideDown();
+    //             $(this).addClass('open');
+    //         }
+    //     }).mouseover(function () {
+    //         $(this).addClass('rollover');
+    //     }).mouseout(function () {
+    //         $(this).removeClass('rollover');
+    //     })
+    // })
+</script>
+
+<script>
+
+    // $(function () {
+    //     $("ul.subs").hide(); //子選單(ul.subs)隱藏
+    //     $(".main").click(function () {
+    //         $("ul.subs").slideUp();
+    //         $(".main").removeClass("open"); //移除在(.main)的class屬性(open)
+    //         if ($("+ul", this).css("display") === "none") {
+    //             $("+ul", this).slideDown();
+    //             $(this).addClass("open"); //被點擊的元素新增一組class(open)
+    //         }
+    //     }).mouseover(function () {
+    //         $(this).addClass("rollover") //滑鼠移入這個元素時新增class(rollover)
+    //     }).mouseout(function () {
+    //         $(this).removeClass("rollover") //滑鼠移開這個元素時移除class(rollover)
+    //     });
+    //     //點擊主選單(.main) 子選單(ul.subs)向上滑動隱藏，移除主選單(.main)的class(open)，如果被點擊的這個元素相鄰的ul display=none 則向下滑動出相鄰的ul並新稱class(open)。
+    // });
+
+    // $(function () {
+    //     "use strict"
+    //     $('ul.subs').hide();
+    //     $('.main').click(function () {
+    //         //全部關上
+    //         $('ul.subs').slideUp();
+    //         //移除選單的active
+    //         $('.main').removeClass('open');
+    //         // 如果選單是關閉的，就展開
+    //         if ($('.main +ul').css('display') === 'none') {
+    //             // this的兄弟元素ul展開
+    //             $('+ul', this).slideDown();
+    //             // 加上open Active狀態
+    //             $(this).addClass('open');
+    //         }
+    //
+    //     }).mouseover(function () {
+    //         $(this).addClass('rollover')
+    //     }).mouseout(function () {
+    //         $(this).removeClass('rollover')
+    //     });
+    // })
+
+
+    // $(function(){
+    //   $("ul.subs").hide(); //隱藏子選單
+    //   $(".main").click(function(){
+    //     $("ul.subs").hide();
+    //     if($("+ul",this).css("display")=="none"){
+    //       $("+ul",this).show();
+    //     }
+    //   });
+    //   //點擊主選單(.main) 隱藏子選單(ul.subs) 如果被點擊的這個元素相鄰的ul display=none 顯示相鄰的ul
+    // });
+
+
+    // $(function(){
+    //   $("ul.subs").hide();
+    //   $(".main").click(function(){
+    //     $("ul.subs").slideUp(); //向上滑動隱藏
+    //     if($("+ul",this).css("display")=="none"){
+    //       $("+ul",this).slideDown();//向下滑動顯示
+    //     }
+    //   });
+    //   //slideUp()、slideDown()、可透過參數控制滑動速度，fast、normal、slow，以毫秒為單位設定，預設值為nomal。
+    // });
+
+
+    // $(function(){
+    //   $("ul.subs").hide();
+    //   $(".main").click(function(){
+    //     if($("+ul",this).css("display")=="none"){
+    //       $("+ul",this).slideDown();
+    //     }else{
+    //       $("+ul",this).slideUp();
+    //     };
+    //   });
+    //   //點擊主選單(.main) 如果被點擊的這個元素相鄰的ul display=none 則向下滑動出相鄰的ul 否則向上滑動相鄰的ul。
+    // });
+
+
+    // $(function(){
+    //   $("ul.subs").hide();
+    //   $(".main").click(function(){
+    //     $("ul.subs").slideUp();
+    //     $(".main").removeClass("open"); //移除在(.main)的class屬性(open)
+    //     if($("+ul",this).css("display")=="none"){
+    //       $("+ul",this).slideDown();
+    //       $(this).addClass("open"); //被點擊的元素新增一組class(open)
+    //     }
+    //   });
+    //   //點擊主選單(.main) 子選單(ul.subs)向上滑動隱藏，移除主選單(.main)的class(open)，如果被點擊的這個元素相鄰的ul display=none 則向下滑動出相鄰的ul並新稱class(open)。
+    // });
+
+
+</script>
+</body>
+</html>
