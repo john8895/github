@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<h1>Bootstrap accordion 手風琴選單</h1>
+<hr>
+<!--整組的 data-parent 都要設為最外層的 id "accordionMenu" ，否則無法連動-->
+<div class="accordion" id="accordionMenu">
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="heading1">
+            <h5 class="mb-0">
+<!--                同一組選單的 data-target、aria-controls 及要與內容的 id 一樣 -->
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="true" aria-controls="collapse1">
+                    選項 1
+                </button>
+            </h5>
+        </div>
+<!--        內容的 class 加入 show 預設就會開啟-->
+        <div id="collapse1" class="collapse show" aria-labelledby="heading1"
+             data-parent="#accordionMenu">
+            <div class="card-body">
+                <p>蔡英文總統昨天前往桃園視察紓困計畫，接受政府紓困貸款的饗賓集團總經理陳毅航表示，接到同意紓困貸款電話時「我哭了」。蔡英文說，政府傾全力做的兩件事，一是防疫確保國民健康、二是紓困保住經濟元氣，希望疫情過後用更大力道把經濟往上推。</p>
+                <p>饗賓餐旅事業由桃園知名老牌福利川菜餐廳轉型，已發展七個品牌、四十家分店的餐飲集團，蔡英文由經濟部長沈榮津、桃園市長鄭文燦及政委龔明鑫陪同訪視。
+
+                    總經理陳毅航簡報時強調「不減薪、不裁員、不放無薪假」，他說，四月廿三日拿到第一筆四千六百三十九萬元紓困貸款，接到沈部長來電「我哭了」，感謝政府把企業當自己的事。</p>
+            </div>
+        </div>
+    </div>
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    選項 2
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionMenu">
+            <div class="card-body">
+                <p>新冠肺炎在國際肆虐，不過在台灣已相對緩和，我國近日已有多天零確診，國人對此也十分振奮。然而有網友指出，上週幾乎人人外出都戴口罩，3日出門卻發現，馬路上、麵包店、公園上的許多路人都沒有戴口罩，質疑「台灣人是放飛心態？」其他網友則表示，「在戶外不一定要戴，加上現在天氣熱，一堆人戴不住了」。
+
+                    有網友在PTT發文表示，「今天出去晃一晃，上禮拜幾乎人人戴口罩，今天不知道怎麼回事， 大家整個覺得很熱還是怎樣，非常少人戴口罩。過馬路的沒戴，去麵包店採買的一群嬉鬧歐巴桑也沒戴，路上阿伯送貨的也沒戴，Uber eat外送員雖然有戴，但是露出了鼻子」。</p>
+            </div>
+        </div>
+    </div>
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    選項 3
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionMenu">
+            <div class="card-body">
+                <p>今年4月30日，「鐵路刺警案」一審判決結果出爐，判決主文為被告「無罪，令入相當處所施以監護伍年。扣案之紅柄嫁接刀壹沒收之。」
+
+                    許多民眾在新聞以「無罪」以及各類聳動的標題、政治人物各類「天地不容」等不問法律、只問天地的撩動情緒言說下，沒有細究判決理由，在網路上開始發表各類鍵盤評論。例如：「得精神病真好，可以到處犯罪！」「精神科醫生真好騙！」「無良醫生！無良判決！」「為什麼要放任這些怪物在路上亂跑！」「精神病患不吃藥真可惡！」「精神病患就應該要關起來！」
+
+                    除了司空見慣把司法當沙包打的行徑外，民粹的情緒甚至將精神疾患者貼上污名標籤，連同司法精神鑑定以及進行鑑定的醫師也被攻擊。司法精神醫學，是法學與精神醫學交會的領域，這門學問的論述必須建立在堅強的法學理論、實務經驗，以及精神醫學的臨床與實證經驗之上，而不是建立在鍵盤的空想之上。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
