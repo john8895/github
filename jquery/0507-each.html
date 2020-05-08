@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li id="1">我是第 1 個li</li>
+    <li id="2">我是第 2 個li</li>
+    <li id="3">我是第 3 個li</li>
+    <li id="4">我是第 4 個li</li>
+    <li id="5">我是第 5 個li</li>
+    <li id="6">我是第 6 個li</li>
+    <li id="7">我是第 7 個li</li>
+    <li id="8">我是第 8 個li</li>
+    <li id="9">我是第 9 個li</li>
+    <li id="10">我是第 10 個li</li>
+</ul>
+<script src="jquery-3.5.1.js"></script>
+<script>
+
+    $(function () {
+        // $('li').each(function () {
+        //     var ids = this.id;
+        //     console.log(ids);
+        //     $(this).append('<em class="order">' + ids + '</em>')
+        // })
+
+        var count=1;
+        $('li').each(function () {
+            if(count % 2 ===0){
+                $(this).css({
+                    'color': 'red',
+                })
+            }
+            count++
+
+        })
+    })
+
+</script>
+</body>
+</html>
