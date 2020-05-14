@@ -1,0 +1,75 @@
+@import "../mixins";
+//.header__menu {
+//    @include jh-flex;
+//
+//}
+//.navbar__brand {
+//    display: inline-block;
+//}
+body {
+    padding: 20px;
+}
+
+.navbar-menu {
+    & > ul.subs {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        & > li {
+            & > a {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    }
+    %sub-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #efefef;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        display: none;
+    }
+    // 第 2 層
+    .subs ul.subs {
+        @extend %sub-menu;
+
+        &.open {
+            display: block;
+        }
+
+        & > li {
+            text-align: center;
+            position: relative;
+
+            & > a {
+                margin-top: 3px;
+                margin-bottom: 3px;
+                display: inline-block;
+            }
+        }
+    }
+
+    // 第 3 層
+    .subs ul.subs ul.subs{
+        @extend %sub-menu;
+        position: absolute;
+        left: 100%;
+        top: 0;
+
+        &.open {
+            display: block;
+        }
+
+        & > li {
+            text-align: center;
+
+            & > a {
+                margin-top: 3px;
+                margin-bottom: 3px;
+                display: inline-block;
+            }
+        }
+    }
+
+}

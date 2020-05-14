@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <h4>Javascript / plugins / clipboard.js 複製貼上</h4>
+    <p><a href="https://clipboardjs.com/">https://clipboardjs.com/</a></p>
+    <hr class="mb-5">
+    <div class="form-group">Target
+      <input id="foo" value="123">
+      <!-- Trigger-->
+      <button class="btn" data-clipboard-target="#foo">copy</button>
+    </div>
+    <hr class="mb-4">
+    <div class="form-group">
+      <!-- Target-->
+      <textarea id="bar">Mussum ipsum cacilds...</textarea>
+      <!-- Trigger-->
+      <button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">Cut to clipboard</button>
+    </div>
+    <hr class="mb-4">
+    <div class="form-group">
+      <!-- Trigger-->
+      <button class="btn" data-clipboard-text="我是一段看不見但會被複製的文字">Copy to clipboard</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script>
+      onload = function () {
+          new ClipboardJS('.btn');
+      }
+    </script>
+  </body>
+</html>

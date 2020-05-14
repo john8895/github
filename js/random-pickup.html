@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>隨機點名</title>
+    <style>
+        #show {
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="show">？</div>
+<input type="button" value="隨機點名" id="startPick">
+<input type="button" value="停止" id="stopPick">
+<script>
+
+    window.onload = function () {
+        let nameArr = ['John', 'Coco', 'Joe', 'Mary', 'Maco', 'Fifi', 'Poco','Aaron','Abner','Gustave']
+        let show = document.getElementById('show');
+        let num = 0;
+
+        document.getElementById('startPick').onclick = randomPickHandle;
+        document.getElementById('stopPick').onclick = pickStop;
+
+        function randomPick() {
+            let newNum = parseInt(Math.random() * nameArr.length);
+            // 如果新亂數與原本相同則重新產生，直到與原本不同為止
+            while (newNum === num) {
+                newNum = parseInt(Math.random() * nameArr.length);
+            }
+            num = newNum;
+            show.innerHTML = nameArr[newNum]
+        }
+
+        let timeId;
+        function randomPickHandle() {
+            // 如果已有計時器就停止
+            if(timeId){
+                clearInterval(timeId);
+            }
+            timeId = setInterval(function () {
+                randomPick();
+            }, 50)
+        }
+
+        function pickStop() {
+            clearInterval(timeId);
+        }
+
+    }
+
+</script>
+</body>
+</html>

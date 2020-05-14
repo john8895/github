@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="navbar.css">
+  </head>
+  <body>
+    <nav class="header__menu">
+      <div class="navbar-menu" id="header__navbar">
+        <ul class="subs">
+          <li><a class="navLink" href="javascript:void(0)" title="">HOME</a></li>
+          <li class="hasSubMenu"><a class="navLink" href="javascript:void(0)" title="">About</a>
+            <ul class="subs">
+              <li class="hasSubMenu"><a class="navLink" href="javascript:void(0)" title="">About1</a>
+                <ul class="subs">
+                  <li><a class="navLink" href="javascript:void(0)" title="">About1</a></li>
+                  <li><a class="navLink" href="javascript:void(0)" title="">About2</a></li>
+                  <li><a class="navLink" href="javascript:void(0)" title="">About3</a></li>
+                </ul>
+              </li>
+              <li><a class="navLink" href="javascript:void(0)" title="">About2</a></li>
+              <li><a class="navLink" href="javascript:void(0)" title="">About3</a></li>
+            </ul>
+          </li>
+          <li><a class="navLink" href="javascript:void(0)" title="">Products</a></li>
+          <li><a class="navLink" href="javascript:void(0)" title="">News</a></li>
+          <li><a class="navLink" href="javascript:void(0)" title="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      (function ($) {
+          // var defaults = {
+          //     sm: 540,
+          //     md: 720,
+          //     lg: 960,
+          //     xl: 1140,
+          //     navbar_expand: 'lg',
+          //     animation: true,
+          //     animateIn: 'fadeIn',
+          // };
+          // $.fn.bootnavbar = function (options) {
+      
+              // var screen_width = $(document).width();
+              // settings = $.extend(defaults, options);
+      
+              // if (screen_width >= settings.lg) {
+      
+                  // .hover（handlerIn，handlerOut）
+                  $('#header__navbar > .subs').find('.hasSubMenu').hover(function () {
+                      $(this).addClass('open');
+                      $(this).find('.subs').first().stop().slideDown().addClass('open');
+                  }, function () {
+                      $(this).removeClass('open');
+                      $(this).find('.subs').first().stop().slideUp().removeClass('open');
+                  });
+              // }
+      
+              // $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+              //     if (!$(this).next().hasClass('show')) {
+              //         $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+              //     }
+              //     var $subMenu = $(this).next(".dropdown-menu");
+              //     $subMenu.toggleClass('show');
+              //
+              //     $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+              //         $('.dropdown-submenu .show').removeClass("show");
+              //     });
+              //
+              //     return false;
+              // });
+          // };
+      })(jQuery);
+    </script>
+  </body>
+</html>
