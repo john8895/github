@@ -1,0 +1,37 @@
+doctype html
+html(lang='zh-Hant')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+    body
+        h4
+            | Javascript / plugins / clipboard.js 複製貼上
+        p
+            a(href='https://clipboardjs.com/')
+                | https://clipboardjs.com/
+        hr.mb-5
+        .form-group
+            | Target
+            input#foo(value='123')
+            // Trigger
+            button.btn(data-clipboard-target='#foo')
+                | copy
+        hr.mb-4
+        .form-group
+            // Target
+            textarea#bar Mussum ipsum cacilds...
+            // Trigger
+            button.btn(data-clipboard-action='cut', data-clipboard-target='#bar')
+                | Cut to clipboard
+        hr.mb-4
+        .form-group
+            // Trigger
+            button.btn(data-clipboard-text='我是一段看不見但會被複製的文字')
+                | Copy to clipboard
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js')
+        script.
+            onload = function () {
+                new ClipboardJS('.btn');
+            }

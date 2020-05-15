@@ -1,0 +1,74 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.float-right {
+  float: right;
+}
+
+body {
+  padding: 20px;
+}
+
+.navbar-menu > ul.subs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-menu > ul.subs > li > a {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.navbar-menu .subs ul.subs ul.subs, .navbar-menu .subs ul.subs {
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  display: none;
+}
+.navbar-menu .subs ul.subs.open {
+  display: block;
+}
+.navbar-menu .subs ul.subs > li {
+  text-align: center;
+  position: relative;
+}
+.navbar-menu .subs ul.subs > li > a {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.navbar-menu .subs ul.subs ul.subs {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.navbar-menu .subs ul.subs ul.subs.open {
+  display: block;
+}
+.navbar-menu .subs ul.subs ul.subs > li {
+  text-align: center;
+}
+.navbar-menu .subs ul.subs ul.subs > li > a {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=navbar.css.map */

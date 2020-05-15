@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*
+    之所以結果是小明，是由於創造環境時，name 尚未賦予值，所以值為 undefined，whosName 函式中的 if 判斷為 false 故不執行，
+程式繼續往下走，將 name 賦予了「小明」的值，因此 console.log 出來的結果才會是小明。
+
+代碼如下：
+*/
+    whosName()
+
+    function whosName() {
+        if (myName) {
+            myName = '杰倫';
+            console.log(1,myName);
+        }
+    }
+    var myName = '小明';
+    console.log(2,myName);
+
+
+
+</script>
+</body>
+</html>

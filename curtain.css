@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.curtain-wrap {
+  width: 100%;
+  display: flex;
+}
+
+.curtain-wrap img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=curtain.css.map */

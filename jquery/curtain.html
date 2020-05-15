@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="curtain.css">
+</head>
+<body>
+<div class="curtain-wrap">
+    <div class="curtain curtain-left">
+        <img src="img/frontcurtain.jpg" alt="">
+    </div>
+    <div class="curtain curtain-right">
+        <img src="img/frontcurtain.jpg" alt="">
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.curtain').animate({
+            width: '60px'
+        },6000)
+    })
+</script>
+</body>
+</html>

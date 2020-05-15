@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container {
+            background-color: #ddd;
+            width: 500px;
+            height: 250px;
+        }
+    </style>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+<!--    <script src="d3.js"></script>-->
+</head>
+<body>
+<div id="container"></div>
+<script>
+
+    var svg = d3.select("#container")
+    .append("svg:svg")
+    // width height
+    .attr('width',500)
+    .attr('height',250)
+
+    d3.select('svg')
+    .append('g')
+    .attr('transform','translate(50,30)')
+
+    d3.select('g')
+    .append('path')
+    .attr('d',line_generator)
+
+</script>
+</body>
+</html>
