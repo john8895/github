@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+    當前瀏覽器不支援canvas
+</canvas>
+<script>
+    // let canvas = document.getElementById('canvas');
+    // canvas.width = 1024;
+    // canvas.height = 768;
+    // let context = canvas.getContext('2d');
+    //
+    // // 繪製
+    // context.beginPath()
+    // context.moveTo(100, 100)
+    // context.lineTo(700, 700)
+    // context.lineTo(100, 700)
+    // context.lineTo(100, 100)
+    // context.closePath()
+    // // context.fillStyle = 'rgb(2,100,30'
+    // // context.fill()
+    // context.lineWidth = 10;
+    // context.strokeStyle = 'red'
+    // context.stroke();
+    //
+    // context.beginPath()
+    // context.moveTo(200, 100)
+    // context.lineTo(700,600)
+    // context.closePath()
+    // context.strokeStyle = 'black'
+    // context.stroke()
+
+</script>
+<script>
+
+    var tangram = [
+        {p: [{x: 0, y: 0}, {x: 800, y: 0}, {x: 400, y: 400}], color: "#caff67"},
+        {p: [{x: 0, y: 0}, {x: 400, y: 400}, {x: 0, y: 800}], color: "#67becf"},
+        {p: [{x: 800, y: 0}, {x: 800, y: 400}, {x: 600, y: 600}, {x: 600, y: 200}], color: "#caff67"},
+        {p: [{x: 600, y: 200}, {x: 600, y: 600}, {x: 400, y: 400}], color: "#f9f51a"},
+        {p: [{x: 400, y: 400}, {x: 600, y: 600}, {x: 400, y: 800}, {x: 200, y: 600}], color: "#a594c0"},
+        {p: [{x: 200, y: 600}, {x: 400, y: 800}, {x: 0, y: 800}], color: "#fa8ecc"},
+        {p: [{x: 800, y: 400}, {x: 800, y: 800}, {x: 400, y: 800}], color: "#f6ca29"}
+    ]
+
+    window.onload = function () {
+
+        var canvas = document.getElementById('canvas')
+
+        canvas.width = 800
+        canvas.height = 800
+
+        var context = canvas.getContext('2d')
+        for (var i = 0; i < tangram.length; i++) {
+            draw(tangram[i], context)
+        }
+
+        function draw(piece, cxt) {
+            cxt.beginPath();
+            cxt.moveTo(piece.p[0].x, piece.p[0].y);
+            for (var i = 0; i < piece.p.length; i++) {
+                cxt.lineTo(piece.p[i].x, piece.p[i].y);
+            }
+            cxt.closePath();
+
+            cxt.fillStyle = piece.color;
+            cxt.fill();
+
+            cxt.strokeStyle = '#000';
+            cxt.lineWidth = 1;
+            cxt.stroke();
+
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
