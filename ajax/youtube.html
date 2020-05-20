@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Youtube API test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<br>
-videoId <input type="text" value="7lCDEYXw3mM" id="videoId"><br>
-part <input type="text" value="snippet" id="videoPart"><br>
-Keyword <input type="text" value="YouTube+Data+API" id="videoKeyword"><br>
-Type <select name="" id="videoType">
+<div id="app">
+
+    <br>
+    videoId <input type="text" value="7lCDEYXw3mM" id="videoId"><br>
+    part <input type="text" value="snippet" id="videoPart"><br>
+    Keyword <input type="text" value="YouTube+Data+API" id="videoKeyword"><br>
+    Type <select name="" id="videoType">
     <option value="video">video</option>
     <option value="channel">channel</option>
     <option value="playlist">playlist</option>
 </select><br>
-Order <select name="" id="videoOrder">
+    Order <select name="" id="videoOrder">
     <option value="date">date</option>
     <option value="rating">rating</option>
     <option value="relevance">relevance</option>
@@ -22,53 +26,129 @@ Order <select name="" id="videoOrder">
     <option value="videoCount">videoCount</option>
     <option value="viewCount">viewCount</option>
 </select><br>
-<input type="button" value="按鈕" id="btn">
-<hr>
-<h1>result</h1>
+    <input type="button" value="搜尋" id="btn" @click="getVideo()">
+    <hr>
+    <h1>result</h1>
 
-<div id="dv"></div>
+    {{ message }}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <div class="innerItem-wrap">
+        <div class="col-sm-12" v-for="(item) in datas" :key="item.id.videoId">
+            <article>
+                <a :href="watchUrl(item.id.videoId)" :alt="item.snippet.title" target="_blank">
+                    <img class="" :src="item.snippet.thumbnails.high.url" alt="Card image cap">
+                </a>
+                <caption>
+                    <a :href="watchUrl(item.id.videoId)" target="_blank">
+                        <h5 class="card-title">{{item.snippet.title}}</h5>
+                    </a>
+                    <p class="card-text">{{item.snippet.description}}</p>
+                    <a :href="watchUrl(item.id.videoId)" target="_blank" class="btn btn-primary">Watch</a>
+                </caption>
+            </article>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>-->
 <script>
-    document.querySelector('#btn').onclick = getVideo;
 
-    function getVideo() {
-        let vId = document.querySelector('#videoId').value;
-        let vPart = document.querySelector('#videoPart').value;
-        let vKeyword = document.querySelector('#videoKeyword').value;
-        let vType = document.querySelector('#videoType').value;
-        let vOrder = document.querySelector('#videoOrder').value;
 
-        var url =
-            "https://www.googleapis.com/youtube/v3/search" +
-            // "?id="+vId +
-            "?part=" + vPart +
-            "&key=AIzaSyBqBcQdP9rR9Vf03b0H4SQdKMMYEow_3uc" +
-            // 關鍵字
-            "&q=" + vKeyword +
-            "&type=" + vType +
-            // 結果數量 5-50 預設5
-            "&maxResults=10" +
-            // 排序
-            "&order=" + vOrder +
-            // 字幕
-            "&videoCaption=closedCaption";
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            message: '123',
+            datas: {},
+        },
+        methods: {
+            getVideo() {
+                let vPart = document.querySelector('#videoPart').value;
+                let vKeyword = document.querySelector('#videoKeyword').value;
+                let vType = document.querySelector('#videoType').value;
+                let vOrder = document.querySelector('#videoOrder').value;
 
-        console.log('url:', url);
+                var url =
+                    "https://www.googleapis.com/youtube/v3/search" +
+                    // "?id="+vId +
+                    "?part=" + vPart +
+                    "&key=AIzaSyBqBcQdP9rR9Vf03b0H4SQdKMMYEow_3uc" +
+                    // 關鍵字
+                    "&q=" + vKeyword +
+                    "&type=" + vType +
+                    // 結果數量 5-50 預設5
+                    "&maxResults=10" +
+                    // 排序
+                    "&order=" + vOrder +
+                    // 字幕
+                    "&videoCaption=closedCaption";
 
-        fetch(url, {method: 'get'})
-            .then(function (response) {
-                // console.log('response', response);
-                response.json().then(function (data) {
-                    console.log('success:', data);
+                console.log('url:', url);
+
+                fetch(url, {method: 'get'})
+                    .then(function (response) {
+                        // console.log('response', response);
+                        response.json().then(function (Jdata) {
+                            // showData();
+                            console.log('success:', Jdata);
+                            vm.datas = Jdata.items;
+                            console.log('vm.datas[0].snippet.thumbnails.high.url', vm.datas[0].snippet.thumbnails.high.url);
+                        })
+
+                    }).catch(function (err) {
+                    console.log('error:', err)
                 })
+            },
+            watchUrl(videoId){
+                return 'https://www.youtube.com/watch?v='+videoId;
+            }
+        }
+    });
 
-            }).catch(function (err) {
-            console.log('error:', err)
-        })
-    }
 
+</script>
 
+<script>
+    // document.querySelector('#btn').onclick = getVideo;
+
+    // function getVideo() {
+    //     let vId = document.querySelector('#videoId').value;
+    //     let vPart = document.querySelector('#videoPart').value;
+    //     let vKeyword = document.querySelector('#videoKeyword').value;
+    //     let vType = document.querySelector('#videoType').value;
+    //     let vOrder = document.querySelector('#videoOrder').value;
+    //
+    //     var url =
+    //         "https://www.googleapis.com/youtube/v3/search" +
+    //         // "?id="+vId +
+    //         "?part=" + vPart +
+    //         "&key=AIzaSyBqBcQdP9rR9Vf03b0H4SQdKMMYEow_3uc" +
+    //         // 關鍵字
+    //         "&q=" + vKeyword +
+    //         "&type=" + vType +
+    //         // 結果數量 5-50 預設5
+    //         "&maxResults=10" +
+    //         // 排序
+    //         "&order=" + vOrder +
+    //         // 字幕
+    //         "&videoCaption=closedCaption";
+    //
+    //     console.log('url:', url);
+    //
+    //     fetch(url, {method: 'get'})
+    //         .then(function (response) {
+    //             // console.log('response', response);
+    //             response.json().then(function (data) {
+    //                 showData();
+    //                 // console.log('success:', data);
+    //             })
+    //
+    //         }).catch(function (err) {
+    //         console.log('error:', err)
+    //     })
+    // }
+</script>
+<script>
     // function makeRequest() {
     //     console.log('url', url);
     //     xhr = new XMLHttpRequest();
@@ -88,8 +168,6 @@ Order <select name="" id="videoOrder">
     //     xhr.send();
     // }
     // makeRequest();
-
-
 </script>
 </body>
 </html>
