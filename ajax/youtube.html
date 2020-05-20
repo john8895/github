@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Youtube API test</title>
 </head>
 <body>
 <br>
@@ -44,10 +44,14 @@ Order <select name="" id="videoOrder">
             // "?id="+vId +
             "?part=" + vPart +
             "&key=AIzaSyBqBcQdP9rR9Vf03b0H4SQdKMMYEow_3uc" +
+            // 關鍵字
             "&q=" + vKeyword +
             "&type=" + vType +
+            // 結果數量 5-50 預設5
             "&maxResults=10" +
+            // 排序
             "&order=" + vOrder +
+            // 字幕
             "&videoCaption=closedCaption";
 
         console.log('url:', url);
