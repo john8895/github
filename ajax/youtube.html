@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+videoId <input type="text" value="7lCDEYXw3mM" id="videoId"><br>
+part <input type="text" value="snippet" id="videoPart"><br>
+Keyword <input type="text" value="YouTube+Data+API" id="videoKeyword"><br>
+Type <select name="" id="videoType">
+    <option value="video">video</option>
+    <option value="channel">channel</option>
+    <option value="playlist">playlist</option>
+</select><br>
+Order <select name="" id="videoOrder">
+    <option value="date">date</option>
+    <option value="rating">rating</option>
+    <option value="relevance">relevance</option>
+    <option value="title">title</option>
+    <option value="videoCount">videoCount</option>
+    <option value="viewCount">viewCount</option>
+</select><br>
+<input type="button" value="按鈕" id="btn">
+<hr>
+<h1>result</h1>
+
+<div id="dv"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    document.querySelector('#btn').onclick = getVideo;
+
+    function getVideo() {
+        let vId = document.querySelector('#videoId').value;
+        let vPart = document.querySelector('#videoPart').value;
+        let vKeyword = document.querySelector('#videoKeyword').value;
+        let vType = document.querySelector('#videoType').value;
+        let vOrder = document.querySelector('#videoOrder').value;
+
+        var url =
+            "https://www.googleapis.com/youtube/v3/search" +
+            // "?id="+vId +
+            "?part=" + vPart +
+            "&key=AIzaSyBqBcQdP9rR9Vf03b0H4SQdKMMYEow_3uc" +
+            "&q=" + vKeyword +
+            "&type=" + vType +
+            "&maxResults=10" +
+            "&order=" + vOrder +
+            "&videoCaption=closedCaption";
+
+        console.log('url:', url);
+
+        fetch(url, {method: 'get'})
+            .then(function (response) {
+                // console.log('response', response);
+                response.json().then(function (data) {
+                    console.log('success:', data);
+                })
+
+            }).catch(function (err) {
+            console.log('error:', err)
+        })
+    }
+
+
+    // function makeRequest() {
+    //     console.log('url', url);
+    //     xhr = new XMLHttpRequest();
+    //     xhr.open('GET', url);
+    //     xhr.onreadystatechange = function () {
+    //         if (xhr.readyState !== 4) return;
+    //         // console.log(xhr.responseText);
+    //         var response = JSON.parse(this.responseText);
+    //         for (var i = 0; i < response.items.length; i++) {
+    //             var item = response.items[i];
+    //             var title = item.snippet.title;
+    //             var desc = item.snippet.description;
+    //             var imgUrl = item.snippet.thumbnails.default.url;
+    //             console.log('title', title, desc, imgUrl)
+    //         }
+    //     }
+    //     xhr.send();
+    // }
+    // makeRequest();
+
+
+</script>
+</body>
+</html>
