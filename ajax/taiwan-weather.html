@@ -7,28 +7,20 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<!--<ul v-for="(item,key) in weatherStatus" :key="key">-->
-<!--    <li>{{item.time[0].startTime}} ,{{key}}</li>-->
-<!--    <li v-for="(item2,key2) in item.time">{{item2.parameter}} ,{{key2}}</li>-->
-<!--</ul>-->
-
 <div id="app">
     <h1>台灣氣象資料</h1>
     <hr>
-<div >
-{{weatherStatus[4].time[1].parameter.parameterName}}
-</div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" :src="weatherIcon[weatherStatus[0].time[0].parameter.parameterValue]" alt="">
-            <div class="card-body">
-                <h5>今晚明晨</h5>
-                <p class="card-text">{{weatherStatus[2].time[0].parameter.parameterName}}
-                </p>
-                <p class="card-text">{{weatherStatus[1].time[0].parameter.parameterName}} %
-                </p>
-            </div>
+    {{weatherStatus[4].time[1].parameter.parameterName}}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" :src="weatherIcon[weatherStatus[0].time[0].parameter.parameterValue]" alt="">
+        <div class="card-body">
+            <h5>今晚明晨</h5>
+            <p class="card-text">{{weatherStatus[2].time[0].parameter.parameterName}}
+            </p>
+            <p class="card-text">{{weatherStatus[1].time[0].parameter.parameterName}} %
+            </p>
         </div>
-
+    </div>
 
 </div>
 
@@ -57,8 +49,6 @@
                             vm.weatherStatus = jsonData.records.location[0].weatherElement;
                         })
                     })
-
-
             }
         },
         beforeMount() {
