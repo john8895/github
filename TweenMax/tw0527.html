@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GreenSock HTML Tweening Basic</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script>
+        function scaleSmall() {
+            var photo = document.getElementById("cat");
+            TweenMax.to(photo, 2, {
+                width: 300,
+                height: 200
+            });
+        }
+    </script>
+</head>
+<body style="font-size:13px; background-color:#FFF">
+<p style="text-align:center"><img src="cat.jpg" alt="波妞 大頭照" name="cat" width="600" height="400" id="cat"
+                                  onClick="scaleSmall()"></p>
+<p style="text-align:center">請點擊貓咪照片</p>
+</body>
+</html>

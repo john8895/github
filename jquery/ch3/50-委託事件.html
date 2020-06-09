@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按鈕" id="btn">
+<div>
+    <p>我是一段話</p>
+    <p>我是一段話</p>
+    <p>我是一段話</p>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $('#btn').click(function () {
+        $('div').append('<p>我是新增的P元素</p>')
+    })
+
+    $('p').click(function () {
+        alert('哈哈')
+    })
+
+    $('div').delegate('p','click',function () {
+        alert('呵呵')
+    })
+
+</script>
+</body>
+</html>

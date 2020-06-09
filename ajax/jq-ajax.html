@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    // $.ajax({
+    //     url: 'https://randomuser.me/api/',
+    //     dataType: 'json',
+    //     success: res => {
+    //         console.log(res);
+    //     }
+    // })
+
+    // const promise1 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve('foo');
+    //     }, 300);
+    // });
+    //
+    // promise1.then((value) => {
+    //     console.log('value',value);
+    //     // expected output: "foo"
+    // });
+    //
+    // console.log(promise1);
+    // // expected output: [object Promise]
+
+    var a = new Promise(function(resolve, reject) {
+        setTimeout(function(){
+            resolve('hello world');
+        }, 1000);
+    });
+
+    a.then(function(value) {
+        console.log(a);				// Promise {<resolved>: "hello world"}
+        console.log(value + '1');		// "hello world1"
+    });
+    a.then(function(value) {
+        console.log(a);				// Promise {<resolved>: "hello world"}
+        console.log(value + '2');		// "hello world2"
+    });
+
+    console.log(a);					// Promise {<pending>}
+
+</script>
+</body>
+</html>

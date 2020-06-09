@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="btn1" id="btn1">
+<input type="button" value="btn2" id="btn2">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $('#btn1').on('click',function () {
+        console.log('btn1被點了');
+    })
+    $('#btn2').on('click',function () {
+        $('#btn1').trigger('click')
+    })
+
+</script>
+</body>
+</html>

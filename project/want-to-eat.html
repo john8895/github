@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="要吃什麼" id="btn">
+<div id="result"></div>
+<input type="text" id="input" value="嚮灞">
+<input type="button" value="新增店家" id="addStoreBtn">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $(function () {
+
+        let store_data;
+
+        $.ajax({
+            url: 'store.json',
+            type: 'GET',
+            success: function (data) {
+                store_data = data
+                console.log(data);
+            }
+        })
+        
+        // let store = ['微克', '原食', '龍品']
+
+
+        $('#btn').on('click', function () {
+            let num = parseInt(Math.random() * store.length)
+            console.log(num, store[num]);
+            $('#result').html(store[num])
+        })
+
+        function saveData(new_data){
+            store_data.push({
+                name: new_data
+            })
+            console.log(store_data);
+            $.ajax({
+                url: 'store.json',
+                type: 'POST',
+                data: store_data,
+                success: function () {
+                    console.log('上傳成功！');
+                },
+                error: function (err) {
+                    console.log('err', err);
+                }
+            })
+        }
+
+        $('#addStoreBtn').on('click',function () {
+            let new_data = $('#input').val();
+            console.log(new_data);
+            saveData(new_data);
+        })
+
+    })
+</script>
+</body>
+</html>

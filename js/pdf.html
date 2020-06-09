@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.5.207/pdf.js"></script>
+</head>
+<body>
+<div id="pdf-container"></div>
+
+<script>
+    PDFJS.getDocument('https://cdn.rawgit.com/mozilla/pdf.js/master/web/compressed.tracemonkey-pldi-09.pdf')
+        .then(function(pdf) {
+        for (var pageNum = 1; pageNum < pdf.numPages; ++pageNum) {
+            pdf.getPage(pageNum).then(function(page) {
+                // you can now use *page* here
+
+                var scale = 1.5;
+                var viewport = page.getViewport(1);
+
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+
+                document.getElementById('pdf-container').appendChild(canvas);
+            });
+        }
+    })
+</script>
+
+</body>
+</html>

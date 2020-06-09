@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .text {
+            position: absolute;
+            width: 728px;
+            height: 90px;
+            color:white;
+            font-size:39px;
+            background-color: grey;
+        }
+
+        .mask {
+            margin: 5px;
+            width: 500px;
+            height: 90px;
+            /*background-color: aqua;*/
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="mask mask1">-->
+<!--    <div class="text">Testing Testing Testing</div>-->
+<!--</div>-->
+<div class="mask mask2">
+    <div class="text">Testing Testing Testing</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+<script>
+    TweenLite.defaultEase = Power0.easeNone;
+
+    TweenMax.set(".mask", {transformOrigin:"100% 100%"});
+
+    // TweenMax.from(".mask1", 2.2, {width:"0px", ease:Power0.easeNone, repeat:-1, repeatDelay:2})
+
+    TweenMax.from(".mask2", 1.1, {width:"0px", marginLeft:"500px", ease:Power0.easeNone, repeat:false, repeatDelay:2})
+
+</script>
+</body>
+</html>
