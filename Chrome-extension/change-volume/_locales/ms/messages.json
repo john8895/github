@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Kawalan kelantangan audio untuk Chrome™. Tetapkan tahap kelantangan untuk setiap tab secara berasingan dengan kawalan audio."
+   },
+   "app_name": {
+      "message": "Volume Control - Kawalan Kelantangan"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Kawalan Kelantangan"
+   },
+   "popup_list_tabs": {
+      "message": "Tab aktif yang memainkan audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Tiada tab dengan audio sekarang"
+   },
+   "popup_volume": {
+      "message": "Kelantangan:"
+   }
+}

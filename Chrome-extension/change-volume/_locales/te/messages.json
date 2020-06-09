@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ కోసం ఆడియో వాల్యూమ్ నియంత్రణ. ధ్వని booster. ఆడియో నియంత్రణతో ప్రత్యేకంగా ప్రతి టాబ్ కోసం వాల్యూమ్ స్థాయిని సెట్ చేయండి."
+   },
+   "app_name": {
+      "message": "Volume Control - వాల్యూమ్ నియంత్రణ"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - వాల్యూమ్ నియంత్రణ"
+   },
+   "popup_list_tabs": {
+      "message": "ఆడియో ప్లే అవుతున్న సక్రియ ట్యాబ్లు:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "ప్రస్తుతం ఆడియోతో ట్యాబ్లు లేవు"
+   },
+   "popup_volume": {
+      "message": "వాల్యూమ్:"
+   }
+}

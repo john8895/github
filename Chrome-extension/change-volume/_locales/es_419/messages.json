@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Control de volumen de audio para Chrome™. Ajuste el nivel de volumen para cada pestaña por separado con control de audio."
+   },
+   "app_name": {
+      "message": "Volume Control - Control del volumen"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Control del volumen"
+   },
+   "popup_list_tabs": {
+      "message": "Pestañas activas reproduciendo audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "No hay pestañas con audio en este momento"
+   },
+   "popup_volume": {
+      "message": "Volumen:"
+   }
+}

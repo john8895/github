@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ এর জন্য অডিও ভলিউম নিয়ন্ত্রণ সাউন্ড বুস্টার অডিও নিয়ন্ত্রণ সঙ্গে আলাদাভাবে প্রতিটি ট্যাবে ভলিউম স্তর সেট করুন।"
+   },
+   "app_name": {
+      "message": "Volume Control - ভলিউম নিয়ন্ত্রণ"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ভলিউম নিয়ন্ত্রণ"
+   },
+   "popup_list_tabs": {
+      "message": "অডিও চালনা সক্রিয় ট্যাবগুলি:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "এখন অডিও সঙ্গে কোন ট্যাব আছে"
+   },
+   "popup_volume": {
+      "message": "ভলিউম:"
+   }
+}

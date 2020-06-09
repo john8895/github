@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "การควบคุมระดับเสียงสำหรับ Chrome™ เพิ่มระดับเสียงและเพิ่มพลังเสียง ตั้งระดับเสียงสำหรับแต่ละแท็บแยกกันด้วยการควบคุมเสียง"
+   },
+   "app_name": {
+      "message": "Volume Control - การควบคุมระดับเสียง"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - การควบคุมระดับเสียง"
+   },
+   "popup_list_tabs": {
+      "message": "แท็บที่ใช้งานอยู่กำลังเล่นเสียง:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "ไม่มีแท็บที่มีเสียงอยู่ในขณะนี้"
+   },
+   "popup_volume": {
+      "message": "ปริมาตร:"
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Contrôle du volume audio pour Chrome™. Le son booster. Réglez le niveau de volume pour chaque onglet séparément avec le contrôle audio"
+   },
+   "app_name": {
+      "message": "Volume Control - Contrôle du volume"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Contrôle du volume"
+   },
+   "popup_list_tabs": {
+      "message": "Onglets actifs en lecture audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Il n'y a pas d'onglets avec audio en ce moment"
+   },
+   "popup_volume": {
+      "message": "Le volume:"
+   }
+}

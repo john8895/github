@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Lydstyrkekontrol til Chrome™. Forøg lydstyrken med lydforstærkeren. Indstil lydstyrkeniveau for hver fane separat med lydstyring."
+   },
+   "app_name": {
+      "message": "Volume Control - Volumenkontrol"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Volumenkontrol"
+   },
+   "popup_list_tabs": {
+      "message": "Aktive faner, der afspiller lyd:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Der er ingen faner med lyd lige nu"
+   },
+   "popup_volume": {
+      "message": "Volumen:"
+   }
+}

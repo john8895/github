@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™的音量控制。 通過聲音增強器增加音量。 使用音頻控件分別設置每個標籤的音量級別。"
+   },
+   "app_name": {
+      "message": "Volume Control - 音量控制"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - 音量控制"
+   },
+   "popup_list_tabs": {
+      "message": "播放音頻的活動標籤："
+   },
+   "popup_list_tabs_no_play": {
+      "message": "目前沒有帶音頻的選項卡"
+   },
+   "popup_volume": {
+      "message": "卷："
+   }
+}

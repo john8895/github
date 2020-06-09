@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ helitugevuse reguleerimine. Helisurve Määrake iga vahekaardi heli juhtimise jaoks eraldi helitugevus."
+   },
+   "app_name": {
+      "message": "Volume Control - Helitugevuse reguleerimine"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Helitugevuse reguleerimine"
+   },
+   "popup_list_tabs": {
+      "message": "Aktiivsed vahelehed, mis mängivad heli:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Heli ei ole praegu vahelehega"
+   },
+   "popup_volume": {
+      "message": "Maht:"
+   }
+}

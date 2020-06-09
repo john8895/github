@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Kontrol ng dami ng audio para sa Chrome™. Itakda ang antas ng lakas ng tunog para sa bawat tab nang hiwalay sa audio control."
+   },
+   "app_name": {
+      "message": "Volume Control - Kontrol ng Dami"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Kontrol ng Dami"
+   },
+   "popup_list_tabs": {
+      "message": "Mga aktibong tab na nagpe-play ng audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Walang mga tab na may audio ngayon"
+   },
+   "popup_volume": {
+      "message": "Dami:"
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Udhibiti wa kiasi cha sauti kwa ajili ya Chrome™. Sound booster. Weka kiwango cha kiasi kwa kila tab tofauti na udhibiti wa sauti."
+   },
+   "app_name": {
+      "message": "Volume Control - Udhibiti wa Volume"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Udhibiti wa Volume"
+   },
+   "popup_list_tabs": {
+      "message": "Tabo za kazi za kucheza sauti:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Hakuna tabo na sauti sasa hivi"
+   },
+   "popup_volume": {
+      "message": "Kitabu:"
+   }
+}

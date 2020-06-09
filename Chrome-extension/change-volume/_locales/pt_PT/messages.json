@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Controle de volume de áudio para o Chrome™. Defina o nível de volume para cada guia separadamente com o controle de áudio."
+   },
+   "app_name": {
+      "message": "Volume Control - Controle de volume"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Controle de volume"
+   },
+   "popup_list_tabs": {
+      "message": "Guias ativas reproduzindo áudio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Não há guias com áudio agora"
+   },
+   "popup_volume": {
+      "message": "Volume:"
+   }
+}

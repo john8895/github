@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Controlarea volumului audio pentru Chrome™. Setați nivelul volumului pentru fiecare filă separat, cu control audio."
+   },
+   "app_name": {
+      "message": "Volume Control - Controlul volumului"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Controlul volumului"
+   },
+   "popup_list_tabs": {
+      "message": "Tab-urile active care redau audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Nu există file cu audio chiar acum"
+   },
+   "popup_volume": {
+      "message": "Volum:"
+   }
+}

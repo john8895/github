@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Контрол на силата на звука за Chrome™. Усилвател на звука. Задайте нивото на звука за всеки раздел отделно с аудиоконтрол."
+   },
+   "app_name": {
+      "message": "Volume Control - Контрол на звука"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Контрол на звука"
+   },
+   "popup_list_tabs": {
+      "message": "Активни раздели, които възпроизвеждат звук"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "В момента няма раздели със звук"
+   },
+   "popup_volume": {
+      "message": "Сила на звука:"
+   }
+}

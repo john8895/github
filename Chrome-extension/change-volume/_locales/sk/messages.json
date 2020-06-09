@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Ovládač hlasitosti prehliadača Chrome™. Zosilňovač zvuku. Nastavte úroveň hlasitosti pre každú kartu zvlášť s ovládaním zvuku."
+   },
+   "app_name": {
+      "message": "Volume Control - Nastavenie hlasitosti"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Nastavenie hlasitosti"
+   },
+   "popup_list_tabs": {
+      "message": "Aktívne karty prehrávané zvukom:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "V súčasnosti nie sú žiadne karty so zvukom"
+   },
+   "popup_volume": {
+      "message": "Hlasitosť:"
+   }
+}

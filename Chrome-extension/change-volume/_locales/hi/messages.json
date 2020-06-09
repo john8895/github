@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ के लिए ऑडियो वॉल्यूम नियंत्रण। ध्वनि बूस्टर। प्रत्येक नियंत्रण के लिए अलग-अलग ऑडियो नियंत्रण के साथ वॉल्यूम स्तर सेट करें।"
+   },
+   "app_name": {
+      "message": "Volume Control - ध्वनि नियंत्रण"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ध्वनि नियंत्रण"
+   },
+   "popup_list_tabs": {
+      "message": "सक्रिय टैब ऑडियो बजाना:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "अभी ऑडियो के साथ कोई टैब नहीं हैं"
+   },
+   "popup_volume": {
+      "message": "मात्रा:"
+   }
+}

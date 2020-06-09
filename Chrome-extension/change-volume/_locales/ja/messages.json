@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™のオーディオ音量コントロール。 サウンドブースターで音量を上げてください。 オーディオコントロールでは、各タブの音量を個別に設定します。"
+   },
+   "app_name": {
+      "message": "Volume Control - 音量調節"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - 音量調節"
+   },
+   "popup_list_tabs": {
+      "message": "オーディオを再生するアクティブなタブ："
+   },
+   "popup_list_tabs_no_play": {
+      "message": "今は音声付きのタブはありません"
+   },
+   "popup_volume": {
+      "message": "ボリューム："
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "בקרת עוצמת שמע עבור Chrome™. הגבר את עוצמת הקול עם מגבר קול. הגדר את עוצמת הקול עבור כל כרטיסייה בנפרד עם בקרת שמע."
+   },
+   "app_name": {
+      "message": "Volume Control - בקרת עוצמת הקול"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - בקרת עוצמת הקול"
+   },
+   "popup_list_tabs": {
+      "message": "כרטיסיות פעילות השמעת שמע:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "אין כרטיסיות עם אודיו עכשיו"
+   },
+   "popup_volume": {
+      "message": "כרך:"
+   }
+}

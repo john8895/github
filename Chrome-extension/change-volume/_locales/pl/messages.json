@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Kontrola głośności dla Chrome™. Wzmacniacz dźwięku. Ustaw poziom głośności dla każdej karty osobno z kontrolą audio."
+   },
+   "app_name": {
+      "message": "Volume Control - Kontrola głośności"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Kontrola głośności"
+   },
+   "popup_list_tabs": {
+      "message": "Aktywne zakładki odtwarzające dźwięk:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "W tej chwili nie ma kart z dźwiękiem"
+   },
+   "popup_volume": {
+      "message": "Głośność:"
+   }
+}

@@ -1,0 +1,25 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "popup.js", "background.js" ]
+   },
+   "content_scripts": [  ],
+   "description": "A timecode tracker for YouTube",
+   "icons": {
+      "128": "images/YTHL_icon128.png",
+      "16": "images/YTHL_icon16.png",
+      "32": "images/YTHL_icon32.png",
+      "48": "images/YTHL_icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr40Ru4NpLAp2t8o11lZs6wR/fccxeG8M6hUnNjbv82qcl+rX6v/t6fDp8TrTL9BCxjjvrZfQOtV7cVPoR+eFeYohY+d3yDAjSDb8M8KG+/tpeNyu+pvKvaiWjBPSzRD/i/00gZgyM63JfmtVWg7+g3NIjPvPvYUsrLCCZZuDuvwYtWJHX/NrPevEON4e52QPAIQfQX7Sw5/c5hp/XStD9WUE4hLQ9cHtdymYjZh4GhGLbODhKPETDAFH+GmbXBfFb+IhF/3DmQSDdTxmDFkEQJ/4xJW1FLc5oiyb1huwyrhTDkUJ0/deDN96ynC+kEkGgk/vM11xCfVtJBbEJUkFPwIDAQAB",
+   "manifest_version": 2,
+   "name": "YT-HighLighter",
+   "page_action": {
+      "default_title": "YTHL"
+   },
+   "permissions": [ "tabs", "activeTab", "declarativeContent", "https://www.youtube.com/*" ],
+   "short_name": "YTHL",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.12",
+   "web_accessible_resources": [ "injectYT.js", "axios.min.js", "YTHL.css" ]
+}

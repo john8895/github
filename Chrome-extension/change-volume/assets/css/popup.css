@@ -1,0 +1,128 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 62.5%;
+    width: 410px;
+    height: auto;
+    min-height: 160px;
+}
+
+body {
+    background-color: #e5e9ea;
+    overflow: hidden;
+}
+
+.speaker {
+    position: absolute;
+    top: 80px;
+    left: 70px;
+    -webkit-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.vlCtrl {
+    position: absolute;
+    top: -39px;
+    left: 250px;
+    -webkit-transform: translate(-50%, 150%);
+    transform: translate(-50%, 150%);
+    height: 45px;
+    width: 300px;
+}
+
+svg, path {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#ctrlCirce {
+    cursor: pointer;
+}
+.vlCtrl svg{
+    max-height:35px;
+}
+.volElem {
+    fill: none;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    cursor: pointer;
+}
+.volume-info{
+    height: 15px;
+}
+
+
+.tabs{
+    margin-top: 42px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    width: 80%;
+}
+.tabs > * {font-size: 14px}
+
+
+.tabs__title{margin-bottom:.25em;text-align:center;font-weight:700;
+    color: #4961a2;}
+.tab{border-bottom:1px solid #e0e0e0;display:-webkit-box;display:-ms-flexbox;display:flex;text-decoration:none;color: #556cb8;-webkit-transition-property:background-color;transition-property:background-color;-webkit-transition-duration:.3s;transition-duration:.3s}
+.tab:last-child{border-bottom:hidden}
+.tab:hover{background-color: #b8bec8;
+}
+.tab__item{white-space:nowrap;padding:.75em .25em}
+.tab__item:first-child{padding-left:.5em}  .tab__item:last-child{padding-right:.5em}
+.tab__icon-image{width:16px;height:16px}
+.tab__title{text-overflow:ellipsis;overflow:hidden;width:100%}
+
+.link{text-decoration:none}.link:hover{text-decoration:underline}.link--external{color: #556cb8
+                                                                 }
+a#rate svg{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+a#rate:hover svg{
+    fill: orange;
+    color: orange;
+}
+footer{
+    text-align: center;
+}
+a#rate{
+    text-decoration: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+svg.pulse-svg {
+    animation: pulse-me 4s linear infinite;
+}
+
+@keyframes pulse-me {
+    0% {
+        transform: scale(1);
+        fill: #ff0007;
+    }
+    50% {
+        transform: scale(0.95);
+        fill: orange;
+    }
+    70% {
+        transform: scale(0.90);
+        fill: orange;
+    }
+    100% {
+        transform: scale(0.91);
+        fill: #ff0007;
+    }
+}

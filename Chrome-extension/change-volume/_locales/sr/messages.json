@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Контрола јачине звука за Chrome™. Звучни појачавач. Подесите ниво јачине звука за сваки језичак посебно са аудио контролом."
+   },
+   "app_name": {
+      "message": "Volume Control - Контрола јачине звука"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Контрола јачине звука"
+   },
+   "popup_list_tabs": {
+      "message": "Активни језици који репродукују звук:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Тренутно нема табова са аудио-ом"
+   },
+   "popup_volume": {
+      "message": "Запремина:"
+   }
+}

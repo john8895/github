@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Nadzor glasnosti zvoka za Chrome™. Povečajte glasnost z zvokom. Nastavite glasnost za vsako jeziček posebej z nadzorom zvoka."
+   },
+   "app_name": {
+      "message": "Volume Control - Regulator glasnosti"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Regulator glasnosti"
+   },
+   "popup_list_tabs": {
+      "message": "Aktivni zavihki predvajanja zvoka:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Trenutno ni tabs z zvokom"
+   },
+   "popup_volume": {
+      "message": "Volumen:"
+   }
+}

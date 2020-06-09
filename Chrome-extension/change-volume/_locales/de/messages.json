@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Lautstärkeregelung für Chrome™. Stellen Sie den Lautstärkepegel für jede Registerkarte getrennt mit der Tonsteuerung ein."
+   },
+   "app_name": {
+      "message": "Volume Control - Lautstärkeregelung"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Lautstärkeregelung"
+   },
+   "popup_list_tabs": {
+      "message": "Aktive Tabs zum Abspielen von Audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Im Moment gibt es keine Tabs mit Audio"
+   },
+   "popup_volume": {
+      "message": "Volumen:"
+   }
+}

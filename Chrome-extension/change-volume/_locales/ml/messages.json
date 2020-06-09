@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ നായുള്ള ഓഡിയോ വോളിയം നിയന്ത്രണം. സൗണ്ട് ബൂസ്റ്റർ ഓഡിയോ നിയന്ത്രണം ഉപയോഗിച്ച് ഓരോ ടാബിനും വോളിയം നില സജ്ജമാക്കുക."
+   },
+   "app_name": {
+      "message": "Volume Control - ശബ്ദ നിയന്ത്രണം"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ശബ്ദ നിയന്ത്രണം"
+   },
+   "popup_list_tabs": {
+      "message": "ഓഡിയോ പ്ലേ ചെയ്യുന്ന സജീവ ടാബുകൾ:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "ഇപ്പോൾ ഓഡിയോയിൽ ടാബുകളില്ല"
+   },
+   "popup_volume": {
+      "message": "വോളിയം:"
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Kontrol volume audio untuk Chrome™. Penguat suara. Setel tingkat volume untuk setiap tab secara terpisah dengan kontrol audio."
+   },
+   "app_name": {
+      "message": "Volume Control - Pengatur suara"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Pengatur suara"
+   },
+   "popup_list_tabs": {
+      "message": "Tab aktif memutar audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Tidak ada tab dengan audio sekarang"
+   },
+   "popup_volume": {
+      "message": "Volume:"
+   }
+}

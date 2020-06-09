@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Регулировка громкости для Chrome™. Усилитель звука. Установите громкость для каждой вкладки отдельно с помощью аудио контроллера."
+   },
+   "app_name": {
+      "message": "Volume Control - Регулятор громкости"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Регулятор громкости"
+   },
+   "popup_list_tabs": {
+      "message": "Активные вкладки с активным аудио:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Сейчас нет активных вкладок с аудио"
+   },
+   "popup_volume": {
+      "message": "Громкость:"
+   }
+}

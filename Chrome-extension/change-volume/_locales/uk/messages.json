@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Регулятор гучності для Chrome™. Звуковий підсилювач. Рівень гучності для кожної вкладки окремо за допомогою керування звуком."
+   },
+   "app_name": {
+      "message": "Volume Control - Регулятор Гучності"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Регулятор Гучності"
+   },
+   "popup_list_tabs": {
+      "message": "Активні вкладки, що відтворюють звук:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Зараз немає вкладок із звуком"
+   },
+   "popup_volume": {
+      "message": "Гучность:"
+   }
+}

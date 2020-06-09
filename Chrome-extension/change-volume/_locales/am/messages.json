@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "የድምጽ ቁጥጥር ለ Chrome ™. የድምፅ ማበልጸጊያ ድምጽን ይጨምሩ. በድምፅ ቁጥጥር ለእያንዳንዱ ትርብ የድምጽ ደረጃን ያቀናብሩ."
+   },
+   "app_name": {
+      "message": "Volume Control - የድምፅ ቁጥጥር"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - የድምፅ ቁጥጥር"
+   },
+   "popup_list_tabs": {
+      "message": "ኦዲዮ የሚያጫኑ ትሮች:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "አሁን ኦዲዮ ያላቸው ትሮች የሉም"
+   },
+   "popup_volume": {
+      "message": "ድምጽ:"
+   }
+}

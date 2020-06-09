@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "التحكم في مستوى الصوت في Chrome™. زيادة حجم الصوت مع معززة الصوت. تعيين مستوى الصوت لكل علامة تبويب بشكل منفصل مع التحكم في الصوت."
+   },
+   "app_name": {
+      "message": "Volume Control - التحكم في مستوى الصوت"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - التحكم في مستوى الصوت"
+   },
+   "popup_list_tabs": {
+      "message": "علامات التبويب النشطة تشغيل الصوت:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "لا توجد علامات تبويب مع الصوت في الوقت الحالي"
+   },
+   "popup_volume": {
+      "message": "الصوت:"
+   }
+}

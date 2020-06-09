@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ க்கான ஆடியோ தொகுதி கட்டுப்பாடு. ஒலி பூஸ்டர். ஒலி கட்டுப்பாடு மூலம் ஒவ்வொரு தாவலுக்கும் தொகுதி அளவு அமைக்க."
+   },
+   "app_name": {
+      "message": "Volume Control - ஒலி கட்டுப்பாடு"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ஒலி கட்டுப்பாடு"
+   },
+   "popup_list_tabs": {
+      "message": "ஆடியோவை இயக்குகின்ற செயலில் உள்ள தாவல்கள்:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "இப்போது ஆடியோவுடன் எந்த தாவல்களும் இல்லை"
+   },
+   "popup_volume": {
+      "message": "தொகுதி:"
+   }
+}

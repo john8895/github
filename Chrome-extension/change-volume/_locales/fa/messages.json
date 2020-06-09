@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "کنترل حجم صدا برای Chrome™. افزایش حجم با تقویت کننده صدا. تنظیم سطح صدا برای هر برگه به طور جداگانه با کنترل صوتی."
+   },
+   "app_name": {
+      "message": "Volume Control - کنترل حجم"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - کنترل حجم"
+   },
+   "popup_list_tabs": {
+      "message": "زبانه های فعال پخش صوتی:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "زبانه هایی با صدا در حال حاضر وجود ندارد"
+   },
+   "popup_volume": {
+      "message": "جلد:"
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "ಕ್ರೋಮ್ಗಾಗಿ ಆಡಿಯೋ ವಾಲ್ಯೂಮ್ Chrome™. ಆಡಿಯೊ ನಿಯಂತ್ರಣದೊಂದಿಗೆ ಪ್ರತ್ಯೇಕವಾಗಿ ಪ್ರತಿ ಟ್ಯಾಬ್ಗೆ ಪರಿಮಾಣ ಮಟ್ಟವನ್ನು ಹೊಂದಿಸಿ."
+   },
+   "app_name": {
+      "message": "Volume Control - ಸಂಪುಟ ನಿಯಂತ್ರಣ"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ಸಂಪುಟ ನಿಯಂತ್ರಣ"
+   },
+   "popup_list_tabs": {
+      "message": "ಆಡಿಯೊ ಪ್ಲೇ ಮಾಡುವ ಸಕ್ರಿಯ ಟ್ಯಾಬ್ಗಳು:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "ಇದೀಗ ಆಡಿಯೊದೊಂದಿಗೆ ಯಾವುದೇ ಟ್ಯಾಬ್ಗಳಿಲ್ಲ"
+   },
+   "popup_volume": {
+      "message": "ಸಂಪುಟ:"
+   }
+}

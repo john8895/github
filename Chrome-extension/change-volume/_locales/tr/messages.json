@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ için ses seviyesi kontrolü. Ses yükseltici. Ses kontrolü ile her bir sekme için ses seviyesini ayrı ayrı ayarlayın."
+   },
+   "app_name": {
+      "message": "Volume Control - Ses kontrol"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Ses kontrol"
+   },
+   "popup_list_tabs": {
+      "message": "Ses oynatılan aktif sekmeler:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Şu anda sesli sekmeler yok"
+   },
+   "popup_volume": {
+      "message": "Hacim:"
+   }
+}

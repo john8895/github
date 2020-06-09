@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ साठी ऑडिओ व्हॉल्यूम नियंत्रण आवाज बूस्टर सह खंड वाढवा. ऑडिओ कंट्रोलसह प्रत्येक टॅबसाठी विभक्त स्तर सेट करा"
+   },
+   "app_name": {
+      "message": "Volume Control - ध्वनि नियंत्रण"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - ध्वनि नियंत्रण"
+   },
+   "popup_list_tabs": {
+      "message": "ऑडिओ वाजवून सक्रिय टॅब:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "आत्ता ऑडिओमध्ये कोणतेही टॅब नाहीत"
+   },
+   "popup_volume": {
+      "message": "व्हॉल्यूम:"
+   }
+}

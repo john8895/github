@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Audió hangerőszabályzó a Chrome™. Növelje a hangerőt hangerősítővel. Állítsa be az egyes fülek hangerejét külön a hangvezérléssel."
+   },
+   "app_name": {
+      "message": "Volume Control - Hangerőszabályozó"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Hangerőszabályozó"
+   },
+   "popup_list_tabs": {
+      "message": "Aktív hangfalak:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Jelenleg nincsenek audiofülek"
+   },
+   "popup_volume": {
+      "message": "Hangerő:"
+   }
+}

@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Ljudvolymkontroll för Chrome™. Öka volymen med ljudförstärkare. Ställ in volymen för varje flik separat med ljudkontrollen."
+   },
+   "app_name": {
+      "message": "Volume Control - Volymkontroll"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Volymkontroll"
+   },
+   "popup_list_tabs": {
+      "message": "Aktiva flikar som spelar ljud:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Det finns inga flikar med ljud just nu"
+   },
+   "popup_volume": {
+      "message": "Volym:"
+   }
+}

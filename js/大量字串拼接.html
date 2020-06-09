@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按鈕" id="btn"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<script>
+    // 此方法會佔記憶體空間，不推薦使用
+    // document.getElementById('btn').onclick = function () {
+    //     let str = "";
+    //     let inputs = document.querySelectorAll('input');
+    //     for (var i = 0; i < inputs.length; i++) {
+    //         if (inputs[i].type === 'text') {
+    //             str += inputs[i].value + "|";
+    //         }
+    //     }
+    //     console.log(str);
+    // }
+
+    // 推薦使用數組
+    document.getElementById('btn').onclick =function () {
+        let str=[];
+        let inputs = document.querySelectorAll('input');
+        for (var i=0;i<inputs.length;i++){
+            if(inputs[i].type==='text'){
+                str.push(inputs[i].value);
+            }
+        }
+        console.log(str.join('|'));
+    }
+
+</script>
+</body>
+</html>

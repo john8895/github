@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Điều chỉnh âm lượng cho Chrome™. Tăng âm lượng với bộ tăng âm. Đặt mức âm lượng cho từng tab riêng biệt với điều khiển âm thanh."
+   },
+   "app_name": {
+      "message": "Volume Control - Kiểm soát âm lượng"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Kiểm soát âm lượng"
+   },
+   "popup_list_tabs": {
+      "message": "Tab đang hoạt động phát âm thanh:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Hiện không có tab nào có âm thanh"
+   },
+   "popup_volume": {
+      "message": "Âm lượng:"
+   }
+}

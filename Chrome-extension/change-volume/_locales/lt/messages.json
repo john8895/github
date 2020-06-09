@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Chrome™ garso garso stiprumo valdiklis. Garso stiprintuvas. Nustatykite kiekvieno skirtuko garso lygį atskirai su garso valdymu."
+   },
+   "app_name": {
+      "message": "Volume Control - Garso valdymas"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Garso valdymas"
+   },
+   "popup_list_tabs": {
+      "message": "Schede attive che riproducono audio:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Non ci sono schede con audio adesso"
+   },
+   "popup_volume": {
+      "message": "Tomas:"
+   }
+}

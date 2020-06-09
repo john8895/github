@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Έλεγχος έντασης ήχου για το Chrome™. Ενίσχυση ήχου. Ρυθμίστε το επίπεδο έντασης για κάθε καρτέλα ξεχωριστά με έλεγχο ήχου."
+   },
+   "app_name": {
+      "message": "Volume Control - Ελεγχος έντασης"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Ελεγχος έντασης"
+   },
+   "popup_list_tabs": {
+      "message": "Ενεργές καρτέλες που αναπαράγουν ήχο:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Δεν υπάρχουν καρτέλες με ήχο αυτήν τη στιγμή"
+   },
+   "popup_volume": {
+      "message": "Τόμος:"
+   }
+}

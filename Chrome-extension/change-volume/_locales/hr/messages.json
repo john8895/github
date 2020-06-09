@@ -1,0 +1,23 @@
+{
+   "app_description": {
+      "message": "Kontrola glasnoće zvuka za Chrome™. Povećajte glasnoću zvukom. Postavite razinu glasnoće za svaku karticu zasebno s audio kontrolom."
+   },
+   "app_name": {
+      "message": "Volume Control - Kontrola zvuka"
+   },
+   "app_short_name": {
+      "message": "Volume Control"
+   },
+   "app_title": {
+      "message": "Volume Control - Kontrola zvuka"
+   },
+   "popup_list_tabs": {
+      "message": "Aktivne kartice za reprodukciju zvuka:"
+   },
+   "popup_list_tabs_no_play": {
+      "message": "Trenutačno nema zvučnih kartica"
+   },
+   "popup_volume": {
+      "message": "Volumen:"
+   }
+}

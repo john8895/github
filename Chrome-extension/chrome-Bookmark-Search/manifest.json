@@ -1,0 +1,25 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "background-script.js" ]
+   },
+   "chrome_url_overrides": {
+      "newtab": "load-new-tab.html"
+   },
+   "content_scripts": [ {
+      "js": [ "content-script.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "description": "Use [CTRL] + [L] to search your bookmarks (a version of the omnibox only suggesting bookmarks). Also used on the New Tab page.",
+   "icons": {
+      "128": "icon-128-128.png",
+      "16": "icon-16-16.png",
+      "48": "icon-48-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkEKKPo0nulyZFL13LIOfcrW8rT1vHtURzj6f4extE/vZbmZRrFSBGNdUDVHnztP9Qi36FvzRr5h8QLL8q3RKo+xwcKxAozepqm6QntTYSuqIihzctf5HrzE8ACP2IQVOc+qMqbqN17FjEb62oVWZu0/SoTQTYs+9OeTc2e1dCltSq/GKTlLKmFAgkl321eO9nKnwPvlKO1LTThqtLOlcCKjA/WdD4W2AEFPOEfsh2x3UI8E6CfpdyBBf8DT+WIgY8whTOdPWmw+8yKzW9k/ffp+wrEbkQPxYSviMMLLAsBejf4StYQxkr1h9wDdivDHnFBW5SKEDYmNGAx26ARTtwwIDAQAB",
+   "manifest_version": 2,
+   "name": "Chrome Bookmark Search",
+   "permissions": [ "bookmarks" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.0"
+}
